@@ -20,18 +20,6 @@ const ROOT = __dirname;
    ENVIRONMENT CONFIGURATION
 ========================================================= */
 
-try {
-    if (typeof process.loadEnvFile === "function") {
-        process.loadEnvFile(
-            path.join(ROOT, ".env")
-        );
-    }
-} catch (error) {
-    console.error(
-        "Unable to load .env file:",
-        error.message
-    );
-}
 
 
 /* =========================================================
