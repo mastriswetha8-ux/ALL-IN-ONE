@@ -70,19 +70,6 @@ const RAZORPAY_KEY_ID =
 const RAZORPAY_KEY_SECRET =
     process.env.RAZORPAY_KEY_SECRET;
 
-if (
-    !RAZORPAY_KEY_ID ||
-    !RAZORPAY_KEY_SECRET
-) {
-    console.error("================================================");
-    console.error("ERROR: Razorpay API keys are missing.");
-    console.error("Please check the .env file.");
-    console.error("Required:");
-    console.error("RAZORPAY_KEY_ID=...");
-    console.error("RAZORPAY_KEY_SECRET=...");
-    console.error("================================================");
-    process.exit(1);
-}
 
 const razorpay =
     new Razorpay({
