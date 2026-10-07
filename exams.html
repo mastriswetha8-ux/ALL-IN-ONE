@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Competitive Videos - ALL-IN-ONE.COM</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f1e8;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #fffdf7;
+            border-bottom: 2px solid #222;
+            padding: 18px 25px;
+            text-align: center;
+            box-shadow: 0 3px 0 rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            margin-top: 5px;
+            font-size: 15px;
+            color: #555;
+        }
+
+        .search-box {
+            margin: 15px auto;
+            max-width: 600px;
+            display: flex;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #333;
+            border-right: none;
+            border-radius: 6px 0 0 6px;
+            font-size: 15px;
+        }
+
+        .search-box button {
+            padding: 12px 20px;
+            border: 2px solid #333;
+            background: #222;
+            color: white;
+            cursor: pointer;
+            border-radius: 0 6px 6px 0;
+            font-weight: bold;
+        }
+
+        nav {
+            margin-top: 12px;
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 5px 8px;
+            color: #222;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .main-container {
+            max-width: 1250px;
+            margin: 25px auto;
+            padding: 0 15px;
+        }
+
+        .page-title {
+            background: #fffdf7;
+            border: 2px solid #222;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.12);
+        }
+
+        .page-title h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .page-title p {
+            color: #555;
+        }
+
+        .columns {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1fr;
+            gap: 18px;
+        }
+
+        .column {
+            background: #fffdf7;
+            border: 2px solid #222;
+            padding: 20px;
+            min-height: 450px;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.12);
+        }
+
+        .column-title {
+            font-size: 21px;
+            font-weight: bold;
+            border-bottom: 2px dashed #555;
+            padding-bottom: 10px;
+            margin-bottom: 18px;
+        }
+
+        .category {
+            margin-bottom: 18px;
+        }
+
+        .category > a {
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .category > a:hover {
+            text-decoration: underline;
+        }
+
+        .sub-category {
+            margin-left: 18px;
+            margin-top: 5px;
+        }
+
+        .sub-category a {
+            display: block;
+            color: #444;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 5px 0;
+        }
+
+        .sub-category a:hover {
+            color: #000;
+            padding-left: 5px;
+        }
+
+        .feature-card {
+            border: 1px solid #777;
+            padding: 14px;
+            margin-bottom: 12px;
+            background: #fff;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 5px;
+            font-size: 17px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .feature-card a {
+            display: inline-block;
+            margin-top: 8px;
+            color: #111;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .feature-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* VIDEO SECTION */
+
+        .video-section {
+            margin-top: 25px;
+            background: #fffdf7;
+            border: 2px solid #222;
+            padding: 20px;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.12);
+        }
+
+        .video-section h2 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .video-section-description {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .video-category {
+            margin-bottom: 25px;
+        }
+
+        .video-category-title {
+            font-size: 19px;
+            font-weight: bold;
+            border-bottom: 2px dashed #777;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+
+        .video-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .video-card {
+            background: #fff;
+            border: 1px solid #888;
+            padding: 14px;
+        }
+
+        .video-card h3 {
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .video-card p {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .video-info {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .watch-button {
+            display: inline-block;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .watch-button:hover {
+            background: #444;
+        }
+
+        .empty-message {
+            background: #fff;
+            border: 1px dashed #777;
+            padding: 15px;
+            color: #666;
+        }
+
+        .loading {
+            padding: 15px;
+            color: #555;
+        }
+
+        .error-message {
+            padding: 15px;
+            border: 1px solid #999;
+            background: #fff;
+            color: #555;
+        }
+
+        /* PAID CLASS */
+
+        .paid-card {
+            border: 1px solid #777;
+            padding: 15px;
+            margin-bottom: 14px;
+            background: #fff;
+        }
+
+        .paid-card h3 {
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .paid-button {
+            display: inline-block;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            padding: 9px 14px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .paid-button:hover {
+            background: #444;
+        }
+
+        /* LOWER */
+
+        .lower-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .box {
+            background: #fffdf7;
+            border: 2px solid #222;
+            padding: 20px;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.12);
+        }
+
+        .box h2 {
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .box a {
+            color: #222;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .box a:hover {
+            text-decoration: underline;
+        }
+
+        /* COMMENT */
+
+        .comment-box {
+            margin-top: 20px;
+            background: #fffdf7;
+            border: 2px solid #222;
+            padding: 20px;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.12);
+        }
+
+        .comment-box textarea {
+            width: 100%;
+            min-height: 100px;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #777;
+            resize: vertical;
+            font-family: Arial;
+        }
+
+        .comment-box button {
+            margin-top: 10px;
+            padding: 10px 18px;
+            background: #222;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 20px;
+            background: #222;
+            color: white;
+            text-align: center;
+        }
+
+        @media (max-width: 950px) {
+
+            .columns {
+                grid-template-columns: 1fr;
+            }
+
+            .column {
+                min-height: auto;
+            }
+
+            .video-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .logo {
+                font-size: 25px;
+            }
+
+            nav a {
+                display: block;
+                margin: 8px 0;
+            }
+
+            .lower-section {
+                grid-template-columns: 1fr;
+            }
+
+            .search-box {
+                display: block;
+            }
+
+            .search-box input {
+                width: 100%;
+                border: 2px solid #333;
+                border-radius: 6px;
+            }
+
+            .search-box button {
+                width: 100%;
+                margin-top: 8px;
+                border-radius: 6px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        ALL-IN-ONE.COM
+    </div>
+
+    <div class="tagline">
+        Learn • Prepare • Watch • Enjoy
+    </div>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search videos, classes, exams..."
+        >
+
+        <button onclick="searchVideos()">
+            🔍 Search
+        </button>
+
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="educational.html">Educational</a>
+
+        <a href="exams.html">Exams</a>
+
+        <a href="entertainment.html">Entertainment</a>
+
+        <a href="videos.html">Videos</a>
+
+        <a href="storyvideos.html">Story Videos</a>
+
+        <a href="storycontent.html">Story Content</a>
+
+        <a href="login.html">Login</a>
+
+    </nav>
+
+</header>
+
+
+<main class="main-container">
+
+
+    <!-- PAGE TITLE -->
+
+    <div class="page-title">
+
+        <h1>
+            🎯 Competitive Videos
+        </h1>
+
+        <p>
+            Prepare for competitive exams with useful learning content
+        </p>
+
+    </div>
+
+
+    <!-- THREE COLUMNS -->
+
+    <div class="columns">
+
+
+        <!-- LEFT -->
+
+        <section class="column">
+
+            <div class="column-title">
+                🎥 Watch Videos
+            </div>
+
+
+            <div class="category">
+
+                <a href="educational.html">
+                    🎓 Educational Videos
+                </a>
+
+                <div class="sub-category">
+
+                    <a href="educational.html">
+                        → 1–10 Classes
+                    </a>
+
+                    <a href="educational.html">
+                        → Intermediate / +2
+                    </a>
+
+                    <a href="educational.html">
+                        → Degree
+                    </a>
+
+                    <a href="educational.html">
+                        → PG / Professional
+                    </a>
+
+                    <a href="educational.html">
+                        → Other Videos
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="category">
+
+                <a href="exams.html">
+                    🎯 Competitive Videos
+                </a>
+
+                <div class="sub-category">
+
+                    <a href="#arithmetic">
+                        → Arithmetic
+                    </a>
+
+                    <a href="#reasoning">
+                        → Reasoning
+                    </a>
+
+                    <a href="#economy">
+                        → Economy
+                    </a>
+
+                    <a href="#polity">
+                        → Polity
+                    </a>
+
+                    <a href="#history">
+                        → History
+                    </a>
+
+                    <a href="#other">
+                        → Other Subjects
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="category">
+
+                <a href="entertainment.html">
+                    🎬 Entertainment Videos
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CENTER -->
+
+        <section class="column">
+
+            <div class="column-title">
+                📚 Competitive Exam Content
+            </div>
+
+
+            <div class="feature-card" id="arithmetic">
+
+                <h3>
+                    🔢 Arithmetic
+                </h3>
+
+                <p>
+                    Arithmetic concepts, calculations,
+                    shortcuts and practice videos.
+                </p>
+
+                <a href="videos.html?search=Arithmetic">
+                    Watch Videos →
+                </a>
+
+            </div>
+
+
+            <div class="feature-card" id="reasoning">
+
+                <h3>
+                    🧠 Reasoning
+                </h3>
+
+                <p>
+                    Logical reasoning, problem solving
+                    and practice questions.
+                </p>
+
+                <a href="videos.html?search=Reasoning">
+                    Watch Videos →
+                </a>
+
+            </div>
+
+
+            <div class="feature-card" id="economy">
+
+                <h3>
+                    💰 Economy
+                </h3>
+
+                <p>
+                    Economy-related educational content
+                    and competitive exam preparation.
+                </p>
+
+                <a href="videos.html?search=Economy">
+                    Watch Videos →
+                </a>
+
+            </div>
+
+
+            <div class="feature-card" id="polity">
+
+                <h3>
+                    🏛️ Polity
+                </h3>
+
+                <p>
+                    Indian polity and important
+                    competitive exam topics.
+                </p>
+
+                <a href="videos.html?search=Polity">
+                    Watch Videos →
+                </a>
+
+            </div>
+
+
+            <div class="feature-card" id="history">
+
+                <h3>
+                    📜 History
+                </h3>
+
+                <p>
+                    Historical topics and study videos
+                    for competitive examinations.
+                </p>
+
+                <a href="videos.html?search=History">
+                    Watch Videos →
+                </a>
+
+            </div>
+
+
+            <div class="feature-card" id="other">
+
+                <h3>
+                    📚 Other Subjects
+                </h3>
+
+                <p>
+                    Other useful competitive examination
+                    subjects and preparation videos.
+                </p>
+
+                <a href="videos.html?search=Other">
+                    Watch Videos →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT -->
+
+        <section class="column">
+
+            <div class="column-title">
+                💳 Paid Class
+            </div>
+
+
+            <div class="paid-card">
+
+                <h3>
+                    UPSC Complete Course
+                </h3>
+
+                <div class="price">
+                    ₹999
+                </div>
+
+                <p>
+                    Complete preparation course.
+                </p>
+
+            </div>
+
+
+            <div class="paid-card">
+
+                <h3>
+                    Competitive Exams
+                </h3>
+
+                <div class="price">
+                    ₹799
+                </div>
+
+                <p>
+                    Preparation material and classes.
+                </p>
+
+            </div>
+
+
+            <div class="paid-card">
+
+                <h3>
+                    Degree Classes
+                </h3>
+
+                <div class="price">
+                    ₹599
+                </div>
+
+                <p>
+                    Degree-related learning classes.
+                </p>
+
+            </div>
+
+
+            <a
+                href="paid-classes.html"
+                class="paid-button"
+            >
+                View Paid Classes →
+            </a>
+
+        </section>
+
+    </div>
+
+
+    <!-- LIVE COMPETITIVE VIDEOS -->
+
+    <section class="video-section">
+
+        <h2>
+            🎥 Competitive Exam Videos
+        </h2>
+
+        <p class="video-section-description">
+            Watch competitive exam videos uploaded to ALL-IN-ONE.COM.
+        </p>
+
+
+        <div id="competitiveVideosContainer">
+
+            <div class="loading">
+                Loading competitive videos...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOWER SECTIONS -->
+
+    <div class="lower-section">
+
+
+        <div class="box">
+
+            <h2>
+                📖 Story Videos
+            </h2>
+
+            <p>
+                Watch Moral, Family, Animal and Festival
+                story videos.
+            </p>
+
+            <br>
+
+            <a href="storyvideos.html">
+                View Story Videos →
+            </a>
+
+        </div>
+
+
+        <div class="box">
+
+            <h2>
+                ✍️ Story Content
+            </h2>
+
+            <p>
+                Read interesting stories and useful
+                story content.
+            </p>
+
+            <br>
+
+            <a href="storycontent.html">
+                View Story Content →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- TERMS -->
+
+    <div
+        class="box"
+        style="margin-top: 20px;"
+    >
+
+        <h2>
+            📜 Terms & Conditions
+        </h2>
+
+        <p>
+            Please read the website rules, content
+            guidelines and terms before using
+            ALL-IN-ONE.COM.
+        </p>
+
+        <br>
+
+        <a href="terms.html">
+            Read Terms & Conditions →
+        </a>
+
+    </div>
+
+
+    <!-- COMMENT -->
+
+    <div class="comment-box">
+
+        <h2>
+            💬 Comment Box
+        </h2>
+
+        <p>
+            Share your feedback about the competitive
+            exam content and website.
+        </p>
+
+        <textarea
+            id="commentText"
+            placeholder="Write your comment here..."
+        ></textarea>
+
+        <br>
+
+        <button onclick="submitComment()">
+            Submit Comment
+        </button>
+
+    </div>
+
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 ALL-IN-ONE.COM
+    </p>
+
+    <p>
+        Learn • Prepare • Watch • Enjoy
+    </p>
+
+</footer>
+
+
+<script>
+
+
+    // ==========================================
+    // SEARCH
+    // ==========================================
+
+    function searchVideos() {
+
+        const search =
+            document
+                .getElementById("searchInput")
+                .value
+                .trim();
+
+
+        if (search === "") {
+
+            alert(
+                "Please enter something to search."
+            );
+
+            return;
+
+        }
+
+
+        window.location.href =
+            "videos.html?search=" +
+            encodeURIComponent(search);
+
+    }
+
+
+    document
+        .getElementById("searchInput")
+        .addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Enter") {
+
+                    searchVideos();
+
+                }
+
+            }
+        );
+
+
+    // ==========================================
+    // SUBJECT NAMES
+    // ==========================================
+
+    const competitiveCategories = {
+
+        "Arithmetic": "🔢 Arithmetic",
+
+        "Reasoning": "🧠 Reasoning",
+
+        "Economy": "💰 Economy",
+
+        "Polity": "🏛️ Polity",
+
+        "History": "📜 History",
+
+        "Other": "📚 Other Subjects"
+
+    };
+
+
+    // ==========================================
+    // NORMALIZE VALUE
+    // ==========================================
+
+    function normalizeValue(value) {
+
+        if (
+            value === null ||
+            value === undefined
+        ) {
+
+            return "";
+
+        }
+
+
+        return String(value)
+            .trim()
+            .toLowerCase();
+
+    }
+
+
+    // ==========================================
+    // GET SUBJECT KEY
+    // ==========================================
+
+    function getSubjectKey(video) {
+
+        const subject =
+            normalizeValue(
+                video.subject
+            );
+
+
+        const title =
+            normalizeValue(
+                video.title
+            );
+
+
+        const description =
+            normalizeValue(
+                video.description
+            );
+
+
+        // SUBJECT FROM DATABASE
+
+        if (subject === "arithmetic") {
+
+            return "Arithmetic";
+
+        }
+
+
+        if (subject === "reasoning") {
+
+            return "Reasoning";
+
+        }
+
+
+        if (subject === "economy") {
+
+            return "Economy";
+
+        }
+
+
+        if (subject === "polity") {
+
+            return "Polity";
+
+        }
+
+
+        if (subject === "history") {
+
+            return "History";
+
+        }
+
+
+        if (
+            subject === "other" ||
+            subject === "other subjects" ||
+            subject === "other competitive"
+        ) {
+
+            return "Other";
+
+        }
+
+
+        // BACKUP TITLE SEARCH
+
+        if (
+            title.includes("arithmetic") ||
+            description.includes("arithmetic")
+        ) {
+
+            return "Arithmetic";
+
+        }
+
+
+        if (
+            title.includes("reasoning") ||
+            description.includes("reasoning")
+        ) {
+
+            return "Reasoning";
+
+        }
+
+
+        if (
+            title.includes("economy") ||
+            description.includes("economy")
+        ) {
+
+            return "Economy";
+
+        }
+
+
+        if (
+            title.includes("polity") ||
+            description.includes("polity")
+        ) {
+
+            return "Polity";
+
+        }
+
+
+        if (
+            title.includes("history") ||
+            description.includes("history")
+        ) {
+
+            return "History";
+
+        }
+
+
+        return null;
+
+    }
+
+
+    // ==========================================
+    // ESCAPE HTML
+    // ==========================================
+
+    function escapeHtml(value) {
+
+        if (
+            value === null ||
+            value === undefined
+        ) {
+
+            return "";
+
+        }
+
+
+        return String(value)
+            .replace(
+                /&/g,
+                "&amp;"
+            )
+            .replace(
+                /</g,
+                "&lt;"
+            )
+            .replace(
+                />/g,
+                "&gt;"
+            )
+            .replace(
+                /"/g,
+                "&quot;"
+            )
+            .replace(
+                /'/g,
+                "&#039;"
+            );
+
+    }
+
+
+    // ==========================================
+    // VIDEO WATCH URL
+    // ==========================================
+
+    function getWatchUrl(video) {
+
+        if (video.id) {
+
+            return (
+                "video.html?id=" +
+                encodeURIComponent(
+                    Number(video.id)
+                )
+            );
+
+        }
+
+
+        return "videos.html";
+
+    }
+
+
+    // ==========================================
+    // LOAD VIDEOS
+    // ==========================================
+
+    async function loadCompetitiveVideos() {
+
+        const container =
+            document.getElementById(
+                "competitiveVideosContainer"
+            );
+
+
+        try {
+
+
+            container.innerHTML = `
+
+                <div class="loading">
+
+                    Loading competitive videos...
+
+                </div>
+
+            `;
+
+
+            const response =
+                await fetch(
+                    "/api/videos?_=" +
+                    Date.now(),
+                    {
+                        credentials: "include",
+                        cache: "no-store"
+                    }
+                );
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Unable to load videos."
+                );
+
+            }
+
+
+            const data =
+                await response.json();
+
+
+            if (
+                !data ||
+                !data.success ||
+                !Array.isArray(data.videos)
+            ) {
+
+                throw new Error(
+                    "Invalid video data."
+                );
+
+            }
+
+
+            // ==========================================
+            // IMPORTANT FIX
+            //
+            // DATABASE:
+            // category = Competitive Exams
+            //
+            // subject =
+            // Arithmetic / Reasoning / Economy /
+            // Polity / History / Other
+            // ==========================================
+
+            const competitiveVideos =
+                data.videos.filter(
+                    function(video) {
+
+                        return (
+                            normalizeValue(
+                                video.category
+                            ) ===
+                            "competitive exams"
+                        );
+
+                    }
+                );
+
+
+            console.log(
+                "TOTAL VIDEOS:",
+                data.videos.length
+            );
+
+
+            console.log(
+                "COMPETITIVE VIDEOS:",
+                competitiveVideos.length
+            );
+
+
+            // ==========================================
+            // NO VIDEOS
+            // ==========================================
+
+            if (
+                competitiveVideos.length === 0
+            ) {
+
+                container.innerHTML = `
+
+                    <div class="empty-message">
+
+                        No competitive exam videos
+                        have been uploaded yet.
+
+                        <br><br>
+
+                        Upload videos using the
+                        <strong>Video Upload</strong>
+                        page and select
+                        <strong>Competitive Exams</strong>.
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            // ==========================================
+            // GROUP VIDEOS
+            // ==========================================
+
+            const groupedVideos = {
+
+                "Arithmetic": [],
+
+                "Reasoning": [],
+
+                "Economy": [],
+
+                "Polity": [],
+
+                "History": [],
+
+                "Other": []
+
+            };
+
+
+            competitiveVideos.forEach(
+                function(video) {
+
+                    const subject =
+                        getSubjectKey(video);
+
+
+                    if (subject) {
+
+                        groupedVideos[
+                            subject
+                        ].push(video);
+
+                    }
+
+                }
+            );
+
+
+            // ==========================================
+            // BUILD HTML
+            // ==========================================
+
+            let html = "";
+
+
+            Object.keys(
+                groupedVideos
+            ).forEach(
+                function(category) {
+
+                    const videos =
+                        groupedVideos[
+                            category
+                        ];
+
+
+                    if (
+                        videos.length === 0
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    html += `
+
+                        <div class="video-category">
+
+                            <div class="video-category-title">
+
+                                ${
+                                    competitiveCategories[
+                                        category
+                                    ]
+                                }
+
+                            </div>
+
+                            <div class="video-list">
+
+                    `;
+
+
+                    videos.forEach(
+                        function(video) {
+
+                            const title =
+                                escapeHtml(
+                                    video.title ||
+                                    "Untitled Video"
+                                );
+
+
+                            const description =
+                                escapeHtml(
+                                    video.description ||
+                                    "No description available."
+                                );
+
+
+                            const creator =
+                                escapeHtml(
+                                    video.creator ||
+                                    "Unknown"
+                                );
+
+
+                            const views =
+                                Number(
+                                    video.views || 0
+                                );
+
+
+                            const likes =
+                                Number(
+                                    video.likes || 0
+                                );
+
+
+                            const watchUrl =
+                                getWatchUrl(
+                                    video
+                                );
+
+
+                            html += `
+
+                                <div class="video-card">
+
+                                    <h3>
+                                        ${title}
+                                    </h3>
+
+                                    <p>
+                                        ${description}
+                                    </p>
+
+                                    <div class="video-info">
+
+                                        👤 Uploaded by:
+                                        <strong>
+                                            ${creator}
+                                        </strong>
+
+                                        <br>
+
+                                        👁️ ${views}
+                                        &nbsp;&nbsp;
+                                        ❤️ ${likes}
+
+                                    </div>
+
+                                    <a
+                                        href="${watchUrl}"
+                                        class="watch-button"
+                                    >
+                                        ▶️ Watch Video
+                                    </a>
+
+                                </div>
+
+                            `;
+
+                        }
+                    );
+
+
+                    html += `
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+                }
+            );
+
+
+            // ==========================================
+            // SUBJECT MISSING
+            // ==========================================
+
+            if (
+                html === ""
+            ) {
+
+                container.innerHTML = `
+
+                    <div class="empty-message">
+
+                        Competitive Exam videos
+                        were found, but their subjects
+                        are not assigned yet.
+
+                        <br><br>
+
+                        Open the main
+                        <strong>Videos</strong>
+                        page to watch them.
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            container.innerHTML =
+                html;
+
+
+        } catch (error) {
+
+
+            console.error(
+                "COMPETITIVE VIDEOS ERROR:",
+                error
+            );
+
+
+            container.innerHTML = `
+
+                <div class="error-message">
+
+                    Unable to load competitive videos.
+
+                    <br><br>
+
+                    Please make sure the
+                    ALL-IN-ONE.COM server is running.
+
+                </div>
+
+            `;
+
+        }
+
+    }
+
+
+    // ==========================================
+    // COMMENT BOX
+    // ==========================================
+
+    function submitComment() {
+
+        const comment =
+            document
+                .getElementById(
+                    "commentText"
+                )
+                .value
+                .trim();
+
+
+        if (comment === "") {
+
+            alert(
+                "Please write a comment."
+            );
+
+            return;
+
+        }
+
+
+        alert(
+            "Comment feature is connected to the website system."
+        );
+
+
+        document
+            .getElementById(
+                "commentText"
+            )
+            .value = "";
+
+    }
+
+
+    // ==========================================
+    // PAGE START
+    // ==========================================
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        function() {
+
+            loadCompetitiveVideos();
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>

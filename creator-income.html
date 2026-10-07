@@ -1,0 +1,1287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Creator Income - ALL-IN-ONE.COM
+    </title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 22px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        header p {
+            margin: 8px 0 15px;
+            color: #d1d5db;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            background: #374151;
+            padding: 9px 14px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background: #2563eb;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow:
+                0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        .login-status {
+            padding: 14px;
+            background: #eef2ff;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .success {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .income-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .income-box {
+            background: #f9fafb;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .income-box h3 {
+            margin: 0;
+            font-size: 28px;
+            color: #2563eb;
+        }
+
+        .income-box p {
+            margin-bottom: 0;
+            color: #555;
+        }
+
+        .money {
+            color: #15803d !important;
+        }
+
+        .payout-box {
+            background: #f9fafb;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 22px;
+        }
+
+        .balance {
+            font-size: 30px;
+            font-weight: bold;
+            color: #15803d;
+            margin: 10px 0 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        input {
+            width: 100%;
+            max-width: 400px;
+            padding: 11px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 16px;
+        }
+
+        button {
+            border: 0;
+            padding: 11px 16px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .success-btn {
+            background: #16a34a;
+            color: white;
+        }
+
+        .secondary {
+            background: #6b7280;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.88;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 750px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #111827;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f9fafb;
+        }
+
+        .pending {
+            color: #b45309;
+            font-weight: bold;
+        }
+
+        .approved {
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .rejected {
+            color: #dc2626;
+            font-weight: bold;
+        }
+
+        .paid {
+            color: #15803d;
+            font-weight: bold;
+        }
+
+        .empty {
+            padding: 25px;
+            background: #f9fafb;
+            border-radius: 8px;
+            text-align: center;
+            color: #666;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        @media (max-width: 850px) {
+
+            .income-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            .income-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>
+        💰 ALL-IN-ONE.COM
+    </h1>
+
+    <p>
+        Creator Income & Payouts
+    </p>
+
+    <nav>
+
+        <a href="/index.html">
+            Home
+        </a>
+
+        <a href="/videos.html">
+            Videos
+        </a>
+
+        <a href="/video-upload.html">
+            Upload Video
+        </a>
+
+        <a href="/account.html">
+            My Account
+        </a>
+
+        <a href="/creator-income.html">
+            Creator Income
+        </a>
+
+    </nav>
+
+</header>
+
+
+<div class="container">
+
+
+    <!-- LOGIN -->
+
+    <section class="card">
+
+        <h2>
+            👤 Creator Account
+        </h2>
+
+        <div
+            id="loginStatus"
+            class="login-status"
+        >
+            ⏳ Checking login...
+        </div>
+
+    </section>
+
+
+    <!-- EARNINGS -->
+
+    <section class="card">
+
+        <h2>
+            💰 Creator Earnings
+        </h2>
+
+        <p>
+            Your video views generate internal creator earnings
+            at the current website rate.
+        </p>
+
+        <div
+            id="earningsStatus"
+            class="login-status"
+        >
+            ⏳ Loading earnings...
+        </div>
+
+        <div
+            id="earningsGrid"
+            class="income-grid"
+        ></div>
+
+    </section>
+
+
+    <!-- PAYOUT -->
+
+    <section class="card">
+
+        <h2>
+            💸 Request Payout
+        </h2>
+
+        <div class="payout-box">
+
+            <p>
+                Available Balance
+            </p>
+
+            <div
+                id="availableBalance"
+                class="balance"
+            >
+                ₹0.00
+            </div>
+
+            <label for="payoutAmount">
+                Payout Amount
+            </label>
+
+            <input
+                id="payoutAmount"
+                type="number"
+                min="0.01"
+                step="0.01"
+                placeholder="Enter payout amount"
+            >
+
+            <br><br>
+
+            <button
+                class="success-btn"
+                onclick="requestPayout()"
+            >
+                💸 Request Payout
+            </button>
+
+            <div
+                id="payoutStatus"
+                class="login-status"
+                style="margin-top:15px;"
+            >
+                Enter an amount and request your payout.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAYOUT HISTORY -->
+
+    <section class="card">
+
+        <h2>
+            📜 Payout History
+        </h2>
+
+        <div
+            id="historyStatus"
+            class="login-status"
+        >
+            ⏳ Loading payout history...
+        </div>
+
+        <div
+            id="historyContent"
+            class="table-wrapper"
+        ></div>
+
+    </section>
+
+
+    <!-- EARNING HISTORY -->
+
+    <section class="card">
+
+        <h2>
+            📈 Earnings History
+        </h2>
+
+        <div
+            id="earningHistoryContent"
+            class="table-wrapper"
+        ></div>
+
+    </section>
+
+
+</div>
+
+
+<footer>
+
+    © 2026 ALL-IN-ONE.COM
+
+    <br>
+
+    Learn • Prepare • Watch • Enjoy
+
+</footer>
+
+
+<script>
+
+
+let currentAvailableBalance = 0;
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value) {
+
+    if (
+        value === null ||
+        value === undefined
+    ) {
+        return "";
+    }
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* =====================================================
+   MONEY
+===================================================== */
+
+function money(value) {
+
+    return "₹" +
+        Number(
+            value || 0
+        ).toFixed(2);
+
+}
+
+
+/* =====================================================
+   LOGIN CHECK
+===================================================== */
+
+async function checkLogin() {
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/me",
+                {
+                    cache: "no-store"
+                }
+            );
+
+        const data =
+            await response.json();
+
+        const box =
+            document.getElementById(
+                "loginStatus"
+            );
+
+        if (
+            !data.loggedIn
+        ) {
+
+            box.className =
+                "login-status error";
+
+            box.innerHTML = `
+                ❌ You are not logged in.
+
+                <br><br>
+
+                <a href="/login.html">
+                    Please Login
+                </a>
+            `;
+
+            return false;
+        }
+
+        box.className =
+            "login-status success";
+
+        box.innerHTML =
+            "✅ Logged in as: " +
+            escapeHTML(
+                data.user.name
+            );
+
+        return true;
+
+    } catch (error) {
+
+        const box =
+            document.getElementById(
+                "loginStatus"
+            );
+
+        box.className =
+            "login-status error";
+
+        box.innerHTML =
+            "❌ Unable to check login.";
+
+        return false;
+
+    }
+
+}
+
+
+/* =====================================================
+   LOAD EARNINGS
+===================================================== */
+
+async function loadEarnings() {
+
+    const loggedIn =
+        await checkLogin();
+
+    if (!loggedIn) {
+        return;
+    }
+
+    const status =
+        document.getElementById(
+            "earningsStatus"
+        );
+
+    status.className =
+        "login-status";
+
+    status.innerHTML =
+        "⏳ Loading creator earnings...";
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/creator/earnings",
+                {
+                    cache: "no-store"
+                }
+            );
+
+        const data =
+            await response.json();
+
+        if (!data.success) {
+
+            throw new Error(
+                data.message ||
+                "Unable to load earnings."
+            );
+
+        }
+
+        const earnings =
+            data.earnings || {};
+
+        currentAvailableBalance =
+            Number(
+                earnings.available_balance || 0
+            );
+
+        document.getElementById(
+            "availableBalance"
+        ).textContent =
+            money(
+                currentAvailableBalance
+            );
+
+        status.className =
+            "login-status success";
+
+        status.innerHTML =
+            "✅ Creator earnings loaded successfully.";
+
+        document.getElementById(
+            "earningsGrid"
+        ).innerHTML = `
+
+            <div class="income-box">
+
+                <h3>
+                    ${Number(
+                        earnings.video_count || 0
+                    )}
+                </h3>
+
+                <p>
+                    Uploaded Videos
+                </p>
+
+            </div>
+
+
+            <div class="income-box">
+
+                <h3>
+                    ${Number(
+                        earnings.total_views || 0
+                    )}
+                </h3>
+
+                <p>
+                    Total Views
+                </p>
+
+            </div>
+
+
+            <div class="income-box">
+
+                <h3>
+                    ${Number(
+                        earnings.total_likes || 0
+                    )}
+                </h3>
+
+                <p>
+                    Total Likes
+                </p>
+
+            </div>
+
+
+            <div class="income-box">
+
+                <h3 class="money">
+                    ${money(
+                        earnings.total_earnings
+                    )}
+                </h3>
+
+                <p>
+                    Total Earnings
+                </p>
+
+            </div>
+
+
+            <div class="income-box">
+
+                <h3 class="money">
+                    ${money(
+                        earnings.available_balance
+                    )}
+                </h3>
+
+                <p>
+                    Available Balance
+                </p>
+
+            </div>
+
+
+            <div class="income-box">
+
+                <h3>
+                    ${money(
+                        earnings.pending_payout
+                    )}
+                </h3>
+
+                <p>
+                    Pending Payout
+                </p>
+
+            </div>
+
+
+            <div class="income-box">
+
+                <h3 class="money">
+                    ${money(
+                        earnings.paid_amount
+                    )}
+                </h3>
+
+                <p>
+                    Paid Amount
+                </p>
+
+            </div>
+
+        `;
+
+
+        loadEarningHistory(
+            earnings.history || []
+        );
+
+    } catch (error) {
+
+        status.className =
+            "login-status error";
+
+        status.innerHTML =
+            "❌ " +
+            escapeHTML(
+                error.message
+            );
+
+    }
+
+}
+
+
+/* =====================================================
+   EARNING HISTORY
+===================================================== */
+
+function loadEarningHistory(
+    history
+) {
+
+    const container =
+        document.getElementById(
+            "earningHistoryContent"
+        );
+
+    if (
+        !Array.isArray(history) ||
+        history.length === 0
+    ) {
+
+        container.innerHTML = `
+            <div class="empty">
+                No earnings history yet.
+            </div>
+        `;
+
+        return;
+    }
+
+    let html = `
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Video ID</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+    `;
+
+    history.forEach(
+        item => {
+
+            html += `
+
+                <tr>
+
+                    <td>
+                        ${Number(
+                            item.id
+                        )}
+                    </td>
+
+                    <td>
+                        ${
+                            item.video_id === null ||
+                            item.video_id === undefined
+                                ? "-"
+                                : Number(
+                                    item.video_id
+                                )
+                        }
+                    </td>
+
+                    <td class="money">
+                        ${money(
+                            item.amount
+                        )}
+                    </td>
+
+                    <td>
+                        ${escapeHTML(
+                            item.earning_type ||
+                            "-"
+                        )}
+                    </td>
+
+                    <td>
+                        ${escapeHTML(
+                            item.description ||
+                            "-"
+                        )}
+                    </td>
+
+                    <td>
+                        ${escapeHTML(
+                            item.created_at ||
+                            "-"
+                        )}
+                    </td>
+
+                </tr>
+
+            `;
+
+        }
+    );
+
+    html += `
+
+            </tbody>
+
+        </table>
+
+    `;
+
+    container.innerHTML =
+        html;
+
+}
+
+
+/* =====================================================
+   REQUEST PAYOUT
+===================================================== */
+
+async function requestPayout() {
+
+    const amountInput =
+        document.getElementById(
+            "payoutAmount"
+        );
+
+    const status =
+        document.getElementById(
+            "payoutStatus"
+        );
+
+    const amount =
+        Number(
+            amountInput.value
+        );
+
+    if (
+        !Number.isFinite(amount) ||
+        amount <= 0
+    ) {
+
+        status.className =
+            "login-status error";
+
+        status.innerHTML =
+            "❌ Please enter a valid payout amount.";
+
+        return;
+    }
+
+    if (
+        amount >
+        currentAvailableBalance
+    ) {
+
+        status.className =
+            "login-status error";
+
+        status.innerHTML =
+            "❌ Payout amount cannot be greater than your available balance.";
+
+        return;
+    }
+
+    const confirmed =
+        confirm(
+            "Request payout of " +
+            money(amount) +
+            "?"
+        );
+
+    if (!confirmed) {
+        return;
+    }
+
+    status.className =
+        "login-status";
+
+    status.innerHTML =
+        "⏳ Sending payout request...";
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/creator/payouts",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify({
+                            amount:
+                                amount
+                        })
+                }
+            );
+
+        const data =
+            await response.json();
+
+        if (!data.success) {
+
+            throw new Error(
+                data.message ||
+                "Unable to request payout."
+            );
+
+        }
+
+        status.className =
+            "login-status success";
+
+        status.innerHTML =
+            "✅ " +
+            escapeHTML(
+                data.message ||
+                "Payout request submitted successfully."
+            );
+
+        amountInput.value = "";
+
+        await loadEarnings();
+
+        await loadPayoutHistory();
+
+    } catch (error) {
+
+        status.className =
+            "login-status error";
+
+        status.innerHTML =
+            "❌ " +
+            escapeHTML(
+                error.message
+            );
+
+    }
+
+}
+
+
+/* =====================================================
+   PAYOUT HISTORY
+===================================================== */
+
+async function loadPayoutHistory() {
+
+    const status =
+        document.getElementById(
+            "historyStatus"
+        );
+
+    const container =
+        document.getElementById(
+            "historyContent"
+        );
+
+    status.className =
+        "login-status";
+
+    status.innerHTML =
+        "⏳ Loading payout history...";
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/creator/payouts",
+                {
+                    cache: "no-store"
+                }
+            );
+
+        const data =
+            await response.json();
+
+        if (!data.success) {
+
+            throw new Error(
+                data.message ||
+                "Unable to load payout history."
+            );
+
+        }
+
+        const payouts =
+            Array.isArray(data.payouts)
+                ? data.payouts
+                : [];
+
+        status.className =
+            "login-status success";
+
+        status.innerHTML =
+            "✅ " +
+            payouts.length +
+            " payout record(s) loaded.";
+
+        if (
+            payouts.length === 0
+        ) {
+
+            container.innerHTML = `
+                <div class="empty">
+                    No payout requests yet.
+                </div>
+            `;
+
+            return;
+        }
+
+        let html = `
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Requested</th>
+                        <th>Approved</th>
+                        <th>Paid</th>
+                        <th>Admin Note</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+        `;
+
+        payouts.forEach(
+            payout => {
+
+                const statusValue =
+                    String(
+                        payout.status || ""
+                    ).toLowerCase();
+
+                let className =
+                    "";
+
+                if (
+                    statusValue === "pending"
+                ) {
+                    className =
+                        "pending";
+                }
+
+                if (
+                    statusValue === "approved"
+                ) {
+                    className =
+                        "approved";
+                }
+
+                if (
+                    statusValue === "rejected"
+                ) {
+                    className =
+                        "rejected";
+                }
+
+                if (
+                    statusValue === "paid"
+                ) {
+                    className =
+                        "paid";
+                }
+
+                html += `
+
+                    <tr>
+
+                        <td>
+                            ${Number(
+                                payout.id
+                            )}
+                        </td>
+
+                        <td class="money">
+                            ${money(
+                                payout.amount
+                            )}
+                        </td>
+
+                        <td class="${className}">
+                            ${escapeHTML(
+                                payout.status ||
+                                "-"
+                            )}
+                        </td>
+
+                        <td>
+                            ${escapeHTML(
+                                payout.requested_at ||
+                                "-"
+                            )}
+                        </td>
+
+                        <td>
+                            ${escapeHTML(
+                                payout.approved_at ||
+                                "-"
+                            )}
+                        </td>
+
+                        <td>
+                            ${escapeHTML(
+                                payout.paid_at ||
+                                "-"
+                            )}
+                        </td>
+
+                        <td>
+                            ${escapeHTML(
+                                payout.admin_note ||
+                                "-"
+                            )}
+                        </td>
+
+                    </tr>
+
+                `;
+
+            }
+        );
+
+        html += `
+
+                </tbody>
+
+            </table>
+
+        `;
+
+        container.innerHTML =
+            html;
+
+    } catch (error) {
+
+        status.className =
+            "login-status error";
+
+        status.innerHTML =
+            "❌ " +
+            escapeHTML(
+                error.message
+            );
+
+    }
+
+}
+
+
+/* =====================================================
+   PAGE LOAD
+===================================================== */
+
+window.addEventListener(
+    "load",
+    async function () {
+
+        const loggedIn =
+            await checkLogin();
+
+        if (!loggedIn) {
+            return;
+        }
+
+        await loadEarnings();
+
+        await loadPayoutHistory();
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
+

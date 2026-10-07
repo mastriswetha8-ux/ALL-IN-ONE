@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Watch Video - ALL-IN-ONE.COM</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        /* ===============================
+           HEADER
+        =============================== */
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 18px 25px;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .tagline {
+            font-size: 13px;
+            color: #d1d5db;
+            margin-top: 4px;
+        }
+
+        nav {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        nav a:hover {
+            background: #374151;
+        }
+
+        /* ===============================
+           MAIN
+        =============================== */
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        #player {
+            width: 100%;
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #player video {
+            width: 100%;
+            max-height: 600px;
+            display: block;
+            background: #000;
+        }
+
+        .youtube-frame {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            display: block;
+        }
+
+        h1 {
+            margin: 22px 0 10px;
+            font-size: 28px;
+        }
+
+        .description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .meta {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+
+        .meta span {
+            background: #f1f5f9;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* ===============================
+           LIKE
+        =============================== */
+
+        .actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            padding: 11px 18px;
+            font-size: 15px;
+        }
+
+        #likeButton {
+            background: #ef4444;
+            color: white;
+        }
+
+        #likeButton:hover {
+            background: #dc2626;
+        }
+
+        #likeButton:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* ===============================
+           COMMENTS
+        =============================== */
+
+        .comments-section {
+            margin-top: 30px;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .comments-section h2 {
+            margin-top: 0;
+        }
+
+        .comment-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .comment-form input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        #commentButton {
+            background: #2563eb;
+            color: white;
+        }
+
+        #commentButton:hover {
+            background: #1d4ed8;
+        }
+
+        .comment {
+            padding: 14px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .comment:last-child {
+            border-bottom: none;
+        }
+
+        .comment-user {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .comment-text {
+            color: #444;
+        }
+
+        .comment-date {
+            font-size: 12px;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        .message {
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .message.error {
+            color: #fecaca;
+        }
+
+        .loading {
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        /* ===============================
+           FOOTER
+        =============================== */
+
+        footer {
+            margin-top: 40px;
+            padding: 25px;
+            text-align: center;
+            background: #111827;
+            color: #d1d5db;
+        }
+
+        /* ===============================
+           MOBILE
+        =============================== */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 15px;
+            }
+
+            .header-container {
+                align-items: flex-start;
+            }
+
+            nav {
+                width: 100%;
+            }
+
+            nav a {
+                font-size: 14px;
+                padding: 7px 9px;
+            }
+
+            main {
+                margin-top: 20px;
+            }
+
+            .video-card {
+                padding: 12px;
+            }
+
+            h1 {
+                font-size: 23px;
+            }
+
+            .comment-form {
+                flex-direction: column;
+            }
+
+            .comment-form button {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-container">
+
+        <div>
+            <div class="logo">
+                ALL-IN-ONE.COM
+            </div>
+
+            <div class="tagline">
+                Learn • Prepare • Watch • Enjoy
+            </div>
+        </div>
+
+        <nav>
+
+            <a href="/index.html">
+                Home
+            </a>
+
+            <a href="/educational.html">
+                Educational
+            </a>
+
+            <a href="/exams.html">
+                Exams
+            </a>
+
+            <a href="/entertainment.html">
+                Entertainment
+            </a>
+
+            <a href="/videos.html">
+                Videos
+            </a>
+
+            <a href="/login.html">
+                Login
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <a
+        href="/videos.html"
+        class="back-link"
+    >
+        ← Back to Videos
+    </a>
+
+
+    <div class="video-card">
+
+        <div id="player">
+
+            <div class="loading">
+                Loading video...
+            </div>
+
+        </div>
+
+
+        <h1 id="videoTitle">
+            Loading...
+        </h1>
+
+
+        <div
+            id="videoDescription"
+            class="description"
+        >
+        </div>
+
+
+        <div
+            id="videoMeta"
+            class="meta"
+        >
+        </div>
+
+
+        <div class="actions">
+
+            <button
+                id="likeButton"
+                type="button"
+            >
+                ❤️ Like
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ===============================
+         COMMENTS
+    =============================== -->
+
+    <div class="comments-section">
+
+        <h2>
+            💬 Comments
+        </h2>
+
+
+        <div class="comment-form">
+
+            <input
+                type="text"
+                id="commentInput"
+                placeholder="Write a comment..."
+                maxlength="500"
+            >
+
+            <button
+                id="commentButton"
+                type="button"
+            >
+                Post Comment
+            </button>
+
+        </div>
+
+
+        <div id="commentsList">
+
+            Loading comments...
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    © 2026 ALL-IN-ONE.COM
+    <br>
+    Learn • Prepare • Watch • Enjoy
+
+</footer>
+
+
+<script>
+
+    /* =====================================================
+       GET VIDEO ID
+    ===================================================== */
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+    const videoId =
+        params.get("id");
+
+
+    if (!videoId) {
+
+        document.getElementById("player").innerHTML =
+            '<div class="message error">' +
+            'Video ID is missing.' +
+            '</div>';
+
+    } else {
+
+        loadVideo();
+
+        loadComments();
+
+    }
+
+
+    /* =====================================================
+       LOAD VIDEO
+    ===================================================== */
+
+    async function loadVideo() {
+
+        try {
+
+            const response =
+                await fetch(
+                    "/api/videos/" +
+                    encodeURIComponent(videoId),
+                    {
+                        credentials: "include"
+                    }
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (
+                !response.ok ||
+                !data.success ||
+                !data.video
+            ) {
+
+                document.getElementById("player").innerHTML =
+                    '<div class="message error">' +
+                    'Video not found.' +
+                    '</div>';
+
+                return;
+
+            }
+
+
+            const video =
+                data.video;
+
+
+            /* ===============================
+               TITLE
+            =============================== */
+
+            document.getElementById(
+                "videoTitle"
+            ).textContent =
+                video.title ||
+                "Untitled Video";
+
+
+            /* ===============================
+               DESCRIPTION
+            =============================== */
+
+            document.getElementById(
+                "videoDescription"
+            ).textContent =
+                video.description ||
+                "No description available.";
+
+
+            /* ===============================
+               META
+            =============================== */
+
+            const category =
+                video.category ||
+                "Other";
+
+
+            const uploader =
+                video.uploader_name ||
+                video.user_name ||
+                video.username ||
+                "User";
+
+
+            const views =
+                Number(video.views || 0);
+
+
+            const likes =
+                Number(video.likes || 0);
+
+
+            document.getElementById(
+                "videoMeta"
+            ).innerHTML =
+
+                "<span>📂 " +
+                escapeHtml(category) +
+                "</span>" +
+
+                "<span>👤 " +
+                escapeHtml(uploader) +
+                "</span>" +
+
+                "<span>👁 " +
+                views +
+                "</span>" +
+
+                "<span>❤️ " +
+                likes +
+                "</span>";
+
+
+            /* ===============================
+               PLAYER
+            =============================== */
+
+            const player =
+                document.getElementById(
+                    "player"
+                );
+
+
+            player.innerHTML = "";
+
+
+            /* =================================================
+               YOUTUBE VIDEO
+            ================================================= */
+
+            if (
+                video.source_type === "youtube" &&
+                video.youtube_url
+            ) {
+
+                const youtubeId =
+                    getYouTubeId(
+                        video.youtube_url
+                    );
+
+
+                if (!youtubeId) {
+
+                    player.innerHTML =
+                        '<div class="message error">' +
+                        'Invalid YouTube URL.' +
+                        '</div>';
+
+                    return;
+
+                }
+
+
+                const iframe =
+                    document.createElement(
+                        "iframe"
+                    );
+
+
+                iframe.className =
+                    "youtube-frame";
+
+
+                iframe.src =
+                    "https://www.youtube.com/embed/" +
+                    encodeURIComponent(
+                        youtubeId
+                    );
+
+
+                iframe.title =
+                    video.title ||
+                    "YouTube Video";
+
+
+                iframe.allow =
+                    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+
+
+                iframe.allowFullscreen =
+                    true;
+
+
+                iframe.referrerPolicy =
+                    "strict-origin-when-cross-origin";
+
+
+                player.appendChild(
+                    iframe
+                );
+
+
+                /*
+                 * IMPORTANT:
+                 * Count one view when the
+                 * video page is opened.
+                 */
+
+                updateVideoView();
+
+
+                return;
+
+            }
+
+
+            /* =================================================
+               NORMAL UPLOADED VIDEO
+            ================================================= */
+
+            if (!video.filename) {
+
+                player.innerHTML =
+                    '<div class="message">' +
+                    'Video filename is missing.' +
+                    '</div>';
+
+                return;
+
+            }
+
+
+            const videoElement =
+                document.createElement(
+                    "video"
+                );
+
+
+            videoElement.controls =
+                true;
+
+
+            videoElement.preload =
+                "metadata";
+
+
+            videoElement.playsInline =
+                true;
+
+
+            videoElement.setAttribute(
+                "controlsList",
+                "nodownload"
+            );
+
+
+            videoElement.src =
+                "/videos/" +
+                encodeURIComponent(
+                    video.filename
+                );
+
+
+            if (video.thumbnail) {
+
+                videoElement.poster =
+                    "/thumbnails/" +
+                    encodeURIComponent(
+                        video.thumbnail
+                    );
+
+            }
+
+
+            videoElement.addEventListener(
+                "error",
+                function () {
+
+                    console.error(
+                        "VIDEO PLAYER ERROR:",
+                        videoElement.error
+                    );
+
+
+                    player.innerHTML =
+                        '<div class="message error">' +
+                        'The video could not be played.' +
+                        '<br><br>' +
+                        'File: ' +
+                        escapeHtml(
+                            video.filename
+                        ) +
+                        '</div>';
+
+                }
+            );
+
+
+            player.appendChild(
+                videoElement
+            );
+
+
+            /*
+             * IMPORTANT:
+             * Update view after video
+             * player is created.
+             */
+
+            updateVideoView();
+
+
+        } catch (error) {
+
+            console.error(
+                "LOAD VIDEO ERROR:",
+                error
+            );
+
+
+            document.getElementById(
+                "player"
+            ).innerHTML =
+                '<div class="message error">' +
+                'Unable to load video.' +
+                '</div>';
+
+        }
+
+    }
+
+
+    /* =====================================================
+       UPDATE VIDEO VIEW
+    ===================================================== */
+
+    async function updateVideoView() {
+
+        try {
+
+            const response =
+                await fetch(
+                    "/api/videos/" +
+                    encodeURIComponent(
+                        videoId
+                    ) +
+                    "/view",
+                    {
+                        method: "POST",
+                        credentials: "include"
+                    }
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (
+                response.ok &&
+                data.success
+            ) {
+
+                console.log(
+                    "VIDEO VIEW UPDATED"
+                );
+
+
+                /*
+                 * Update the number displayed
+                 * on the current page immediately.
+                 */
+
+                const meta =
+                    document.getElementById(
+                        "videoMeta"
+                    );
+
+
+                if (meta) {
+
+                    const spans =
+                        meta.querySelectorAll(
+                            "span"
+                        );
+
+
+                    spans.forEach(
+                        function (span) {
+
+                            if (
+                                span.textContent
+                                    .trim()
+                                    .startsWith("👁")
+                            ) {
+
+                                const currentText =
+                                    span.textContent
+                                        .replace(
+                                            "👁",
+                                            ""
+                                        )
+                                        .trim();
+
+
+                                const currentViews =
+                                    parseInt(
+                                        currentText,
+                                        10
+                                    ) || 0;
+
+
+                                /*
+                                 * The API has already
+                                 * incremented the DB.
+                                 */
+
+                                span.textContent =
+                                    "👁 " +
+                                    (
+                                        currentViews + 1
+                                    );
+
+                            }
+
+                        }
+                    );
+
+                }
+
+            } else {
+
+                console.warn(
+                    "VIEW UPDATE FAILED:",
+                    data
+                );
+
+            }
+
+        } catch (error) {
+
+            console.error(
+                "VIEW UPDATE ERROR:",
+                error
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       YOUTUBE ID EXTRACTOR
+    ===================================================== */
+
+    function getYouTubeId(url) {
+
+        if (!url) {
+            return null;
+        }
+
+
+        try {
+
+            const parsed =
+                new URL(url);
+
+
+            const hostname =
+                parsed.hostname
+                    .toLowerCase();
+
+
+            /* youtube.com/watch?v= */
+
+            if (
+                hostname === "www.youtube.com" ||
+                hostname === "youtube.com" ||
+                hostname === "m.youtube.com"
+            ) {
+
+                const watchId =
+                    parsed.searchParams.get(
+                        "v"
+                    );
+
+
+                if (watchId) {
+                    return watchId;
+                }
+
+
+                /* /embed/VIDEO_ID */
+
+                const embedMatch =
+                    parsed.pathname.match(
+                        /^\/embed\/([^/]+)/
+                    );
+
+
+                if (embedMatch) {
+                    return embedMatch[1];
+                }
+
+
+                /* /shorts/VIDEO_ID */
+
+                const shortsMatch =
+                    parsed.pathname.match(
+                        /^\/shorts\/([^/]+)/
+                    );
+
+
+                if (shortsMatch) {
+                    return shortsMatch[1];
+                }
+
+
+                /* /live/VIDEO_ID */
+
+                const liveMatch =
+                    parsed.pathname.match(
+                        /^\/live\/([^/]+)/
+                    );
+
+
+                if (liveMatch) {
+                    return liveMatch[1];
+                }
+
+            }
+
+
+            /* youtu.be/VIDEO_ID */
+
+            if (
+                hostname === "youtu.be"
+            ) {
+
+                const id =
+                    parsed.pathname
+                        .replace(
+                            /^\//,
+                            ""
+                        )
+                        .split("/")[0];
+
+
+                if (id) {
+                    return id;
+                }
+
+            }
+
+
+        } catch (error) {
+
+            console.error(
+                "YOUTUBE URL ERROR:",
+                error
+            );
+
+        }
+
+
+        return null;
+
+    }
+
+
+    /* =====================================================
+       LIKE VIDEO
+    ===================================================== */
+
+    document
+        .getElementById("likeButton")
+        .addEventListener(
+            "click",
+            async function () {
+
+                const button =
+                    this;
+
+
+                button.disabled =
+                    true;
+
+
+                try {
+
+                    const response =
+                        await fetch(
+                            "/api/videos/" +
+                            encodeURIComponent(
+                                videoId
+                            ) +
+                            "/like",
+                            {
+                                method: "POST",
+                                credentials: "include"
+                            }
+                        );
+
+
+                    const data =
+                        await response.json();
+
+
+                    if (
+                        response.ok &&
+                        data.success
+                    ) {
+
+                        alert(
+                            data.message ||
+                            "Video liked."
+                        );
+
+
+                        button.textContent =
+                            "❤️ Liked";
+
+
+                        /*
+                         * Update like count
+                         */
+
+                        const meta =
+                            document.getElementById(
+                                "videoMeta"
+                            );
+
+
+                        if (meta) {
+
+                            const spans =
+                                meta.querySelectorAll(
+                                    "span"
+                                );
+
+
+                            spans.forEach(
+                                function (span) {
+
+                                    if (
+                                        span.textContent
+                                            .trim()
+                                            .startsWith("❤️")
+                                    ) {
+
+                                        const current =
+                                            parseInt(
+                                                span.textContent
+                                                    .replace(
+                                                        "❤️",
+                                                        ""
+                                                    )
+                                                    .trim(),
+                                                10
+                                            ) || 0;
+
+
+                                        span.textContent =
+                                            "❤️ " +
+                                            (
+                                                current + 1
+                                            );
+
+                                    }
+
+                                }
+                            );
+
+                        }
+
+                    } else {
+
+                        alert(
+                            data.message ||
+                            "Unable to like video."
+                        );
+
+
+                        button.disabled =
+                            false;
+
+                    }
+
+                } catch (error) {
+
+                    console.error(
+                        "LIKE ERROR:",
+                        error
+                    );
+
+
+                    alert(
+                        "Unable to like video."
+                    );
+
+
+                    button.disabled =
+                        false;
+
+                }
+
+            }
+        );
+
+
+    /* =====================================================
+       LOAD COMMENTS
+    ===================================================== */
+
+    async function loadComments() {
+
+        const commentsList =
+            document.getElementById(
+                "commentsList"
+            );
+
+
+        commentsList.innerHTML =
+            "Loading comments...";
+
+
+        try {
+
+            const response =
+                await fetch(
+                    "/api/videos/" +
+                    encodeURIComponent(
+                        videoId
+                    ) +
+                    "/comments",
+                    {
+                        credentials: "include"
+                    }
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (
+                !response.ok ||
+                !data.success
+            ) {
+
+                commentsList.innerHTML =
+                    "<p>Unable to load comments.</p>";
+
+                return;
+
+            }
+
+
+            const comments =
+                data.comments || [];
+
+
+            if (
+                comments.length === 0
+            ) {
+
+                commentsList.innerHTML =
+                    "<p>No comments yet.</p>";
+
+                return;
+
+            }
+
+
+            commentsList.innerHTML =
+                "";
+
+
+            comments.forEach(
+                function (comment) {
+
+                    const item =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    item.className =
+                        "comment";
+
+
+                    const user =
+                        comment.user_name ||
+                        comment.username ||
+                        "User";
+
+
+                    const text =
+                        comment.comment ||
+                        comment.text ||
+                        "";
+
+
+                    const date =
+                        comment.created_at ||
+                        "";
+
+
+                    item.innerHTML =
+
+                        '<div class="comment-user">' +
+                        escapeHtml(user) +
+                        '</div>' +
+
+                        '<div class="comment-text">' +
+                        escapeHtml(text) +
+                        '</div>' +
+
+                        (
+                            date
+                                ? '<div class="comment-date">' +
+                                  escapeHtml(date) +
+                                  '</div>'
+                                : ""
+                        );
+
+
+                    commentsList.appendChild(
+                        item
+                    );
+
+                }
+            );
+
+
+        } catch (error) {
+
+            console.error(
+                "LOAD COMMENTS ERROR:",
+                error
+            );
+
+
+            commentsList.innerHTML =
+                "<p>Unable to load comments.</p>";
+
+        }
+
+    }
+
+
+    /* =====================================================
+       POST COMMENT
+    ===================================================== */
+
+    document
+        .getElementById("commentButton")
+        .addEventListener(
+            "click",
+            async function () {
+
+                const input =
+                    document.getElementById(
+                        "commentInput"
+                    );
+
+
+                const text =
+                    input.value.trim();
+
+
+                if (!text) {
+
+                    alert(
+                        "Please write a comment."
+                    );
+
+                    return;
+
+                }
+
+
+                this.disabled =
+                    true;
+
+
+                try {
+
+                    const response =
+                        await fetch(
+                            "/api/videos/" +
+                            encodeURIComponent(
+                                videoId
+                            ) +
+                            "/comments",
+                            {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type":
+                                        "application/json"
+                                },
+                                credentials:
+                                    "include",
+                                body:
+                                    JSON.stringify({
+                                        comment:
+                                            text
+                                    })
+                            }
+                        );
+
+
+                    const data =
+                        await response.json();
+
+
+                    if (
+                        response.ok &&
+                        data.success
+                    ) {
+
+                        input.value =
+                            "";
+
+
+                        await loadComments();
+
+
+                    } else {
+
+                        alert(
+                            data.message ||
+                            "Please login to comment."
+                        );
+
+                    }
+
+                } catch (error) {
+
+                    console.error(
+                        "POST COMMENT ERROR:",
+                        error
+                    );
+
+
+                    alert(
+                        "Unable to post comment."
+                    );
+
+                }
+
+
+                this.disabled =
+                    false;
+
+            }
+        );
+
+
+    /* =====================================================
+       ENTER KEY FOR COMMENT
+    ===================================================== */
+
+    document
+        .getElementById("commentInput")
+        .addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Enter"
+                ) {
+
+                    event.preventDefault();
+
+
+                    document
+                        .getElementById(
+                            "commentButton"
+                        )
+                        .click();
+
+                }
+
+            }
+        );
+
+
+    /* =====================================================
+       HTML ESCAPE
+    ===================================================== */
+
+    function escapeHtml(value) {
+
+        return String(value)
+            .replace(
+                /&/g,
+                "&amp;"
+            )
+            .replace(
+                /</g,
+                "&lt;"
+            )
+            .replace(
+                />/g,
+                "&gt;"
+            )
+            .replace(
+                /"/g,
+                "&quot;"
+            )
+            .replace(
+                /'/g,
+                "&#039;"
+            );
+
+    }
+
+</script>
+
+</body>
+
+</html>

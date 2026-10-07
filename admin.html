@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Admin Management - ALL-IN-ONE.COM</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f6f9;
+        color: #222;
+    }
+
+    header {
+        background: #111827;
+        color: white;
+        padding: 18px 25px;
+    }
+
+    header h1 {
+        margin: 0 0 6px;
+        font-size: 28px;
+    }
+
+    header p {
+        margin: 0;
+        color: #d1d5db;
+    }
+
+    nav {
+        background: #1f2937;
+        padding: 12px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    .container {
+        width: 95%;
+        max-width: 1400px;
+        margin: 25px auto;
+    }
+
+    .section {
+        background: white;
+        border-radius: 12px;
+        padding: 22px;
+        margin-bottom: 25px;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .section h2 {
+        margin-top: 0;
+        color: #111827;
+    }
+
+    .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 15px 0;
+    }
+
+    button {
+        border: none;
+        border-radius: 7px;
+        padding: 10px 16px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    button:disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+    }
+
+    .btn-blue {
+        background: #2563eb;
+        color: white;
+    }
+
+    .btn-green {
+        background: #16a34a;
+        color: white;
+    }
+
+    .btn-red {
+        background: #dc2626;
+        color: white;
+    }
+
+    .btn-orange {
+        background: #ea580c;
+        color: white;
+    }
+
+    .btn-gray {
+        background: #6b7280;
+        color: white;
+    }
+
+    button:hover:not(:disabled) {
+        opacity: 0.88;
+    }
+
+    .message {
+        padding: 12px;
+        border-radius: 7px;
+        margin: 10px 0;
+        display: none;
+    }
+
+    .success {
+        background: #dcfce7;
+        color: #166534;
+    }
+
+    .error {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+
+    .loading {
+        padding: 15px;
+        text-align: center;
+        color: #555;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .card {
+        padding: 20px;
+        border-radius: 10px;
+        background: #f9fafb;
+        border: 1px solid #e5e7eb;
+    }
+
+    .card h3 {
+        margin: 0 0 8px;
+        font-size: 16px;
+    }
+
+    .card .number {
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .pending {
+        color: #d97706;
+    }
+
+    .approved {
+        color: #2563eb;
+    }
+
+    .paid {
+        color: #16a34a;
+    }
+
+    .rejected {
+        color: #dc2626;
+    }
+
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        min-width: 850px;
+    }
+
+    th {
+        background: #111827;
+        color: white;
+        padding: 12px;
+        text-align: left;
+    }
+
+    td {
+        padding: 12px;
+        border-bottom: 1px solid #e5e7eb;
+        vertical-align: middle;
+    }
+
+    tr:hover td {
+        background: #f9fafb;
+    }
+
+    .status {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .status-pending {
+        background: #fef3c7;
+        color: #92400e;
+    }
+
+    .status-approved {
+        background: #dbeafe;
+        color: #1e40af;
+    }
+
+    .status-paid {
+        background: #dcfce7;
+        color: #166534;
+    }
+
+    .status-rejected {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+
+    .action-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+    }
+
+    .action-buttons button {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+
+    .empty {
+        padding: 25px;
+        text-align: center;
+        background: #f9fafb;
+        border-radius: 8px;
+        color: #666;
+        margin-top: 15px;
+    }
+
+    .workflow {
+        background: #f8fafc;
+        border-left: 5px solid #2563eb;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 6px;
+    }
+
+    .admin-info {
+        background: #eef2ff;
+        padding: 12px 15px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+    .action-status {
+        margin-top: 8px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    @media (max-width: 700px) {
+        header h1 {
+            font-size: 22px;
+        }
+
+        .section {
+            padding: 15px;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<header>
+    <h1>ALL-IN-ONE.COM</h1>
+    <p>Learn • Prepare • Watch • Enjoy</p>
+</header>
+
+<nav>
+    <a href="/index.html">Home</a>
+    <a href="/educational.html">Educational</a>
+    <a href="/exams.html">Exams</a>
+    <a href="/entertainment.html">Entertainment</a>
+    <a href="/videos.html">Videos</a>
+    <a href="/storyvideos.html">Story Videos</a>
+    <a href="/storycontent.html">Story Content</a>
+    <a href="/account.html">Account</a>
+</nav>
+
+<div class="container">
+
+```
+<div class="section">
+    <h2>🛠️ Admin Management</h2>
+
+    <div class="admin-info">
+        <strong>Administrator Panel</strong><br>
+        Manage users, videos, comments, payments and creator payouts.
+    </div>
+
+    <div class="button-row">
+        <button class="btn-blue" onclick="loadUsers()">👥 Users</button>
+        <button class="btn-blue" onclick="loadVideos()">🎥 Videos</button>
+        <button class="btn-blue" onclick="loadComments()">💬 Comments</button>
+        <button class="btn-blue" onclick="loadStatistics()">📊 Statistics</button>
+        <button class="btn-green" onclick="loadCreatorIncome()">💰 Creator Income</button>
+        <button class="btn-orange" onclick="loadPayments()">💳 Payments</button>
+        <button class="btn-orange" onclick="openPayouts()">💵 Manage Payouts</button>
+    </div>
+</div>
+
+<div class="section" id="usersSection">
+    <h2>👥 Users</h2>
+    <div id="usersMessage" class="message"></div>
+    <div id="usersContent">
+        <div class="empty">
+            Click "Users" to load registered users.
+        </div>
+    </div>
+</div>
+
+<div class="section" id="videosSection">
+    <h2>🎥 Videos</h2>
+    <div id="videosMessage" class="message"></div>
+    <div id="videosContent">
+        <div class="empty">
+            Click "Videos" to load uploaded videos.
+        </div>
+    </div>
+</div>
+
+<div class="section" id="commentsSection">
+    <h2>💬 Comments</h2>
+    <div id="commentsMessage" class="message"></div>
+    <div id="commentsContent">
+        <div class="empty">
+            Click "Comments" to load comments.
+        </div>
+    </div>
+</div>
+
+<div class="section" id="statisticsSection">
+    <h2>📊 Statistics</h2>
+    <div id="statisticsContent">
+        <div class="empty">
+            Click "Statistics" to load website statistics.
+        </div>
+    </div>
+</div>
+
+<div class="section" id="creatorIncomeSection">
+    <h2>💰 Creator Income</h2>
+
+    <div id="creatorIncomeMessage" class="message"></div>
+
+    <div id="creatorIncomeContent">
+        <div class="empty">
+            Click "Creator Income" to load creator income.
+        </div>
+    </div>
+</div>
+
+<div class="section" id="paymentsSection">
+    <h2>💳 Payments</h2>
+
+    <div id="paymentsMessage" class="message"></div>
+
+    <div id="paymentsContent">
+        <div class="empty">
+            Click "Payments" to load course payments.
+        </div>
+    </div>
+</div>
+
+<div class="section" id="payoutsSection">
+
+    <h2>💵 Creator Payouts</h2>
+
+    <div class="workflow">
+        <strong>Payout Workflow:</strong><br><br>
+        🟡 Pending → 🔵 Approved → 🟢 Paid
+        <br>
+        or
+        <br>
+        🟡 Pending / 🔵 Approved → 🔴 Rejected
+    </div>
+
+    <div class="button-row">
+        <button class="btn-orange" onclick="loadPayouts()">
+            🔄 Refresh Payouts
+        </button>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🟡 Pending</h3>
+            <div id="pendingCount" class="number pending">0</div>
+        </div>
+
+        <div class="card">
+            <h3>🔵 Approved</h3>
+            <div id="approvedCount" class="number approved">0</div>
+        </div>
+
+        <div class="card">
+            <h3>🟢 Paid</h3>
+            <div id="paidCount" class="number paid">0</div>
+        </div>
+
+        <div class="card">
+            <h3>🔴 Rejected</h3>
+            <div id="rejectedCount" class="number rejected">0</div>
+        </div>
+
+    </div>
+
+    <div id="payoutMessage" class="message"></div>
+
+    <div id="payoutContent">
+        <div class="empty">
+            Click "Manage Payouts" to load payout requests.
+        </div>
+    </div>
+
+</div>
+```
+
+</div>
+
+<script>
+
+function showMessage(elementId, message, type) {
+
+    const element = document.getElementById(elementId);
+
+    if (!element) return;
+
+    element.textContent = message;
+    element.className = "message " + type;
+    element.style.display = "block";
+}
+
+
+async function getJSON(url, options = {}) {
+
+    const response = await fetch(url, {
+        cache: "no-store",
+        credentials: "same-origin",
+        ...options
+    });
+
+    const text = await response.text();
+
+    let data = {};
+
+    try {
+        data = text ? JSON.parse(text) : {};
+    } catch (error) {
+        throw new Error(
+            "Server returned invalid response. HTTP " +
+            response.status
+        );
+    }
+
+    if (!response.ok) {
+        throw new Error(
+            data.message ||
+            data.error ||
+            "Request failed. HTTP " + response.status
+        );
+    }
+
+    return data;
+}
+
+
+/* =========================================================
+   USERS
+========================================================= */
+
+async function loadUsers() {
+
+    const content = document.getElementById("usersContent");
+
+    content.innerHTML =
+        '<div class="loading">Loading users...</div>';
+
+    try {
+
+        const data = await getJSON("/api/admin/users");
+
+        const users =
+            data.users ||
+            data.data ||
+            [];
+
+        if (!users.length) {
+            content.innerHTML =
+                '<div class="empty">No users found.</div>';
+            return;
+        }
+
+        let html = `
+            <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Created</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        users.forEach(user => {
+
+            html += `
+                <tr>
+                    <td>${escapeHTML(user.id)}</td>
+                    <td>${escapeHTML(user.name || "-")}</td>
+                    <td>${escapeHTML(user.email || "-")}</td>
+                    <td>${escapeHTML(user.role || "user")}</td>
+                    <td>${escapeHTML(user.created_at || "-")}</td>
+                </tr>
+            `;
+        });
+
+        html += `
+                </tbody>
+            </table>
+            </div>
+        `;
+
+        content.innerHTML = html;
+
+    } catch (error) {
+
+        content.innerHTML =
+            '<div class="empty">❌ ' +
+            escapeHTML(error.message) +
+            '</div>';
+    }
+}
+
+
+/* =========================================================
+   VIDEOS
+========================================================= */
+
+async function loadVideos() {
+
+    const content = document.getElementById("videosContent");
+
+    content.innerHTML =
+        '<div class="loading">Loading videos...</div>';
+
+    try {
+
+        const data = await getJSON("/api/admin/videos");
+
+        const videos =
+            data.videos ||
+            data.data ||
+            [];
+
+        if (!videos.length) {
+            content.innerHTML =
+                '<div class="empty">No videos found.</div>';
+            return;
+        }
+
+        let html = `
+            <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Uploader</th>
+                        <th>Views</th>
+                        <th>Likes</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        videos.forEach(video => {
+
+            html += `
+                <tr>
+                    <td>${escapeHTML(video.id)}</td>
+                    <td>${escapeHTML(video.title || "-")}</td>
+                    <td>${escapeHTML(video.category || "-")}</td>
+                    <td>${escapeHTML(
+                        video.user_name ||
+                        video.uploader_name ||
+                        video.uploaded_by ||
+                        "-"
+                    )}</td>
+                    <td>${escapeHTML(video.views ?? 0)}</td>
+                    <td>${escapeHTML(video.likes ?? 0)}</td>
+                </tr>
+            `;
+        });
+
+        html += `
+                </tbody>
+            </table>
+            </div>
+        `;
+
+        content.innerHTML = html;
+
+    } catch (error) {
+
+        content.innerHTML =
+            '<div class="empty">❌ ' +
+            escapeHTML(error.message) +
+            '</div>';
+    }
+}
+
+
+/* =========================================================
+   COMMENTS
+========================================================= */
+
+async function loadComments() {
+
+    const content =
+        document.getElementById("commentsContent");
+
+    content.innerHTML =
+        '<div class="loading">Loading comments...</div>';
+
+    try {
+
+        const data =
+            await getJSON("/api/admin/comments");
+
+        const comments =
+            data.comments ||
+            data.data ||
+            [];
+
+        if (!comments.length) {
+            content.innerHTML =
+                '<div class="empty">No comments found.</div>';
+            return;
+        }
+
+        let html = `
+            <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>User</th>
+                        <th>Comment</th>
+                        <th>Video</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        comments.forEach(comment => {
+
+            html += `
+                <tr>
+                    <td>${escapeHTML(comment.id)}</td>
+                    <td>${escapeHTML(
+                        comment.user_name ||
+                        comment.name ||
+                        "-"
+                    )}</td>
+                    <td>${escapeHTML(
+                        comment.comment ||
+                        comment.text ||
+                        "-"
+                    )}</td>
+                    <td>${escapeHTML(
+                        comment.video_title ||
+                        comment.title ||
+                        "-"
+                    )}</td>
+                    <td>${escapeHTML(
+                        comment.created_at ||
+                        "-"
+                    )}</td>
+                </tr>
+            `;
+        });
+
+        html += `
+                </tbody>
+            </table>
+            </div>
+        `;
+
+        content.innerHTML = html;
+
+    } catch (error) {
+
+        content.innerHTML =
+            '<div class="empty">❌ ' +
+            escapeHTML(error.message) +
+            '</div>';
+    }
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+async function loadStatistics() {
+
+    const content =
+        document.getElementById("statisticsContent");
+
+    content.innerHTML =
+        '<div class="loading">Loading statistics...</div>';
+
+    try {
+
+        const data =
+            await getJSON("/api/admin/statistics");
+
+        const stats =
+            data.statistics ||
+            data.stats ||
+            data.data ||
+            data;
+
+        content.innerHTML = `
+            <div class="cards">
+
+                <div class="card">
+                    <h3>👥 Registered Users</h3>
+                    <div class="number">
+                        ${escapeHTML(stats.users ?? 0)}
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🎥 Uploaded Videos</h3>
+                    <div class="number">
+                        ${escapeHTML(stats.videos ?? 0)}
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>💬 Comments</h3>
+                    <div class="number">
+                        ${escapeHTML(stats.comments ?? 0)}
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>❤️ Likes</h3>
+                    <div class="number">
+                        ${escapeHTML(stats.likes ?? 0)}
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>👁️ Total Views</h3>
+                    <div class="number">
+                        ${escapeHTML(stats.views ?? 0)}
+                    </div>
+                </div>
+
+            </div>
+        `;
+
+    } catch (error) {
+
+        content.innerHTML =
+            '<div class="empty">❌ ' +
+            escapeHTML(error.message) +
+            '</div>';
+    }
+}
+
+
+/* =========================================================
+   CREATOR INCOME
+========================================================= */
+
+async function loadCreatorIncome() {
+
+    const content =
+        document.getElementById("creatorIncomeContent");
+
+    content.innerHTML =
+        '<div class="loading">Loading creator income...</div>';
+
+    try {
+
+        const data =
+            await getJSON("/api/admin/creator-income");
+
+        const creators =
+            data.creators ||
+            data.income ||
+            data.data ||
+            [];
+
+        if (!creators.length) {
+
+            content.innerHTML =
+                '<div class="empty">No creator income records found.</div>';
+
+            return;
+        }
+
+        let html = `
+            <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Email</th>
+                        <th>Videos</th>
+                        <th>Views</th>
+                        <th>Total Earnings</th>
+                        <th>Available</th>
+                        <th>Pending</th>
+                        <th>Paid</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        creators.forEach(item => {
+
+            html += `
+                <tr>
+
+                    <td>${escapeHTML(
+                        item.user_name ||
+                        item.name ||
+                        "-"
+                    )}</td>
+
+                    <td>${escapeHTML(
+                        item.user_email ||
+                        item.email ||
+                        "-"
+                    )}</td>
+
+                    <td>${escapeHTML(
+                        item.videos_uploaded ??
+                        item.video_count ??
+                        0
+                    )}</td>
+
+                    <td>${escapeHTML(
+                        item.total_views ??
+                        item.views ??
+                        0
+                    )}</td>
+
+                    <td>₹${Number(
+                        item.total_earnings ??
+                        item.totalEarnings ??
+                        0
+                    ).toFixed(2)}</td>
+
+                    <td>₹${Number(
+                        item.available_balance ??
+                        item.available ??
+                        0
+                    ).toFixed(2)}</td>
+
+                    <td>₹${Number(
+                        item.pending_payout ??
+                        item.pending ??
+                        0
+                    ).toFixed(2)}</td>
+
+                    <td>₹${Number(
+                        item.paid_amount ??
+                        item.paid ??
+                        0
+                    ).toFixed(2)}</td>
+
+                </tr>
+            `;
+        });
+
+        html += `
+                </tbody>
+            </table>
+            </div>
+        `;
+
+        content.innerHTML = html;
+
+    } catch (error) {
+
+        content.innerHTML =
+            '<div class="empty">❌ ' +
+            escapeHTML(error.message) +
+            '</div>';
+    }
+}
+
+
+/* =========================================================
+   PAYMENTS
+========================================================= */
+
+async function loadPayments() {
+
+    const content =
+        document.getElementById("paymentsContent");
+
+    content.innerHTML =
+        '<div class="loading">Loading payments...</div>';
+
+    try {
+
+        const data =
+            await getJSON("/api/admin/payments");
+
+        const payments =
+            data.payments ||
+            data.data ||
+            [];
+
+        if (!payments.length) {
+
+            content.innerHTML =
+                '<div class="empty">No payments found.</div>';
+
+            return;
+        }
+
+        let html = `
+            <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>User</th>
+                        <th>Course</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        payments.forEach(payment => {
+
+            html += `
+                <tr>
+
+                    <td>${escapeHTML(payment.id)}</td>
+
+                    <td>${escapeHTML(
+                        payment.user_name ||
+                        payment.name ||
+                        "-"
+                    )}</td>
+
+                    <td>${escapeHTML(
+                        payment.course_name ||
+                        payment.course ||
+                        "-"
+                    )}</td>
+
+                    <td>₹${Number(
+                        payment.amount ||
+                        payment.amount_rupees ||
+                        0
+                    ).toFixed(2)}</td>
+
+                    <td>${escapeHTML(
+                        payment.status ||
+                        "paid"
+                    )}</td>
+
+                    <td>${escapeHTML(
+                        payment.created_at ||
+                        payment.paid_at ||
+                        "-"
+                    )}</td>
+
+                </tr>
+            `;
+        });
+
+        html += `
+                </tbody>
+            </table>
+            </div>
+        `;
+
+        content.innerHTML = html;
+
+    } catch (error) {
+
+        content.innerHTML =
+            '<div class="empty">❌ ' +
+            escapeHTML(error.message) +
+            '</div>';
+    }
+}
+
+
+/* =========================================================
+   CREATOR PAYOUTS
+========================================================= */
+
+async function loadPayouts() {
+
+    const content =
+        document.getElementById("payoutContent");
+
+    const message =
+        document.getElementById("payoutMessage");
+
+    content.innerHTML =
+        '<div class="loading">⏳ Loading payout requests...</div>';
+
+    message.style.display = "none";
+
+    try {
+
+        const data =
+            await getJSON("/api/admin/payouts");
+
+        const payouts =
+            Array.isArray(data.payouts)
+                ? data.payouts
+                : Array.isArray(data.data)
+                    ? data.data
+                    : [];
+
+        updatePayoutCounts(payouts);
+
+        if (!payouts.length) {
+
+            content.innerHTML = `
+                <div class="empty">
+                    <strong>ℹ️ No payout requests found.</strong>
+                </div>
+            `;
+
+            return;
+        }
+
+        let html = `
+            <div class="table-wrapper">
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Creator</th>
+                        <th>Email</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Requested</th>
+                        <th>Approved</th>
+                        <th>Paid</th>
+                        <th>Admin Note</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+        `;
+
+        payouts.forEach(payout => {
+
+            const id =
+                Number(payout.id);
+
+            const status =
+                String(
+                    payout.status ||
+                    "pending"
+                ).trim().toLowerCase();
+
+            const amount =
+                Number(
+                    payout.amount || 0
+                ).toFixed(2);
+
+            const requested =
+                payout.requested_at ||
+                payout.created_at ||
+                "-";
+
+            const approved =
+                payout.approved_at ||
+                "-";
+
+            const paid =
+                payout.paid_at ||
+                "-";
+
+            let actionHTML = "";
+
+            if (status === "pending") {
+
+                actionHTML = `
+                    <div class="action-buttons">
+
+                        <button
+                            type="button"
+                            class="btn-green payout-action"
+                            data-id="${id}"
+                            data-status="approved"
+                        >
+                            ✅ Approve
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn-red payout-action"
+                            data-id="${id}"
+                            data-status="rejected"
+                        >
+                            ❌ Reject
+                        </button>
+
+                    </div>
+                `;
+
+            } else if (status === "approved") {
+
+                actionHTML = `
+                    <div class="action-buttons">
+
+                        <button
+                            type="button"
+                            class="btn-green payout-action"
+                            data-id="${id}"
+                            data-status="paid"
+                        >
+                            💰 Mark Paid
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn-red payout-action"
+                            data-id="${id}"
+                            data-status="rejected"
+                        >
+                            ❌ Reject
+                        </button>
+
+                    </div>
+                `;
+
+            } else if (status === "paid") {
+
+                actionHTML = `
+                    <span class="status status-paid">
+                        Payment Completed
+                    </span>
+                `;
+
+            } else if (status === "rejected") {
+
+                actionHTML = `
+                    <span class="status status-rejected">
+                        Rejected
+                    </span>
+                `;
+
+            } else {
+
+                actionHTML =
+                    escapeHTML(status);
+            }
+
+            html += `
+                <tr>
+
+                    <td>
+                        <strong>#${escapeHTML(id)}</strong>
+                    </td>
+
+                    <td>
+                        <strong>
+                            ${escapeHTML(
+                                payout.user_name ||
+                                payout.name ||
+                                "-"
+                            )}
+                        </strong>
+                    </td>
+
+                    <td>
+                        ${escapeHTML(
+                            payout.user_email ||
+                            payout.email ||
+                            "-"
+                        )}
+                    </td>
+
+                    <td>
+                        <strong>₹${escapeHTML(amount)}</strong>
+                    </td>
+
+                    <td>
+                        <span class="status status-${escapeHTML(status)}">
+                            ${escapeHTML(status)}
+                        </span>
+                    </td>
+
+                    <td>${escapeHTML(requested)}</td>
+
+                    <td>${escapeHTML(approved)}</td>
+
+                    <td>${escapeHTML(paid)}</td>
+
+                    <td>${escapeHTML(
+                        payout.admin_note ||
+                        "-"
+                    )}</td>
+
+                    <td>${actionHTML}</td>
+
+                </tr>
+            `;
+        });
+
+        html += `
+                </tbody>
+            </table>
+            </div>
+        `;
+
+        content.innerHTML = html;
+
+        showMessage(
+            "payoutMessage",
+            "✅ " +
+            payouts.length +
+            " payout request(s) loaded successfully.",
+            "success"
+        );
+
+    } catch (error) {
+
+        content.innerHTML = `
+            <div class="empty">
+                <strong>❌ Unable to load payout requests.</strong>
+                <br><br>
+                ${escapeHTML(error.message)}
+            </div>
+        `;
+
+        showMessage(
+            "payoutMessage",
+            "❌ " + error.message,
+            "error"
+        );
+    }
+}
+
+
+/* =========================================================
+   PAYOUT COUNTS
+========================================================= */
+
+function updatePayoutCounts(payouts) {
+
+    let pending = 0;
+    let approved = 0;
+    let paid = 0;
+    let rejected = 0;
+
+    payouts.forEach(payout => {
+
+        const status =
+            String(
+                payout.status || ""
+            ).trim().toLowerCase();
+
+        if (status === "pending") {
+            pending++;
+        }
+
+        if (status === "approved") {
+            approved++;
+        }
+
+        if (status === "paid") {
+            paid++;
+        }
+
+        if (status === "rejected") {
+            rejected++;
+        }
+    });
+
+    document.getElementById(
+        "pendingCount"
+    ).textContent = pending;
+
+    document.getElementById(
+        "approvedCount"
+    ).textContent = approved;
+
+    document.getElementById(
+        "paidCount"
+    ).textContent = paid;
+
+    document.getElementById(
+        "rejectedCount"
+    ).textContent = rejected;
+}
+
+
+/* =========================================================
+   PAYOUT BUTTON EVENT HANDLER
+========================================================= */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        const button =
+            event.target.closest(
+                ".payout-action"
+            );
+
+        if (!button) return;
+
+        const payoutId =
+            Number(
+                button.dataset.id
+            );
+
+        const status =
+            String(
+                button.dataset.status
+            ).trim().toLowerCase();
+
+        if (!payoutId || !status) {
+            showMessage(
+                "payoutMessage",
+                "❌ Invalid payout information.",
+                "error"
+            );
+            return;
+        }
+
+        changePayoutStatus(
+            payoutId,
+            status,
+            button
+        );
+    }
+);
+
+
+/* =========================================================
+   CHANGE PAYOUT STATUS
+========================================================= */
+
+async function changePayoutStatus(
+    payoutId,
+    status,
+    clickedButton
+) {
+
+    let question = "";
+
+    if (status === "approved") {
+
+        question =
+            "Approve payout #" +
+            payoutId +
+            "?";
+
+    } else if (status === "rejected") {
+
+        question =
+            "Reject payout #" +
+            payoutId +
+            "?";
+
+    } else if (status === "paid") {
+
+        question =
+            "Mark payout #" +
+            payoutId +
+            " as PAID?";
+    }
+
+    if (!confirm(question)) {
+        return;
+    }
+
+    const buttons =
+        document.querySelectorAll(
+            ".payout-action"
+        );
+
+    buttons.forEach(button => {
+        button.disabled = true;
+    });
+
+    if (clickedButton) {
+        clickedButton.textContent =
+            "⏳ Processing...";
+    }
+
+    showMessage(
+        "payoutMessage",
+        "⏳ Updating payout #" +
+        payoutId +
+        "...",
+        "success"
+    );
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/admin/payouts/" +
+                encodeURIComponent(payoutId) +
+                "/status",
+                {
+                    method: "POST",
+
+                    credentials: "same-origin",
+
+                    cache: "no-store",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json",
+                        "Accept":
+                            "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        status: status
+                    })
+                }
+            );
+
+        const responseText =
+            await response.text();
+
+        let data = {};
+
+        try {
+            data =
+                responseText
+                    ? JSON.parse(responseText)
+                    : {};
+        } catch (error) {
+
+            throw new Error(
+                "Server returned invalid response. HTTP " +
+                response.status
+            );
+        }
+
+        if (!response.ok) {
+
+            throw new Error(
+                data.message ||
+                "Payout update failed. HTTP " +
+                response.status
+            );
+        }
+
+        if (data.success !== true) {
+
+            throw new Error(
+                data.message ||
+                "Payout update was not successful."
+            );
+        }
+
+        showMessage(
+            "payoutMessage",
+            "✅ Payout #" +
+            payoutId +
+            " changed to " +
+            status.toUpperCase() +
+            " successfully.",
+            "success"
+        );
+
+        await loadPayouts();
+
+        await loadCreatorIncome();
+
+    } catch (error) {
+
+        showMessage(
+            "payoutMessage",
+            "❌ " +
+            error.message,
+            "error"
+        );
+
+    } finally {
+
+        document
+            .querySelectorAll(".payout-action")
+            .forEach(button => {
+                button.disabled = false;
+            });
+    }
+}
+
+
+/* =========================================================
+   OPEN PAYOUTS
+========================================================= */
+
+function openPayouts() {
+
+    const section =
+        document.getElementById(
+            "payoutsSection"
+        );
+
+    if (section) {
+
+        section.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+
+    loadPayouts();
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(value) {
+
+    if (
+        value === null ||
+        value === undefined
+    ) {
+        return "";
+    }
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+/* =========================================================
+   PAGE LOAD
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+        loadPayouts();
+    }
+);
+
+</script>
+
+</body>
+</html>

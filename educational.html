@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Educational - ALL-IN-ONE.COM</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f7fb;
+        color: #222;
+    }
+
+    header {
+        background: #17365d;
+        color: white;
+        padding: 18px 25px;
+    }
+
+    .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .tagline {
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    .search-box {
+        padding: 10px 14px;
+        width: 280px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+
+    nav {
+        margin-top: 15px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 9px 14px;
+        border-radius: 5px;
+        background: #245486;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        background: #3478b9;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 25px auto;
+        padding: 0 15px;
+    }
+
+    .page-title {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .page-title h1 {
+        margin-bottom: 8px;
+        color: #17365d;
+    }
+
+    .page-title p {
+        color: #555;
+    }
+
+    .section {
+        background: white;
+        border-radius: 10px;
+        padding: 22px;
+        margin-bottom: 25px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .section h2 {
+        color: #17365d;
+        margin-top: 0;
+    }
+
+    .section h3 {
+        color: #245486;
+    }
+
+    .class-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .class-button {
+        border: none;
+        background: #245486;
+        color: white;
+        padding: 13px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .class-button:hover {
+        background: #17365d;
+    }
+
+    #classSubjects {
+        margin-top: 25px;
+        padding: 20px;
+        border-left: 5px solid #245486;
+        background: #f1f6fb;
+        border-radius: 7px;
+    }
+
+    .subject-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 15px;
+    }
+
+    .subject-button {
+        border: 1px solid #c8d6e5;
+        background: white;
+        padding: 14px;
+        border-radius: 6px;
+        text-align: left;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+        color: #17365d;
+    }
+
+    .subject-button:hover {
+        background: #eaf2f9;
+        border-color: #245486;
+    }
+
+    .course-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+        margin-top: 15px;
+    }
+
+    .course-button {
+        border: none;
+        background: #e67e22;
+        color: white;
+        padding: 13px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .course-button:hover {
+        background: #c95d0b;
+    }
+
+    #mainVideoArea {
+        margin-top: 25px;
+        display: none;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    #videoTitle {
+        color: #17365d;
+        margin-top: 0;
+    }
+
+    .video-info {
+        background: #f1f6fb;
+        padding: 15px;
+        border-radius: 7px;
+        line-height: 1.6;
+    }
+
+    .youtube-search-button {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 12px 18px;
+        background: #ff0000;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+    }
+
+    .youtube-search-button:hover {
+        background: #cc0000;
+    }
+
+    .quick-video-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .quick-video {
+        padding: 15px;
+        background: #f1f6fb;
+        border: 1px solid #c8d6e5;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .quick-video h4 {
+        margin: 5px 0 10px;
+        color: #17365d;
+    }
+
+    .quick-video a {
+        display: inline-block;
+        padding: 9px 12px;
+        background: #245486;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 13px;
+    }
+
+    .quick-video a:hover {
+        background: #17365d;
+    }
+
+    .message {
+        padding: 15px;
+        background: #fff3cd;
+        border: 1px solid #ffe69c;
+        border-radius: 6px;
+        margin-top: 15px;
+    }
+
+    footer {
+        background: #17365d;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+    }
+
+    @media (max-width: 900px) {
+        .class-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .course-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .quick-video-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .header-top {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .search-box {
+            width: 100%;
+        }
+
+        .class-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .subject-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .course-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .quick-video-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<header>
+
+```
+<div class="header-top">
+
+    <div>
+        <div class="logo">ALL-IN-ONE.COM</div>
+
+        <div class="tagline">
+            Learn • Prepare • Watch • Enjoy
+        </div>
+    </div>
+
+    <input
+        type="text"
+        class="search-box"
+        placeholder="Search videos, classes, exams..."
+        id="searchBox"
+    >
+
+</div>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="educational.html">Educational</a>
+    <a href="exams.html">Exams</a>
+    <a href="entertainment.html">Entertainment</a>
+    <a href="videos.html">Videos</a>
+    <a href="login.html">Login</a>
+</nav>
+```
+
+</header>
+
+<div class="container">
+
+```
+<div class="page-title">
+
+    <h1>📚 Educational</h1>
+
+    <p>
+        Choose your class, subject and watch educational videos.
+    </p>
+
+</div>
+
+
+<!-- =====================================
+     CLASS 1 - 10
+     ===================================== -->
+
+<div class="section">
+
+    <h2>🎓 1–10 Class</h2>
+
+    <p>
+        Select your class. After clicking the class,
+        subjects will appear.
+    </p>
+
+    <div class="class-grid">
+
+        <button class="class-button" data-class="1">Class 1</button>
+        <button class="class-button" data-class="2">Class 2</button>
+        <button class="class-button" data-class="3">Class 3</button>
+        <button class="class-button" data-class="4">Class 4</button>
+        <button class="class-button" data-class="5">Class 5</button>
+        <button class="class-button" data-class="6">Class 6</button>
+        <button class="class-button" data-class="7">Class 7</button>
+        <button class="class-button" data-class="8">Class 8</button>
+        <button class="class-button" data-class="9">Class 9</button>
+        <button class="class-button" data-class="10">Class 10</button>
+
+    </div>
+
+
+    <div id="classSubjects">
+
+        <h3>📖 Select a Class</h3>
+
+        <p>
+            Class 1–10 lo oka class select cheyyandi.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     QUICK SUBJECT VIDEOS
+     ===================================== -->
+
+<div class="section">
+
+    <h2>🎥 Educational Video Subjects</h2>
+
+    <p>
+        Maths, English, Telugu, Science and Hindi videos
+        kosam subject select cheyyandi.
+    </p>
+
+    <div class="quick-video-grid">
+
+        <div class="quick-video">
+
+            <h4>➗ Mathematics</h4>
+
+            <a
+                href="https://www.youtube.com/results?search_query=Mathematics+educational+videos+Telugu"
+                target="_blank"
+                rel="noopener noreferrer">
+                ▶ Watch Maths
+            </a>
+
+        </div>
+
+
+        <div class="quick-video">
+
+            <h4>📘 English</h4>
+
+            <a
+                href="https://www.youtube.com/results?search_query=English+educational+videos+Telugu"
+                target="_blank"
+                rel="noopener noreferrer">
+                ▶ Watch English
+            </a>
+
+        </div>
+
+
+        <div class="quick-video">
+
+            <h4>📝 Telugu</h4>
+
+            <a
+                href="https://www.youtube.com/results?search_query=Telugu+educational+videos+classes"
+                target="_blank"
+                rel="noopener noreferrer">
+                ▶ Watch Telugu
+            </a>
+
+        </div>
+
+
+        <div class="quick-video">
+
+            <h4>🔬 Science</h4>
+
+            <a
+                href="https://www.youtube.com/results?search_query=Science+educational+videos+Telugu"
+                target="_blank"
+                rel="noopener noreferrer">
+                ▶ Watch Science
+            </a>
+
+        </div>
+
+
+        <div class="quick-video">
+
+            <h4>📕 Hindi</h4>
+
+            <a
+                href="https://www.youtube.com/results?search_query=Hindi+educational+videos+Telugu"
+                target="_blank"
+                rel="noopener noreferrer">
+                ▶ Watch Hindi
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     INTERMEDIATE
+     ===================================== -->
+
+<div class="section">
+
+    <h2>🎓 Intermediate / +2</h2>
+
+    <p>Select your group:</p>
+
+    <div class="course-grid">
+
+        <button class="course-button" data-search="Intermediate MPC">
+            MPC
+        </button>
+
+        <button class="course-button" data-search="Intermediate BiPC">
+            BiPC
+        </button>
+
+        <button class="course-button" data-search="Intermediate CEC">
+            CEC
+        </button>
+
+        <button class="course-button" data-search="Intermediate MEC">
+            MEC
+        </button>
+
+        <button class="course-button" data-search="Intermediate HEC">
+            HEC
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     DEGREE
+     ===================================== -->
+
+<div class="section">
+
+    <h2>🎓 Degree</h2>
+
+    <p>Select your degree:</p>
+
+    <div class="course-grid">
+
+        <button class="course-button" data-search="B.Sc Degree">
+            B.Sc
+        </button>
+
+        <button class="course-button" data-search="B.A Degree">
+            B.A
+        </button>
+
+        <button class="course-button" data-search="B.Com Degree">
+            B.Com
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     PG
+     ===================================== -->
+
+<div class="section">
+
+    <h2>🎓 PG</h2>
+
+    <p>Select your PG course:</p>
+
+    <div class="course-grid">
+
+        <button class="course-button" data-search="MBA">
+            MBA
+        </button>
+
+        <button class="course-button" data-search="MCA">
+            MCA
+        </button>
+
+        <button class="course-button" data-search="M.Com">
+            M.Com
+        </button>
+
+        <button class="course-button" data-search="M.Sc">
+            M.Sc
+        </button>
+
+        <button class="course-button" data-search="M.A">
+            M.A
+        </button>
+
+        <button class="course-button" data-search="M.Tech">
+            M.Tech
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     PROFESSIONAL
+     ===================================== -->
+
+<div class="section">
+
+    <h2>💼 Professional Courses</h2>
+
+    <p>Select your professional course:</p>
+
+    <div class="course-grid">
+
+        <button class="course-button" data-search="CA Chartered Accountant">
+            CA
+        </button>
+
+        <button class="course-button" data-search="CS Company Secretary">
+            CS
+        </button>
+
+        <button class="course-button" data-search="CMA Cost Management Accountant">
+            CMA
+        </button>
+
+        <button class="course-button" data-search="Digital Marketing">
+            Digital Marketing
+        </button>
+
+        <button class="course-button" data-search="Data Science Artificial Intelligence AI">
+            Data Science / AI
+        </button>
+
+        <button class="course-button" data-search="Law">
+            Law
+        </button>
+
+        <button class="course-button" data-search="Teaching">
+            Teaching
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     VIDEO AREA
+     ===================================== -->
+
+<div id="mainVideoArea">
+
+    <h2 id="videoTitle">
+        🎥 Video
+    </h2>
+
+    <div class="video-info">
+
+        <p>
+            <strong>Educational Videos</strong>
+        </p>
+
+        <p>
+            YouTube lo available unna latest educational
+            videos ni ikkada search cheyyachu.
+        </p>
+
+        <p>
+            Class + Subject select chesi
+            <strong>▶ More Videos on YouTube</strong>
+            button click cheyyandi.
+        </p>
+
+    </div>
+
+
+    <a
+        id="youtubeSearchButton"
+        class="youtube-search-button"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer">
+        ▶ Watch Videos on YouTube
+    </a>
+
+</div>
+```
+
+</div>
+
+<footer>
+
+```
+<p>
+    © 2026 ALL-IN-ONE.COM
+</p>
+
+<p>
+    Learn • Prepare • Watch • Enjoy
+</p>
+```
+
+</footer>
+
+<script>
+
+/* =========================================
+   CLASS SUBJECTS
+   ========================================= */
+
+const commonSubjects = [
+    "Mathematics",
+    "English",
+    "Telugu",
+    "Hindi",
+    "Science",
+    "Social Studies"
+];
+
+
+const classSubjects = {
+
+    1: commonSubjects,
+    2: commonSubjects,
+    3: commonSubjects,
+    4: commonSubjects,
+    5: commonSubjects,
+    6: commonSubjects,
+    7: commonSubjects,
+    8: commonSubjects,
+    9: commonSubjects,
+
+    10: [
+        "Mathematics",
+        "English",
+        "Telugu",
+        "Hindi",
+        "Physical Science",
+        "Biological Science",
+        "Social Studies"
+    ]
+
+};
+
+
+/* =========================================
+   CLASS BUTTON CLICK
+   ========================================= */
+
+document.querySelectorAll(".class-button").forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const classNumber =
+            Number(this.dataset.class);
+
+        showClass(classNumber);
+
+    });
+
+});
+
+
+/* =========================================
+   SHOW SUBJECTS
+   ========================================= */
+
+function showClass(classNumber) {
+
+    const box =
+        document.getElementById("classSubjects");
+
+    const subjects =
+        classSubjects[classNumber];
+
+    if (!subjects) {
+
+        box.innerHTML = `
+            <h3>📖 Subjects</h3>
+            <p>No subjects available.</p>
+        `;
+
+        return;
+    }
+
+
+    let html = `
+        <h3>
+            📖 Class ${classNumber} Subjects
+        </h3>
+
+        <p>
+            Select a subject to watch educational videos:
+        </p>
+
+        <div class="subject-grid">
+    `;
+
+
+    subjects.forEach(function(subject) {
+
+        html += `
+            <button
+                type="button"
+                class="subject-button"
+                data-class="${classNumber}"
+                data-subject="${subject}">
+                📘 ${subject}
+            </button>
+        `;
+
+    });
+
+
+    html += `
+        </div>
+    `;
+
+
+    box.innerHTML = html;
+
+
+    box.querySelectorAll(".subject-button")
+        .forEach(function(button) {
+
+            button.addEventListener(
+                "click",
+                function() {
+
+                    const classNumber =
+                        this.dataset.class;
+
+                    const subject =
+                        this.dataset.subject;
+
+
+                    /*
+                       Better search keywords
+                       for each subject.
+                    */
+
+                    let searchText =
+                        "Class " +
+                        classNumber +
+                        " " +
+                        subject;
+
+
+                    if (subject === "Mathematics") {
+
+                        searchText +=
+                            " Maths lessons Telugu";
+
+                    }
+
+                    else if (subject === "English") {
+
+                        searchText +=
+                            " English lessons Telugu";
+
+                    }
+
+                    else if (subject === "Telugu") {
+
+                        searchText +=
+                            " Telugu lessons";
+
+                    }
+
+                    else if (subject === "Hindi") {
+
+                        searchText +=
+                            " Hindi lessons Telugu explanation";
+
+                    }
+
+                    else if (
+                        subject === "Science" ||
+                        subject === "Physical Science" ||
+                        subject === "Biological Science"
+                    ) {
+
+                        searchText +=
+                            " Science lessons Telugu";
+
+                    }
+
+                    else if (subject === "Social Studies") {
+
+                        searchText +=
+                            " Social Studies lessons Telugu";
+
+                    }
+
+
+                    openYouTubeVideoSearch(
+                        searchText,
+                        "Class " +
+                        classNumber +
+                        " - " +
+                        subject
+                    );
+
+                }
+            );
+
+        });
+
+
+    box.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+}
+
+
+/* =========================================
+   OTHER COURSE BUTTONS
+   ========================================= */
+
+document.querySelectorAll(".course-button")
+    .forEach(function(button) {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                const searchText =
+                    this.dataset.search;
+
+                openYouTubeVideoSearch(
+                    searchText + " educational Telugu",
+                    searchText
+                );
+
+            }
+        );
+
+    });
+
+
+/* =========================================
+   QUICK SUBJECT VIDEO BUTTONS
+   ========================================= */
+
+document.querySelectorAll(".quick-video a")
+    .forEach(function(link) {
+
+        link.addEventListener(
+            "click",
+            function() {
+
+                const title =
+                    this.parentElement
+                        .querySelector("h4")
+                        .textContent;
+
+                const area =
+                    document.getElementById(
+                        "mainVideoArea"
+                    );
+
+                const titleBox =
+                    document.getElementById(
+                        "videoTitle"
+                    );
+
+                titleBox.textContent =
+                    "🎥 " + title;
+
+                area.style.display =
+                    "block";
+
+            }
+        );
+
+    });
+
+
+/* =========================================
+   YOUTUBE SEARCH
+   ========================================= */
+
+function openYouTubeVideoSearch(
+    searchText,
+    title
+) {
+
+    const query =
+        encodeURIComponent(searchText);
+
+
+    const youtubeSearchUrl =
+        "https://www.youtube.com/results?search_query=" +
+        query;
+
+
+    const area =
+        document.getElementById(
+            "mainVideoArea"
+        );
+
+    const titleBox =
+        document.getElementById(
+            "videoTitle"
+        );
+
+    const moreButton =
+        document.getElementById(
+            "youtubeSearchButton"
+        );
+
+
+    titleBox.textContent =
+        "🎥 " + title;
+
+
+    moreButton.href =
+        youtubeSearchUrl;
+
+
+    area.style.display =
+        "block";
+
+
+    area.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+
+    window.open(
+        youtubeSearchUrl,
+        "_blank"
+    );
+
+}
+
+
+/* =========================================
+   SEARCH BOX
+   ========================================= */
+
+document.getElementById("searchBox")
+    .addEventListener(
+        "input",
+        function() {
+
+            const searchText =
+                this.value
+                    .toLowerCase()
+                    .trim();
+
+
+            const buttons =
+                document.querySelectorAll(
+                    ".class-button, .course-button"
+                );
+
+
+            buttons.forEach(function(button) {
+
+                const text =
+                    button.textContent
+                        .toLowerCase();
+
+
+                if (
+                    searchText === "" ||
+                    text.includes(searchText)
+                ) {
+
+                    button.style.display =
+                        "";
+
+                }
+
+                else {
+
+                    button.style.display =
+                        "none";
+
+                }
+
+            });
+
+        }
+    );
+
+</script>
+
+</body>
+</html>

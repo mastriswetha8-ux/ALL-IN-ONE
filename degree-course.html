@@ -1,0 +1,610 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Degree Courses - ALL-IN-ONE.COM</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        body {
+            background: #f4f7fb;
+            font-family: Arial, sans-serif;
+        }
+
+        .degree-container {
+            width: 92%;
+            max-width: 1150px;
+            margin: 30px auto;
+        }
+
+        .degree-header {
+            background: linear-gradient(
+                90deg,
+                #1e3a8a,
+                #7c3aed,
+                #2563eb
+            );
+
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+            border-radius: 18px;
+            margin-bottom: 30px;
+        }
+
+        .degree-header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .degree-header p {
+            font-size: 17px;
+            margin: 6px;
+        }
+
+        .student-box {
+            background: white;
+            padding: 20px;
+            border-radius: 14px;
+            margin-bottom: 30px;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .student-box h2 {
+            color: #1e3a8a;
+            margin-bottom: 8px;
+        }
+
+        .course-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .course-card {
+
+            background: white;
+
+            border-radius: 18px;
+
+            padding: 28px 22px;
+
+            text-align: center;
+
+            box-shadow:
+                0 5px 18px rgba(0,0,0,0.10);
+
+            transition:
+                transform 0.2s,
+                box-shadow 0.2s;
+        }
+
+        .course-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .course-icon {
+
+            font-size: 55px;
+
+            margin-bottom: 12px;
+        }
+
+        .course-card h2 {
+
+            color: #1e3a8a;
+
+            margin-bottom: 10px;
+        }
+
+        .course-card p {
+
+            color: #4b5563;
+
+            line-height: 1.7;
+
+            min-height: 90px;
+        }
+
+        .subject-list {
+
+            text-align: left;
+
+            background: #f8fafc;
+
+            padding: 15px;
+
+            border-radius: 10px;
+
+            margin: 15px 0;
+
+            line-height: 1.9;
+        }
+
+        .open-button {
+
+            display: inline-block;
+
+            width: 100%;
+
+            padding: 13px;
+
+            border-radius: 9px;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            margin-top: 10px;
+        }
+
+        .bsc-button {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #059669,
+                    #10b981
+                );
+        }
+
+        .ba-button {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #7c3aed,
+                    #8b5cf6
+                );
+        }
+
+        .bcom-button {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ea580c,
+                    #f97316
+                );
+        }
+
+        .information {
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            margin-top: 30px;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .information h2 {
+
+            color: #1e3a8a;
+
+            margin-bottom: 15px;
+        }
+
+        .information ul {
+
+            line-height: 2;
+
+            padding-left: 25px;
+        }
+
+        .back-home {
+
+            display: inline-block;
+
+            background: #111827;
+
+            color: white;
+
+            padding: 12px 22px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            margin-bottom: 20px;
+        }
+
+        .back-home:hover {
+
+            background: #1e3a8a;
+        }
+
+        footer {
+
+            margin-top: 45px;
+
+            background: #111827;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 28px;
+        }
+
+        @media (max-width: 900px) {
+
+            .course-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="degree-container">
+
+
+    <!-- HOME BUTTON -->
+
+    <a href="index.html"
+       class="back-home">
+
+        ← Back to Home
+
+    </a>
+
+
+    <!-- HEADER -->
+
+    <div class="degree-header">
+
+        <h1>
+            🎓 Degree Courses
+        </h1>
+
+        <p>
+            Bachelor Degree Learning Center
+        </p>
+
+        <p>
+            B.Sc • B.A • B.Com
+        </p>
+
+    </div>
+
+
+    <!-- STUDENT -->
+
+    <div class="student-box">
+
+        <h2>
+            👤 Student:
+            <span id="studentName">
+                Student
+            </span>
+        </h2>
+
+        <p>
+            📚 Choose your Degree Course
+            and start learning.
+        </p>
+
+    </div>
+
+
+    <!-- COURSES -->
+
+    <div class="course-grid">
+
+
+        <!-- B.SC -->
+
+        <div class="course-card">
+
+            <div class="course-icon">
+                🔬
+            </div>
+
+            <h2>
+                B.Sc
+            </h2>
+
+            <p>
+                Bachelor of Science
+            </p>
+
+            <div class="subject-list">
+
+                📚 <strong>Subjects</strong>
+
+                <br>
+
+                🧮 Mathematics
+
+                <br>
+
+                💻 Computer Science
+
+                <br>
+
+                ⚛️ Physics
+
+                <br>
+
+                🧪 Chemistry
+
+                <br>
+
+                🪔 Telugu
+
+                <br>
+
+                🇬🇧 English
+
+            </div>
+
+            <a
+                href="bsc-course.html"
+                class="open-button bsc-button">
+
+                Open B.Sc →
+
+            </a>
+
+        </div>
+
+
+        <!-- B.A -->
+
+        <div class="course-card">
+
+            <div class="course-icon">
+                📖
+            </div>
+
+            <h2>
+                B.A
+            </h2>
+
+            <p>
+                Bachelor of Arts
+            </p>
+
+            <div class="subject-list">
+
+                📚 <strong>Subjects</strong>
+
+                <br>
+
+                🏛️ History
+
+                <br>
+
+                🏛️ Political Science
+
+                <br>
+
+                💰 Economics
+
+                <br>
+
+                👥 Sociology
+
+                <br>
+
+                🪔 Telugu
+
+                <br>
+
+                🇬🇧 English
+
+            </div>
+
+            <a
+                href="ba-course.html"
+                class="open-button ba-button">
+
+                Open B.A →
+
+            </a>
+
+        </div>
+
+
+        <!-- B.COM -->
+
+        <div class="course-card">
+
+            <div class="course-icon">
+                💼
+            </div>
+
+            <h2>
+                B.Com
+            </h2>
+
+            <p>
+                Bachelor of Commerce
+            </p>
+
+            <div class="subject-list">
+
+                📚 <strong>Subjects</strong>
+
+                <br>
+
+                📊 Accounting
+
+                <br>
+
+                💼 Business Studies
+
+                <br>
+
+                💰 Economics
+
+                <br>
+
+                📈 Commerce
+
+                <br>
+
+                🧮 Business Mathematics
+
+                <br>
+
+                💻 Computer Applications
+
+            </div>
+
+            <a
+                href="bcom-course.html"
+                class="open-button bcom-button">
+
+                Open B.Com →
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- INFORMATION -->
+
+    <div class="information">
+
+        <h2>
+            📚 Degree Learning Center
+        </h2>
+
+        <ul>
+
+            <li>
+                🎓 Choose B.Sc, B.A or B.Com.
+            </li>
+
+            <li>
+                📖 Learn subject by subject.
+            </li>
+
+            <li>
+                🎥 Watch available learning videos.
+            </li>
+
+            <li>
+                📝 More lessons and study
+                material can be added later.
+            </li>
+
+            <li>
+                👤 Your logged-in account
+                is shown on the course page.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 ALL-IN-ONE.COM
+    </p>
+
+    <p>
+        Learn • Prepare • Watch • Enjoy
+    </p>
+
+</footer>
+
+
+<script>
+
+async function loadStudent() {
+
+    try {
+
+        const response =
+            await fetch("/api/me");
+
+        const data =
+            await response.json();
+
+        if (
+            data.loggedIn &&
+            data.user
+        ) {
+
+            document
+                .getElementById("studentName")
+                .textContent =
+
+                data.user.username ||
+
+                data.user.name ||
+
+                data.user.email ||
+
+                "Student";
+
+        }
+
+    }
+
+    catch (error) {
+
+        console.log(
+            "Student information could not be loaded."
+        );
+
+    }
+
+}
+
+loadStudent();
+
+</script>
+
+
+</body>
+
+</html>
+

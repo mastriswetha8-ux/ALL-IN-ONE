@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Story Videos - ALL-IN-ONE.COM</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        header p {
+            margin: 8px 0 15px;
+            color: #d1d5db;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 9px 13px;
+            border-radius: 6px;
+            background: #374151;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            background: #2563eb;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .intro,
+        .category-section {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .intro h2 {
+            margin-top: 0;
+        }
+
+        .category-title {
+            margin-top: 0;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .video-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 260px;
+            background: #111827;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .video-placeholder div {
+            max-width: 500px;
+        }
+
+        .video-placeholder h3 {
+            margin: 0 0 10px;
+            font-size: 24px;
+        }
+
+        .video-placeholder p {
+            margin: 0;
+            color: #d1d5db;
+            line-height: 1.5;
+        }
+
+        .video-info {
+            padding: 16px;
+        }
+
+        .video-info h3 {
+            margin: 0 0 8px;
+            font-size: 19px;
+        }
+
+        .video-info p {
+            margin: 7px 0;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .youtube-button,
+        .search-button {
+            display: inline-block;
+            padding: 10px 14px;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .youtube-button {
+            background: #dc2626;
+        }
+
+        .youtube-button:hover {
+            background: #b91c1c;
+        }
+
+        .search-button {
+            background: #2563eb;
+        }
+
+        .search-button:hover {
+            background: #1d4ed8;
+        }
+
+        .watch-note {
+            margin-top: 20px;
+            padding: 15px;
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 700px) {
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .video-placeholder {
+                height: 220px;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+
+            .intro,
+            .category-section {
+                padding: 18px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .button-row {
+                flex-direction: column;
+            }
+
+            .youtube-button,
+            .search-button {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <h1>📖 ALL-IN-ONE.COM</h1>
+
+    <p>
+        Learn • Prepare • Watch • Enjoy
+    </p>
+
+    <nav>
+        <a href="/index.html">Home</a>
+        <a href="/educational.html">Educational</a>
+        <a href="/exams.html">Exams</a>
+        <a href="/entertainment.html">Entertainment</a>
+        <a href="/videos.html">Videos</a>
+        <a href="/storyvideos.html">Story Videos</a>
+        <a href="/storycontent.html">Story Content</a>
+        <a href="/login.html">Login</a>
+    </nav>
+
+</header>
+
+
+<div class="container">
+
+    <div class="intro">
+
+        <h2>🎬 Story Videos</h2>
+
+        <p>
+            తెలుగు Moral Stories, Family Stories,
+            Animal Stories మరియు Festival Stories.
+        </p>
+
+        <p>
+            మంచి కథలు, మంచి విలువలు మరియు
+            మంచి జీవిత పాఠాలను చూడండి.
+        </p>
+
+        <div class="watch-note">
+            💡 YouTubeలో అందుబాటులో ఉన్న కథలను category-wise
+            చూడటానికి క్రింది buttons ఉపయోగించండి.
+        </div>
+
+    </div>
+
+
+    <!-- MORAL STORIES -->
+
+    <div class="category-section">
+
+        <h2 class="category-title">
+            📚 Moral Stories
+        </h2>
+
+        <p>
+            తెలుగు నీతి కథలు మరియు మంచి జీవిత పాఠాలతో
+            కూడిన కథలు.
+        </p>
+
+        <div class="video-grid">
+
+            <div class="video-card">
+
+                <div class="video-placeholder">
+
+                    <div>
+                        <h3>🐘 మంచి ఏనుగు - కొంటె చిలుక</h3>
+
+                        <p>
+                            Telugu Moral Story
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="video-info">
+
+                    <h3>🐘 మంచి ఏనుగు - కొంటె చిలుక</h3>
+
+                    <p>
+                        మంచి విలువలు, స్నేహం మరియు
+                        సహాయం గురించి తెలుగు నీతి కథ.
+                    </p>
+
+                    <div class="button-row">
+
+                        <a
+                            class="youtube-button"
+                            href="https://www.youtube.com/watch?v=_GeQ7aElXho"
+                            target="_blank"
+                            rel="noopener">
+                            ▶ YouTubeలో చూడండి
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="video-card">
+
+                <div class="video-placeholder">
+
+                    <div>
+                        <h3>📖 తెలుగు నీతి కథలు</h3>
+
+                        <p>
+                            Telugu Moral Stories
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="video-info">
+
+                    <h3>📖 తెలుగు నీతి కథలు</h3>
+
+                    <p>
+                        వివిధ తెలుగు నీతి కథలు మరియు
+                        మంచి జీవిత పాఠాలు.
+                    </p>
+
+                    <div class="button-row">
+
+                        <a
+                            class="search-button"
+                            href="https://www.youtube.com/results?search_query=Telugu+Moral+Stories"
+                            target="_blank"
+                            rel="noopener">
+                            🔎 మరిన్ని Moral Stories
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FAMILY STORIES -->
+
+    <div class="category-section">
+
+        <h2 class="category-title">
+            👨‍👩‍👧 Family Stories
+        </h2>
+
+        <p>
+            కుటుంబం, ప్రేమ, సంబంధాలు మరియు మంచి విలువల
+            గురించి తెలుగు Family Stories.
+        </p>
+
+        <div class="video-grid">
+
+            <div class="video-card">
+
+                <div class="video-placeholder">
+
+                    <div>
+                        <h3>❤️ కుటుంబ కథలు</h3>
+
+                        <p>
+                            Telugu Family Stories
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="video-info">
+
+                    <h3>👨‍👩‍👧 తెలుగు Family Stories</h3>
+
+                    <p>
+                        కుటుంబ ప్రేమ, సంబంధాలు మరియు
+                        మంచి జీవిత విలువలతో కూడిన కథలు.
+                    </p>
+
+                    <div class="button-row">
+
+                        <a
+                            class="search-button"
+                            href="https://www.youtube.com/results?search_query=Telugu+Family+Stories"
+                            target="_blank"
+                            rel="noopener">
+                            🔎 Family Stories
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="video-card">
+
+                <div class="video-placeholder">
+
+                    <div>
+                        <h3>👩‍👧 అమ్మ ప్రేమ</h3>
+
+                        <p>
+                            Telugu Mother & Family Stories
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="video-info">
+
+                    <h3>❤️ అమ్మ ప్రేమ కథలు</h3>
+
+                    <p>
+                        తల్లి ప్రేమ మరియు కుటుంబ బంధాల
+                        గురించి తెలుగు కథలు.
+                    </p>
+
+                    <div class="button-row">
+
+                        <a
+                            class="search-button"
+                            href="https://www.youtube.com/results?search_query=Telugu+Mother+Love+Stories"
+                            target="_blank"
+                            rel="noopener">
+                            🔎 కథలు చూడండి
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ANIMAL STORIES -->
+
+    <div class="category-section">
+
+        <h2 class="category-title">
+            🐶 Animal Stories
+        </h2>
+
+        <p>
+            జంతువులు, అడవి మరియు స్నేహం గురించి
+            తెలుగు Animal Stories.
+        </p>
+
+        <div class="video-grid">
+
+            <div class="video-card">
+
+                <div class="video-placeholder">
+
+                    <div>
+                        <h3>🦁 సింహం మరియు కుందేలు</h3>
+
+                        <p>
+                            Telugu Animal Story
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="video-info">
+
+                    <h3>🦁 సింహం మరియు కుందేలు కథ</h3>
+
+                    <p>
+                        బలం కంటే తెలివి గొప్పది అనే
+                        మంచి సందేశాన్ని చెప్పే కథ.
+                    </p>
+
+                    <div class="button-row">
+
+                        <a
+                            class="search-button"
+                            href="https://www.youtube.com/results?search_query=Telugu+Lion+Rabbit+Story"
+                            target="_blank"
+                            rel="noopener">
+                            🔎 Animal Story
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="video-card">
+
+                <div class="video-placeholder">
+
+                    <div>
+                        <h3>🐘 జంతువుల స్నేహం</h3>
+
+                        <p>
+                            Telugu Animal Stories
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="video-info">
+
+                    <h3>🐘 మిత్రుల కథ</h3>
+
+                    <p>
+                        స్నేహం, సహాయం మరియు
+                        జంతువుల కథలతో కూడిన మంచి కథలు.
+                    </p>
+
+                    <div class="button-row">
+
+                        <a
+                            class="search-button"
+                            href="https://www.youtube.com/results?search_query=Telugu+Animal+Stories"
+                            target="_blank"
+                            rel="noopener">
+                            🔎 మరిన్ని Animal Stories
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FESTIVAL STORIES -->
+
+    <div class="category-section">
+
+        <h2 class="category-title">
+            🪔 Festival Stories
+        </h2>
+
+        <p>
+            పండుగలు, సంప్రదాయాలు మరియు భారతీయ సంస్కృతి
+            గురించి తెలుగు Festival Stories.
+        </p>
+
+        <div class="video-grid">
+
+            <div class="video-card">
+
+                <div class="video-placeholder">
+
+                    <div>
+                        <h3>🐘 వినాయక చవితి కథ</h3>
+
+                        <p>
+                            Telugu Festival Story
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="video-info">
+
+                    <h3>🐘 వినాయక చవితి కథ</h3>
+
+                    <p>
+                        వినాయక చవితి పండుగ మరియు
+                        గణేశుడి కథ గురించి తెలుగు వీడియోలు.
+                    </p>
+
+                    <div class="button-row">
+
+                        <a
+                            class="search-button"
+                            href="https://www.youtube.com/results?search_query=Vinayaka+Chavithi+Katha+Telugu"
+                            target="_blank"
+                            rel="noopener">
+                            🔎 వినాయక చవితి కథలు
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="video-card">
+
+                <div class="video-placeholder">
+
+                    <div>
+                        <h3>🪔 విజయదశమి</h3>
+
+                        <p>
+                            Dasara Festival Story
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="video-info">
+
+                    <h3>🪔 విజయదశమి - Dasara Story</h3>
+
+                    <p>
+                        మంచి చెడుపై విజయం మరియు
+                        విజయదశమి పండుగ ప్రాముఖ్యత.
+                    </p>
+
+                    <div class="button-row">
+
+                        <a
+                            class="youtube-button"
+                            href="https://www.youtube.com/watch?v=oNKpoByP3kk"
+                            target="_blank"
+                            rel="noopener">
+                            ▶ YouTubeలో చూడండి
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MORE STORIES -->
+
+    <div class="category-section">
+
+        <h2 class="category-title">
+            🔎 More Telugu Story Videos
+        </h2>
+
+        <p>
+            మీకు నచ్చిన Story categoryని YouTubeలో
+            మరింతగా చూడండి.
+        </p>
+
+        <div class="button-row">
+
+            <a
+                class="search-button"
+                href="https://www.youtube.com/results?search_query=Telugu+Moral+Stories"
+                target="_blank"
+                rel="noopener">
+                📚 Moral
+            </a>
+
+            <a
+                class="search-button"
+                href="https://www.youtube.com/results?search_query=Telugu+Family+Stories"
+                target="_blank"
+                rel="noopener">
+                👨‍👩‍👧 Family
+            </a>
+
+            <a
+                class="search-button"
+                href="https://www.youtube.com/results?search_query=Telugu+Animal+Stories"
+                target="_blank"
+                rel="noopener">
+                🐶 Animal
+            </a>
+
+            <a
+                class="search-button"
+                href="https://www.youtube.com/results?search_query=Telugu+Festival+Stories"
+                target="_blank"
+                rel="noopener">
+                🪔 Festival
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <p>
+
+        <a href="/storyvideos.html">
+            Story Videos
+        </a>
+
+        <a href="/storycontent.html">
+            Story Content
+        </a>
+
+        <a href="/terms.html">
+            Terms & Conditions
+        </a>
+
+        <a href="/index.html">
+            Home
+        </a>
+
+    </p>
+
+    <p>
+        © 2026 ALL-IN-ONE.COM
+    </p>
+
+</footer>
+
+</body>
+</html>

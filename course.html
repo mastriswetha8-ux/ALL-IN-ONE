@@ -1,0 +1,1400 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Course - ALL-IN-ONE.COM</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+header {
+    background: #111827;
+    color: white;
+    padding: 18px 30px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.tagline {
+    color: #d1d5db;
+    margin-top: 5px;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #60a5fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.back-button {
+    display: inline-block;
+    text-decoration: none;
+    background: #374151;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.course-header {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    margin-bottom: 25px;
+}
+
+.course-header h1 {
+    margin-top: 0;
+}
+
+.student {
+    color: #555;
+}
+
+.access {
+    display: inline-block;
+    background: #dcfce7;
+    color: #166534;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.section-title {
+    margin-top: 30px;
+}
+
+.lesson {
+    background: white;
+    margin-bottom: 22px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.lesson h3 {
+    margin-top: 0;
+    color: #2563eb;
+}
+
+.lesson h2 {
+    margin-bottom: 10px;
+}
+
+.lesson p {
+    color: #555;
+}
+
+.video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-top: 15px;
+    background: #111;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.coming-soon {
+    margin-top: 15px;
+    background: #f3f4f6;
+    border: 1px dashed #9ca3af;
+    padding: 25px;
+    text-align: center;
+    border-radius: 8px;
+    color: #6b7280;
+    font-weight: bold;
+}
+
+.subject-title {
+    background: #e5e7eb;
+    padding: 12px 15px;
+    border-radius: 7px;
+    margin: 25px 0 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.error {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+}
+
+.success-message {
+    background: #dcfce7;
+    color: #166534;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 40px;
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        ALL-IN-ONE.COM
+    </div>
+
+    <div class="tagline">
+        Learn • Prepare • Watch • Enjoy
+    </div>
+
+    <nav>
+        <a href="/index.html">Home</a>
+        <a href="/educational.html">Educational</a>
+        <a href="/exams.html">Exams</a>
+        <a href="/entertainment.html">Entertainment</a>
+        <a href="/videos.html">Videos</a>
+        <a href="/login.html">Login</a>
+    </nav>
+
+</header>
+
+
+<div class="container">
+
+    <a href="/paid-classes.html" class="back-button">
+        ← Back to Paid Classes
+    </a>
+
+    <div id="pageContent">
+
+        <div class="loading">
+            Loading course...
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+    © 2026 ALL-IN-ONE.COM
+</footer>
+
+
+<script>
+
+/* =========================================================
+   COURSE DATA
+========================================================= */
+
+const courseData = {
+
+    /* =====================================================
+       UPSC
+    ===================================================== */
+
+    upsc: {
+
+        name: "UPSC Complete Course",
+
+        description:
+            "Complete UPSC preparation course with important subjects and study material.",
+
+        lessons: [
+
+            {
+                title: "Introduction to UPSC - Telugu",
+
+                description:
+                    "UPSC CSE beginners preparation strategy and basic guidance in Telugu."
+            },
+
+            {
+                title: "Indian Polity - Telugu",
+
+                description:
+                    "Indian Constitution and Indian Polity concepts explained in Telugu."
+            },
+
+            {
+                title: "Indian History - Telugu",
+
+                description:
+                    "Important Indian History topics for UPSC preparation."
+            },
+
+            {
+                title: "Indian Economy - Telugu",
+
+                description:
+                    "Basic Indian Economy concepts for UPSC aspirants."
+            },
+
+            {
+                title: "Current Affairs - Telugu",
+
+                description:
+                    "Current affairs preparation for UPSC examinations."
+            }
+
+        ]
+    },
+
+
+    /* =====================================================
+       COMPETITIVE EXAMS
+    ===================================================== */
+
+    competitive: {
+
+        name: "Competitive Exams",
+
+        description:
+            "Competitive examination preparation including Arithmetic, Reasoning, Economy, Polity and History.",
+
+        lessons: [
+
+            {
+                title: "Arithmetic - Telugu",
+
+                description:
+                    "Arithmetic preparation for APPSC, TSPSC, SSC, Railway and other competitive examinations."
+            },
+
+            {
+                title: "Reasoning - Telugu",
+
+                description:
+                    "Reasoning concepts and important competitive-exam questions in Telugu."
+            },
+
+            {
+                title: "Economy - Telugu",
+
+                description:
+                    "Indian Economy basics for competitive examinations."
+            },
+
+            {
+                title: "Polity - Telugu",
+
+                description:
+                    "Indian Constitution and Polity preparation for competitive examinations."
+            },
+
+            {
+                title: "History - Telugu",
+
+                description:
+                    "Modern and Indian History preparation for competitive examinations."
+            }
+
+        ]
+    },
+
+
+    /* =====================================================
+       DEGREE
+    ===================================================== */
+
+    degree: {
+
+        name: "Degree Classes",
+
+        description:
+            "Degree-level classes including B.Sc, B.A and B.Com subjects.",
+
+        sections: [
+
+            {
+                name: "B.Sc",
+
+                lessons: [
+
+                    {
+                        title: "B.Sc Mathematics",
+
+                        description:
+                            "B.Sc Mathematics degree-level classes."
+                    },
+
+                    {
+                        title: "B.Sc Physics",
+
+                        description:
+                            "B.Sc Physics degree-level classes."
+                    },
+
+                    {
+                        title: "B.Sc Computer Science",
+
+                        description:
+                            "B.Sc Computer Science degree-level classes."
+                    }
+
+                ]
+            },
+
+
+            {
+                name: "B.A",
+
+                lessons: [
+
+                    {
+                        title: "B.A History",
+
+                        description:
+                            "B.A History degree-level classes."
+                    },
+
+                    {
+                        title: "B.A Economics",
+
+                        description:
+                            "B.A Economics degree-level classes."
+                    },
+
+                    {
+                        title: "B.A Political Science",
+
+                        description:
+                            "B.A Political Science degree-level classes."
+                    }
+
+                ]
+            },
+
+
+            {
+                name: "B.Com",
+
+                lessons: [
+
+                    {
+                        title: "B.Com Accounting",
+
+                        description:
+                            "B.Com Accounting degree-level classes."
+                    },
+
+                    {
+                        title: "B.Com Economics",
+
+                        description:
+                            "B.Com Economics degree-level classes."
+                    },
+
+                    {
+                        title: "B.Com Business Studies",
+
+                        description:
+                            "B.Com Business Studies degree-level classes."
+                    }
+
+                ]
+            }
+
+        ]
+    }
+
+};
+
+
+/* =========================================================
+   GET COURSE ID
+========================================================= */
+
+function getCourseId() {
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+    return params.get("course");
+}
+
+
+/* =========================================================
+   NORMALIZE TEXT
+========================================================= */
+
+function normalizeText(value) {
+
+    if (!value) {
+        return "";
+    }
+
+    return String(value)
+        .toLowerCase()
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+
+/* =========================================================
+   YOUTUBE EMBED URL
+========================================================= */
+
+function getYoutubeEmbedUrl(url) {
+
+    if (!url) {
+        return "";
+    }
+
+    const value = String(url).trim();
+
+
+    if (value.includes("/embed/")) {
+        return value;
+    }
+
+
+    let videoId = "";
+
+
+    try {
+
+        const parsed =
+            new URL(value);
+
+
+        if (
+            parsed.hostname.includes(
+                "youtube.com"
+            )
+        ) {
+
+            videoId =
+                parsed.searchParams.get("v")
+                || "";
+
+
+            if (
+                parsed.pathname.startsWith(
+                    "/shorts/"
+                )
+            ) {
+
+                videoId =
+                    parsed.pathname
+                        .split("/shorts/")[1]
+                        .split("/")[0];
+
+            }
+
+        }
+
+
+        if (
+            parsed.hostname ===
+            "youtu.be"
+        ) {
+
+            videoId =
+                parsed.pathname
+                    .replace("/", "")
+                    .split("/")[0];
+
+        }
+
+    } catch (error) {
+
+        console.warn(
+            "Invalid YouTube URL:",
+            value
+        );
+
+    }
+
+
+    if (!videoId) {
+
+        const match =
+            value.match(
+                /(?:v=|youtu\.be\/|embed\/|shorts\/)([A-Za-z0-9_-]{6,})/
+            );
+
+
+        if (match) {
+            videoId = match[1];
+        }
+
+    }
+
+
+    if (!videoId) {
+        return "";
+    }
+
+
+    return (
+        "https://www.youtube.com/embed/" +
+        videoId
+    );
+}
+
+
+/* =========================================================
+   FIND MATCHING COURSE VIDEO
+========================================================= */
+
+function findCourseVideo(
+    lesson,
+    videos
+) {
+
+    if (!Array.isArray(videos)) {
+        return null;
+    }
+
+
+    const lessonTitle =
+        normalizeText(
+            lesson.title
+        );
+
+
+    /* EXACT MATCH */
+
+    let match =
+        videos.find(
+            video =>
+                normalizeText(
+                    video.title
+                ) === lessonTitle
+        );
+
+
+    if (match) {
+        return match;
+    }
+
+
+    /* CONTAINS MATCH */
+
+    match =
+        videos.find(
+            video => {
+
+                const dbTitle =
+                    normalizeText(
+                        video.title
+                    );
+
+
+                return (
+                    dbTitle.includes(
+                        lessonTitle
+                    ) ||
+                    lessonTitle.includes(
+                        dbTitle
+                    )
+                );
+            }
+        );
+
+
+    if (match) {
+        return match;
+    }
+
+
+    /* SPECIAL ALIASES */
+
+    const aliases = {
+
+        "b.sc mathematics": [
+            "b.sc mathematics",
+            "bsc mathematics"
+        ],
+
+        "b.sc physics": [
+            "b.sc physics",
+            "bsc physics",
+            "physics"
+        ],
+
+        "b.sc computer science": [
+            "b.sc computer science",
+            "bsc computer science",
+            "computer science"
+        ],
+
+        "b.a history": [
+            "b.a history",
+            "ba history"
+        ],
+
+        "b.a economics": [
+            "b.a economics",
+            "ba economics"
+        ],
+
+        "b.a political science": [
+            "b.a political science",
+            "ba political science",
+            "political science"
+        ],
+
+        "b.com accounting": [
+            "b.com accounting",
+            "bcom accounting",
+            "accounting"
+        ],
+
+        "b.com economics": [
+            "b.com economics",
+            "bcom economics"
+        ],
+
+        "b.com business studies": [
+            "b.com business studies",
+            "bcom business studies",
+            "business studies"
+        ],
+
+        "introduction to upsc - telugu": [
+            "introduction to upsc - telugu",
+            "introduction to upsc"
+        ],
+
+        "indian polity - telugu": [
+            "indian polity - telugu",
+            "indian polity"
+        ],
+
+        "indian economy - telugu": [
+            "indian economy - telugu",
+            "indian economy"
+        ],
+
+        "arithmetic - telugu": [
+            "arithmetic - telugu",
+            "arithmetic"
+        ],
+
+        "reasoning - telugu": [
+            "reasoning - telugu",
+            "reasoning"
+        ],
+
+        "economy - telugu": [
+            "economy - telugu",
+            "economy"
+        ],
+
+        "polity - telugu": [
+            "polity - telugu",
+            "polity"
+        ],
+
+        "history - telugu": [
+            "history - telugu",
+            "history"
+        ]
+
+    };
+
+
+    const lessonAliases =
+        aliases[lessonTitle];
+
+
+    if (lessonAliases) {
+
+        match =
+            videos.find(
+                video => {
+
+                    const dbTitle =
+                        normalizeText(
+                            video.title
+                        );
+
+
+                    return lessonAliases.some(
+                        alias => {
+
+                            const a =
+                                normalizeText(
+                                    alias
+                                );
+
+
+                            return (
+                                dbTitle === a ||
+                                dbTitle.includes(a)
+                            );
+                        }
+                    );
+
+                }
+            );
+
+    }
+
+
+    return match || null;
+}
+
+
+/* =========================================================
+   CREATE LESSON
+========================================================= */
+
+function createLesson(
+    lesson,
+    number,
+    courseVideos
+) {
+
+    const matchedVideo =
+        findCourseVideo(
+            lesson,
+            courseVideos
+        );
+
+
+    let videoHTML = "";
+
+
+    if (matchedVideo) {
+
+        const youtubeUrl =
+            matchedVideo.youtube_url ||
+            matchedVideo.youtubeUrl ||
+            matchedVideo.video_url ||
+            matchedVideo.url ||
+            "";
+
+
+        const embedUrl =
+            matchedVideo.youtube_embed_url ||
+            matchedVideo.youtubeEmbedUrl ||
+            getYoutubeEmbedUrl(
+                youtubeUrl
+            );
+
+
+        if (embedUrl) {
+
+            videoHTML = `
+
+                <div class="video-container">
+
+                    <iframe
+                        src="${embedUrl}"
+                        title="${escapeHTML(
+                            lesson.title
+                        )}"
+                        allow="accelerometer;
+                        autoplay;
+                        clipboard-write;
+                        encrypted-media;
+                        gyroscope;
+                        picture-in-picture;
+                        web-share"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+            `;
+
+        } else {
+
+            videoHTML = `
+
+                <div class="coming-soon">
+
+                    🎥 Video link is not available
+
+                </div>
+
+            `;
+
+        }
+
+    } else {
+
+        videoHTML = `
+
+            <div class="coming-soon">
+
+                🎥 Video Coming Soon
+
+            </div>
+
+        `;
+
+    }
+
+
+    return `
+
+        <div class="lesson">
+
+            <h3>
+                LESSON ${number}
+            </h3>
+
+            <h2>
+                ${escapeHTML(
+                    lesson.title
+                )}
+            </h2>
+
+            <p>
+                ${escapeHTML(
+                    lesson.description
+                )}
+            </p>
+
+            ${videoHTML}
+
+        </div>
+
+    `;
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(value) {
+
+    if (
+        value === undefined ||
+        value === null
+    ) {
+        return "";
+    }
+
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+}
+
+
+/* =========================================================
+   LOAD COURSE VIDEOS FROM DATABASE API
+========================================================= */
+
+async function loadCourseVideos(
+    courseId
+) {
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/course-videos/" +
+                encodeURIComponent(
+                    courseId
+                ),
+                {
+                    credentials: "include",
+                    cache: "no-store"
+                }
+            );
+
+
+        if (!response.ok) {
+
+            console.error(
+                "Course video API error:",
+                response.status
+            );
+
+            return [];
+        }
+
+
+        const data =
+            await response.json();
+
+
+        console.log(
+            "COURSE VIDEO API RESPONSE:",
+            data
+        );
+
+
+        /* API MAY RETURN ARRAY */
+
+        if (
+            Array.isArray(data)
+        ) {
+
+            return data;
+        }
+
+
+        /* API MAY RETURN { videos: [] } */
+
+        if (
+            Array.isArray(
+                data.videos
+            )
+        ) {
+
+            return data.videos;
+        }
+
+
+        /* API MAY RETURN { courseVideos: [] } */
+
+        if (
+            Array.isArray(
+                data.courseVideos
+            )
+        ) {
+
+            return data.courseVideos;
+        }
+
+
+        return [];
+
+    } catch (error) {
+
+        console.error(
+            "Unable to load course videos:",
+            error
+        );
+
+        return [];
+    }
+}
+
+
+/* =========================================================
+   LOAD COURSE
+========================================================= */
+
+async function loadCourse() {
+
+    const page =
+        document.getElementById(
+            "pageContent"
+        );
+
+
+    try {
+
+        const courseId =
+            getCourseId();
+
+
+        /* COURSE CHECK */
+
+        if (
+            !courseId ||
+            !courseData[courseId]
+        ) {
+
+            page.innerHTML = `
+
+                <div class="error">
+
+                    <h2>
+                        Course Not Found
+                    </h2>
+
+                    <p>
+                        Please select a valid course
+                        from Paid Classes.
+                    </p>
+
+                </div>
+
+            `;
+
+            return;
+        }
+
+
+        /* =================================================
+           LOGIN CHECK
+        ================================================= */
+
+        const meResponse =
+            await fetch(
+                "/api/me",
+                {
+                    credentials: "include",
+                    cache: "no-store"
+                }
+            );
+
+
+        const meData =
+            await meResponse.json();
+
+
+        if (!meData.loggedIn) {
+
+            page.innerHTML = `
+
+                <div class="error">
+
+                    <h2>
+                        Login Required
+                    </h2>
+
+                    <p>
+                        Please login before accessing
+                        the course.
+                    </p>
+
+                    <br>
+
+                    <a href="/login.html">
+                        Login Now
+                    </a>
+
+                </div>
+
+            `;
+
+            return;
+        }
+
+
+        /* =================================================
+           PURCHASE CHECK
+        ================================================= */
+
+        const purchaseResponse =
+            await fetch(
+                "/api/my-purchases",
+                {
+                    credentials: "include",
+                    cache: "no-store"
+                }
+            );
+
+
+        const purchaseData =
+            await purchaseResponse.json();
+
+
+        const purchases =
+            purchaseData.purchases || [];
+
+
+        const hasPurchase =
+            purchases.some(
+                purchase => {
+
+                    return (
+                        String(
+                            purchase.course_id ||
+                            purchase.courseId
+                        ) ===
+                        String(courseId)
+                    );
+
+                }
+            );
+
+
+        if (!hasPurchase) {
+
+            page.innerHTML = `
+
+                <div class="error">
+
+                    <h2>
+                        Course Access Not Granted
+                    </h2>
+
+                    <p>
+                        You have not purchased
+                        this course yet.
+                    </p>
+
+                    <br>
+
+                    <a href="/paid-classes.html">
+                        Go to Paid Classes
+                    </a>
+
+                </div>
+
+            `;
+
+            return;
+        }
+
+
+        /* =================================================
+           COURSE DATA
+        ================================================= */
+
+        const course =
+            courseData[courseId];
+
+
+        /* =================================================
+           GET VIDEOS FROM DATABASE
+        ================================================= */
+
+        const courseVideos =
+            await loadCourseVideos(
+                courseId
+            );
+
+
+        console.log(
+            "COURSE ID:",
+            courseId
+        );
+
+        console.log(
+            "TOTAL COURSE VIDEOS:",
+            courseVideos.length
+        );
+
+
+        console.log(
+            "COURSE VIDEOS:",
+            courseVideos
+        );
+
+
+        /* =================================================
+           COURSE HEADER
+        ================================================= */
+
+        let html = `
+
+            <div class="course-header">
+
+                <h1>
+                    📚 ${escapeHTML(
+                        course.name
+                    )}
+                </h1>
+
+                <p>
+                    ${escapeHTML(
+                        course.description
+                    )}
+                </p>
+
+                <p class="student">
+
+                    👤 Student:
+
+                    <strong>
+                        ${escapeHTML(
+                            meData.user.name
+                        )}
+                    </strong>
+
+                </p>
+
+                <div class="access">
+
+                    ✅ Course Access Granted
+
+                </div>
+
+            </div>
+
+            <div class="success-message">
+
+                🎓 You can now access your
+                purchased course lessons.
+
+            </div>
+
+            <h2 class="section-title">
+
+                🎓 Course Lessons
+
+            </h2>
+
+        `;
+
+
+        /* =================================================
+           UPSC / COMPETITIVE LESSONS
+        ================================================= */
+
+        if (course.lessons) {
+
+            course.lessons.forEach(
+                (lesson, index) => {
+
+                    html +=
+                        createLesson(
+                            lesson,
+                            index + 1,
+                            courseVideos
+                        );
+
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           DEGREE SECTIONS
+        ================================================= */
+
+        if (course.sections) {
+
+            course.sections.forEach(
+                section => {
+
+                    html += `
+
+                        <div class="subject-title">
+
+                            📘 ${escapeHTML(
+                                section.name
+                            )}
+
+                        </div>
+
+                    `;
+
+
+                    section.lessons.forEach(
+                        (lesson, index) => {
+
+                            html +=
+                                createLesson(
+                                    lesson,
+                                    index + 1,
+                                    courseVideos
+                                );
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+
+
+        page.innerHTML = html;
+
+
+        console.log(
+            "COURSE PAGE LOADED SUCCESSFULLY"
+        );
+
+    } catch (error) {
+
+        console.error(
+            "COURSE PAGE ERROR:",
+            error
+        );
+
+
+        page.innerHTML = `
+
+            <div class="error">
+
+                <h2>
+                    Unable to load course
+                </h2>
+
+                <p>
+                    Please refresh the page
+                    and try again.
+                </p>
+
+            </div>
+
+        `;
+    }
+}
+
+
+/* =========================================================
+   START
+========================================================= */
+
+loadCourse();
+
+</script>
+
+</body>
+</html>
+

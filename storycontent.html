@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Story Content - ALL-IN-ONE.COM</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 22px 40px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .tagline {
+            margin-top: 6px;
+            color: #666;
+            font-size: 15px;
+        }
+
+        nav {
+            margin-top: 18px;
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #222;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #0066cc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .page-title h1 {
+            margin: 0 0 8px;
+        }
+
+        .page-title p {
+            margin: 0;
+            color: #666;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 25px;
+        }
+
+        .sidebar,
+        .story-area {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 22px;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 15px;
+            height: fit-content;
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+            font-size: 21px;
+        }
+
+        .tree {
+            line-height: 2;
+        }
+
+        .tree a {
+            display: block;
+            text-decoration: none;
+            color: #222;
+            padding: 3px 0;
+        }
+
+        .tree a:hover {
+            color: #0066cc;
+        }
+
+        .tree .sub {
+            padding-left: 22px;
+        }
+
+        .story-area h2 {
+            margin-top: 0;
+        }
+
+        .story-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 22px;
+            margin-top: 18px;
+            background: #fff;
+        }
+
+        .story-card h3 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .scene {
+            border-left: 4px solid #ddd;
+            padding: 12px 15px;
+            margin: 18px 0;
+            background: #fafafa;
+        }
+
+        .scene h4 {
+            margin: 0 0 8px;
+        }
+
+        .scene p {
+            line-height: 1.7;
+        }
+
+        .moral {
+            margin-top: 22px;
+            padding: 18px;
+            border-radius: 8px;
+            background: #f3f3f3;
+        }
+
+        .moral h3 {
+            margin-top: 0;
+        }
+
+        .creator-box {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 10px;
+            background: #fafafa;
+            border: 1px solid #ddd;
+        }
+
+        .creator-box a,
+        .video-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 16px;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .creator-box a:hover,
+        .video-link:hover {
+            background: #0066cc;
+        }
+
+        .story-intro {
+            line-height: 1.7;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: white;
+            border-top: 1px solid #ddd;
+            padding: 25px;
+            text-align: center;
+        }
+
+        footer a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        footer a:hover {
+            color: #0066cc;
+        }
+
+        @media (max-width: 800px) {
+
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            .story-card h3 {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        ALL-IN-ONE.COM
+    </div>
+
+    <div class="tagline">
+        Learn • Prepare • Watch • Enjoy
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="educational.html">Educational</a>
+        <a href="exams.html">Exams</a>
+        <a href="entertainment.html">Entertainment</a>
+        <a href="videos.html">Videos</a>
+        <a href="storyvideos.html">Story Videos</a>
+        <a href="storycontent.html">Story Content</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+</header>
+
+
+<div class="container">
+
+    <div class="page-title">
+
+        <h1>
+            📖 Story Content
+        </h1>
+
+        <p>
+            Read interesting Moral, Family, Animal and Festival stories.
+        </p>
+
+    </div>
+
+
+    <div class="layout">
+
+        <!-- LEFT SIDE -->
+
+        <aside class="sidebar">
+
+            <h2>
+                📚 Story Categories
+            </h2>
+
+            <div class="tree">
+
+                <a href="#moral">
+                    → Moral Stories
+                </a>
+
+                <div class="sub">
+
+                    <a href="#honest-farmer">
+                        ↳ The Honest Farmer
+                    </a>
+
+                    <a href="#honest-farmer">
+                        ↳ More Moral Stories
+                    </a>
+
+                </div>
+
+
+                <a href="#family">
+                    → Family Stories
+                </a>
+
+                <div class="sub">
+
+                    <a href="#family-love">
+                        ↳ అమ్మ ప్రేమ
+                    </a>
+
+                    <a href="#family-love">
+                        ↳ More Family Stories
+                    </a>
+
+                </div>
+
+
+                <a href="#animal">
+                    → Animal Stories
+                </a>
+
+                <div class="sub">
+
+                    <a href="#dog-friendship">
+                        ↳ బిందు కుక్క కథ
+                    </a>
+
+                    <a href="#dog-friendship">
+                        ↳ More Animal Stories
+                    </a>
+
+                </div>
+
+
+                <a href="#festival">
+                    → Festival Stories
+                </a>
+
+                <div class="sub">
+
+                    <a href="#vinayaka">
+                        ↳ వినాయక చవితి కథ
+                    </a>
+
+                    <a href="#vinayaka">
+                        ↳ More Festival Stories
+                    </a>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- RIGHT SIDE -->
+
+        <main class="story-area">
+
+            <h2>
+                📚 Telugu Story Collection
+            </h2>
+
+            <p class="story-intro">
+                ALL-IN-ONE.COM లో మంచి విలువలు, కుటుంబ ప్రేమ,
+                స్నేహం, జంతువులు మరియు పండుగల గురించి
+                ఆసక్తికరమైన కథలను చదవండి.
+            </p>
+
+
+            <!-- MORAL STORY -->
+
+            <div class="story-card" id="moral">
+
+                <h3>
+                    🌾 The Honest Farmer
+                </h3>
+
+                <p>
+                    ఒక రైతు నిజాయితీగా జీవించి
+                    చివరికి అందరి గౌరవాన్ని పొందిన కథ.
+                </p>
+
+
+                <div class="scene">
+
+                    <h4>
+                        Scene 1 — రామయ్య అనే రైతు
+                    </h4>
+
+                    <p>
+                        ఒక చిన్న గ్రామంలో రామయ్య అనే రైతు ఉండేవాడు.
+                        అతను చాలా కష్టపడి వ్యవసాయం చేసేవాడు.
+                        నిజాయితీగా జీవించడం అతని ముఖ్యమైన లక్ష్యం.
+                    </p>
+
+                    <p>
+                        తనకు ఎంత కష్టం వచ్చినా ఇతరులకు చెందిన
+                        వస్తువులను తీసుకోవద్దని అతను నమ్మేవాడు.
+                    </p>
+
+                </div>
+
+
+                <div class="scene">
+
+                    <h4>
+                        Scene 2 — పొలంలో పెట్టె
+                    </h4>
+
+                    <p>
+                        ఒక రోజు రామయ్య తన పొలంలో పని చేస్తుండగా
+                        నేలలో ఒక చిన్న పెట్టె కనిపించింది.
+                    </p>
+
+                    <p>
+                        అతను ఆ పెట్టెను బయటకు తీసి
+                        తెరిచి చూశాడు.
+                    </p>
+
+                </div>
+
+
+                <div class="scene">
+
+                    <h4>
+                        Scene 3 — బంగారు నాణేలు
+                    </h4>
+
+                    <p>
+                        పెట్టెలో చాలా బంగారు నాణేలు ఉన్నాయి.
+                        రామయ్య ఆశ్చర్యపోయాడు.
+                    </p>
+
+                    <p>
+                        కానీ వెంటనే అతనికి ఒక విషయం గుర్తుకు వచ్చింది.
+                        “ఇవి నావి కావు” అని అనుకున్నాడు.
+                    </p>
+
+                </div>
+
+
+                <div class="scene">
+
+                    <h4>
+                        Scene 4 — నిజాయితీ నిర్ణయం
+                    </h4>
+
+                    <p>
+                        రామయ్య ఆ పెట్టెను గ్రామ పెద్ద దగ్గరకు తీసుకెళ్లాడు.
+                        జరిగిన విషయం మొత్తం చెప్పాడు.
+                    </p>
+
+                    <p>
+                        గ్రామ పెద్ద కూడా రామయ్య నిజాయితీని
+                        చూసి చాలా సంతోషించాడు.
+                    </p>
+
+                </div>
+
+
+                <div class="scene">
+
+                    <h4>
+                        Scene 5 — అసలు యజమాని
+                    </h4>
+
+                    <p>
+                        కొన్ని రోజుల తర్వాత ఒక వృద్ధుడు గ్రామానికి వచ్చాడు.
+                        తన బంగారు నాణేల పెట్టె పోయిందని చెప్పాడు.
+                    </p>
+
+                    <p>
+                        రామయ్య వెంటనే ఆ పెట్టెను అతనికి తిరిగి ఇచ్చాడు.
+                    </p>
+
+                </div>
+
+
+                <div class="scene">
+
+                    <h4>
+                        Scene 6 — గౌరవం
+                    </h4>
+
+                    <p>
+                        వృద్ధుడు రామయ్యకు బహుమతి ఇవ్వాలని ప్రయత్నించాడు.
+                    </p>
+
+                    <p>
+                        కానీ రామయ్య,
+                        “నిజాయితీగా ఉండటం నా బాధ్యత.
+                        నాకు బహుమతి అవసరం లేదు” అని అన్నాడు.
+                    </p>
+
+                </div>
+
+
+                <div class="moral">
+
+                    <h3>
+                        🌟 Moral of the Story
+                    </h3>
+
+                    <p>
+                        <strong>English:</strong>
+                        Always be honest. Honesty earns respect and trust.
+                    </p>
+
+                    <p>
+                        <strong>Telugu:</strong>
+                        ఎప్పుడూ నిజాయితీగా ఉండాలి.
+                        నిజాయితీ మనకు గౌరవం మరియు నమ్మకాన్ని తెస్తుంది.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAMILY STORY -->
+
+            <div class="story-card" id="family">
+
+                <h3>
+                    ❤️ అమ్మ ప్రేమ
+                </h3>
+
+                <div class="scene" id="family-love">
+
+                    <h4>
+                        Scene 1 — చిన్న కుటుంబం
+                    </h4>
+
+                    <p>
+                        ఒక చిన్న గ్రామంలో సావిత్రి అనే తల్లి
+                        తన కుమారుడు రమేష్‌తో కలిసి జీవించేది.
+                    </p>
+
+                    <p>
+                        రమేష్ చదువులో బాగా రాణించాలనే
+                        కోరికతో ప్రతిరోజూ కష్టపడేవాడు.
+                    </p>
+
+                </div>
+
+
+                <div class="scene">
+
+                    <h4>
+                        Scene 2 — రమేష్ సమస్య
+                    </h4>
+
+                    <p>
+                        ఒక రోజు రమేష్ పరీక్షలో తక్కువ మార్కులు రావడంతో
+                        చాలా బాధపడ్డాడు.
+                    </p>
+
+                    <p>
+                        “నేను చదువులో బాగా చేయలేను” అని
+                        అతను నిరాశ చెందాడు.
+                    </p>
+
+                </div>
+
+
+                <div class="scene">
+
+                    <h4>
+                        Scene 3 — అమ్మ మాట
+                    </h4>
+
+                    <p>
+                        సావిత్రి తన కుమారుడిని ఓదార్చింది.
+                    </p>
+
+                    <p>
+                        “ఒక్కసారి విఫలమైనంత మాత్రాన
+                        మనం ఓడిపోయినట్లు కాదు.
+                        మళ్లీ ప్రయత్నిస్తే తప్పకుండా విజయం సాధిస్తావు”
+                        అని చెప్పింది.
+                    </p>
+
+                </div>
+
+
+                <div class="scene">
+
+                    <h4>
+                        Scene 4 — విజయం
+                    </h4>
+
+                    <p>
+                        రమేష్ తన తల్లి మాటలను గుర్తుపెట్టుకొని
+                        ప్రతిరోజూ కష్టపడి చదివాడు.
+                    </p>
+
+                    <p>
+                        తరువాతి పరీక్షలో మంచి మార్కులు సాధించాడు.
+                        అతను తన విజయాన్ని తన తల్లికి అంకితం చేశాడు.
+                    </p>
+
+                </div>
+
+
+                <div class="moral">
+
+                    <h3>
+                        🌟 Moral
+                    </h3>
+
+                    <p>
+                        తల్లి ప్రేమ, ప్రోత్సాహం మరియు నమ్మకం
+                        పిల్లలకు జీవితంలో ముందుకు వెళ్లే శక్తిని ఇస్తాయి.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ANIMAL STORY -->
+
+            <div class="story-card" id="animal">
+
+                <h3>
+                    🐕 బిందు కుక్క కథ
+                </h3>
+
+                <div class="scene" id="dog-friendship">
+
+                    <h4>
+                        Scene 1 — గ్రామంలోని బిందు
+                    </h4>
+
+                    <p>
+                        ఒక అందమైన గ్రామంలో బిందు అనే కుక్క ఉండేది.
+                        అది చాలా తెలివైనది మరియు అందరితో స్నేహంగా ఉండేది.
+                    </p>
+
+                </div>
+
+
+                <div class="scene">
+
+                    <h4>
+                        Scene 2 — రైతు కుటుంబం
+                    </h4>
+
+                    <p>
+                        బిందు ప్రతిరోజూ రైతు కుటుంబం ఇంటి దగ్గర ఉండేది.
+                        ఆ కుటుంబంలోని పిల్లలతో ఎంతో ప్రేమగా ఆడుకునేది.
+                    </p>
+
+                </div>
+
+
+                <div class="scene">
+
+                    <h4>
+                        Scene 3 — ప్రమాదం
+                    </h4>
+
+                    <p>
+                        ఒక రోజు ఇంటి దగ్గర చిన్న పిల్లవాడు
+                        ఆడుకుంటూ దూరంగా వెళ్లిపోయాడు.
+                    </p>
+
+                    <p>
+                        బిందు వెంటనే అతని వెంట వెళ్లి
+                        అతను సురక్షితంగా ఇంటికి చేరేలా చేసింది.
+                    </p>
+
+                </div>
+
+
+                <div class="scene">
+
+                    <h4>
+                        Scene 4 — కుటుంబం ఆనందం
+                    </h4>
+
+                    <p>
+                        పిల్లవాడు సురక్షితంగా ఇంటికి రావడంతో
+                        కుటుంబ సభ్యులు చాలా సంతోషించారు.
+                    </p>
+
+                    <p>
+                        బిందు చేసిన సహాయానికి అందరూ
+                        దానిని ప్రేమగా చూసుకున్నారు.
+                    </p>
+
+                </div>
+
+
+                <div class="moral">
+
+                    <h3>
+                        🌟 Moral
+                    </h3>
+
+                    <p>
+                        జంతువులను ప్రేమగా చూసుకుంటే
+                        అవి కూడా మనకు ప్రేమ మరియు నమ్మకాన్ని చూపిస్తాయి.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FESTIVAL STORY -->
+
+            <div class="story-card" id="festival">
+
+                <h3>
+                    🐘 వినాయక చవితి కథ
+                </h3>
+
+                <div class="scene" id="vinayaka">
+
+                    <h4>
+                        Scene 1 — పండుగ ఏర్పాట్లు
+                    </h4>
+
+                    <p>
+                        ఒక గ్రామంలో వినాయక చవితి పండుగకు
+                        అందరూ ఎంతో ఆనందంగా ఏర్పాట్లు చేసుకున్నారు.
+                    </p>
+
+                    <p>
+                        పిల్లలు ఇళ్లను శుభ్రం చేసి,
+                        పూలతో అలంకరించారు.
+                    </p>
+
+                </div>
+
+
+                <div class="scene">
+
+                    <h4>
+                        Scene 2 — వినాయకుడి ప్రతిమ
+                    </h4>
+
+                    <p>
+                        కుటుంబ సభ్యులు అందరూ కలిసి
+                        వినాయకుడి ప్రతిమను ఇంటికి తీసుకువచ్చారు.
+                    </p>
+
+                    <p>
+                        భక్తితో పూజలు చేసి,
+                        ప్రసాదం తయారు చేశారు.
+                    </p>
+
+                </div>
+
+
+                <div class="scene">
+
+                    <h4>
+                        Scene 3 — పిల్లల ఆనందం
+                    </h4>
+
+                    <p>
+                        పిల్లలు వినాయకుడి కథలు వింటూ
+                        పండుగను ఆనందంగా జరుపుకున్నారు.
+                    </p>
+
+                    <p>
+                        పెద్దలు పిల్లలకు మన సంస్కృతి,
+                        సంప్రదాయాల గురించి వివరించారు.
+                    </p>
+
+                </div>
+
+
+                <div class="scene">
+
+                    <h4>
+                        Scene 4 — మంచి సందేశం
+                    </h4>
+
+                    <p>
+                        పండుగ చివరలో అందరూ కలిసి
+                        “అందరికీ మంచి జరగాలి” అని ప్రార్థించారు.
+                    </p>
+
+                </div>
+
+
+                <div class="moral">
+
+                    <h3>
+                        🌟 Moral
+                    </h3>
+
+                    <p>
+                        పండుగలు మన సంప్రదాయాలను గుర్తు చేస్తాయి.
+                        కుటుంబ సభ్యులు మరియు సమాజం కలిసి
+                        ఆనందాన్ని పంచుకోవడం ముఖ్యమైన విషయం.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- STORY VIDEOS -->
+
+            <div class="creator-box">
+
+                <h3>
+                    🎬 Story Videos
+                </h3>
+
+                <p>
+                    ఈ కథలకు సంబంధించిన వీడియోలను
+                    Story Videos page లో చూడండి.
+                </p>
+
+                <a
+                    class="video-link"
+                    href="storyvideos.html">
+                    ▶ Story Videos చూడండి
+                </a>
+
+            </div>
+
+
+            <!-- CREATOR -->
+
+            <div class="creator-box">
+
+                <h3>
+                    🎥 Create & Upload Your Story
+                </h3>
+
+                <p>
+                    You can create your own story videos and upload them
+                    to ALL-IN-ONE.COM.
+                </p>
+
+                <p>
+                    మీ స్వంత Story Videos తయారు చేసి
+                    ALL-IN-ONE.COM లో upload చేయవచ్చు.
+                </p>
+
+                <a href="video-upload.html">
+                    📤 Upload Your Video
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <div>
+
+        <a href="storyvideos.html">
+            Story Videos
+        </a>
+
+        <a href="storycontent.html">
+            Story Content
+        </a>
+
+        <a href="terms.html">
+            Terms & Conditions
+        </a>
+
+        <a href="index.html">
+            Home
+        </a>
+
+    </div>
+
+    <p>
+        © 2026 ALL-IN-ONE.COM
+    </p>
+
+</footer>
+
+</body>
+</html>

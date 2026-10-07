@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Watch Video - ALL-IN-ONE.COM</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 2px solid #222;
+            padding: 18px 30px;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .tagline {
+            margin-top: 5px;
+            color: #555;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #222;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 5px;
+        }
+
+        .search-box input {
+            padding: 10px;
+            width: 230px;
+            border: 1px solid #999;
+            border-radius: 5px;
+        }
+
+        .search-box button {
+            padding: 10px 15px;
+            border: none;
+            background: #222;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .notebook {
+            background: white;
+            border: 2px solid #222;
+            padding: 25px;
+            box-shadow: 4px 4px 0 #ddd;
+        }
+
+        h1 {
+            margin-top: 0;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
+        }
+
+        #videoTitle {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .video-player {
+            width: 100%;
+            background: #000;
+            border: 2px solid #222;
+            margin-bottom: 20px;
+        }
+
+        video {
+            display: block;
+            width: 100%;
+            max-height: 600px;
+            background: #000;
+        }
+
+        iframe {
+            display: block;
+            width: 100%;
+            height: 600px;
+            border: none;
+            background: #000;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            margin: 15px 0 25px;
+            flex-wrap: wrap;
+        }
+
+        .like-button {
+            padding: 11px 20px;
+            border: 2px solid #222;
+            background: white;
+            color: #222;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .like-button:hover {
+            background: #eeeeee;
+        }
+
+        .like-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .like-button.liked {
+            background: #222;
+            color: white;
+        }
+
+        .info {
+            border-top: 1px solid #ccc;
+            padding-top: 15px;
+            line-height: 1.8;
+        }
+
+        .info strong {
+            display: inline-block;
+            min-width: 100px;
+        }
+
+        .message {
+            padding: 20px;
+            border: 1px solid #ccc;
+            background: #fafafa;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 18px;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-button:hover {
+            background: #444;
+        }
+
+        /* COMMENTS */
+
+        .comments-section {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 2px solid #222;
+        }
+
+        .comments-section h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .comment-form {
+            border: 1px solid #ccc;
+            background: #fafafa;
+            padding: 20px;
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            min-height: 100px;
+            resize: vertical;
+            padding: 12px;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            border: 1px solid #999;
+            border-radius: 5px;
+        }
+
+        .comment-form button {
+            margin-top: 12px;
+            padding: 11px 20px;
+            border: none;
+            background: #222;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .comment-form button:hover {
+            background: #444;
+        }
+
+        .comment-form button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .login-message {
+            padding: 15px;
+            border: 1px solid #ccc;
+            background: #fafafa;
+            margin-bottom: 20px;
+        }
+
+        .login-message a {
+            font-weight: bold;
+            color: #222;
+        }
+
+        .comment-list {
+            margin-top: 25px;
+        }
+
+        .comment-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 12px;
+            background: white;
+        }
+
+        .comment-user {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .comment-date {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .comment-text {
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .no-comments {
+            padding: 15px;
+            background: #fafafa;
+            border: 1px solid #ddd;
+            color: #666;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 25px;
+            text-align: center;
+            background: #222;
+            color: white;
+        }
+
+        @media (max-width: 700px) {
+
+            .search-box input {
+                width: 170px;
+            }
+
+            iframe {
+                height: 350px;
+            }
+
+            #videoTitle {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-top">
+
+        <div>
+
+            <div class="logo">
+                ALL-IN-ONE.COM
+            </div>
+
+            <div class="tagline">
+                Learn • Prepare • Watch • Enjoy
+            </div>
+
+        </div>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search videos, classes, exams..."
+            >
+
+            <button onclick="searchVideos()">
+                Search
+            </button>
+
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="educational.html">
+            Educational
+        </a>
+
+        <a href="exams.html">
+            Exams
+        </a>
+
+        <a href="entertainment.html">
+            Entertainment
+        </a>
+
+        <a href="videos.html">
+            Videos
+        </a>
+
+        <a href="login.html">
+            Login
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <div class="notebook">
+
+        <h1>
+            🎥 Watch Video
+        </h1>
+
+        <div id="content">
+            Loading video...
+        </div>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    ALL-IN-ONE.COM
+    <br>
+
+    Learn • Prepare • Watch • Enjoy
+
+</footer>
+
+
+<script>
+
+const params =
+    new URLSearchParams(window.location.search);
+
+const videoId =
+    params.get("id");
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function searchVideos() {
+
+    const input =
+        document.getElementById("searchInput");
+
+    const value =
+        input.value.trim();
+
+    if (!value) {
+
+        window.location.href =
+            "videos.html";
+
+        return;
+    }
+
+    window.location.href =
+        "videos.html?search=" +
+        encodeURIComponent(value);
+}
+
+
+/* =========================
+   LOAD VIDEO
+========================= */
+
+async function loadVideo() {
+
+    const content =
+        document.getElementById("content");
+
+
+    if (!videoId) {
+
+        content.innerHTML = `
+
+            <div class="message">
+                Video ID not found.
+            </div>
+
+            <a
+                class="back-button"
+                href="videos.html">
+
+                ← Back to Videos
+
+            </a>
+
+        `;
+
+        return;
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/videos/" + videoId
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            !response.ok ||
+            !data.success ||
+            !data.video
+        ) {
+
+            content.innerHTML = `
+
+                <div class="message">
+                    Video not found.
+                </div>
+
+                <a
+                    class="back-button"
+                    href="videos.html">
+
+                    ← Back to Videos
+
+                </a>
+
+            `;
+
+            return;
+        }
+
+
+        const video =
+            data.video;
+
+
+        const title =
+            video.title ||
+            "Untitled Video";
+
+
+        const description =
+            video.description ||
+            "";
+
+
+        const category =
+            video.category ||
+            "Other";
+
+
+        const uploader =
+            video.uploader ||
+            "Unknown";
+
+
+        let views =
+            Number(video.views || 0);
+
+
+        let likes =
+            Number(video.likes || 0);
+
+
+        let playerHTML = "";
+
+
+        /* =========================
+           YOUTUBE
+        ========================= */
+
+        if (video.youtubeUrl) {
+
+            let youtubeId = "";
+
+
+            const match =
+                video.youtubeUrl.match(
+                    /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&?/]+)/
+                );
+
+
+            if (match) {
+
+                youtubeId =
+                    match[1];
+
+            }
+
+
+            if (youtubeId) {
+
+                playerHTML = `
+
+                    <iframe
+                        src="https://www.youtube.com/embed/${youtubeId}"
+                        allowfullscreen>
+                    </iframe>
+
+                `;
+
+            } else {
+
+                playerHTML = `
+
+                    <div class="message">
+                        Invalid YouTube URL.
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+
+        /* =========================
+           UPLOADED VIDEO
+        ========================= */
+
+        else if (video.url) {
+
+            playerHTML = `
+
+                <video
+                    controls
+                    autoplay
+                    playsinline>
+
+                    <source
+                        src="${escapeHTML(video.url)}"
+                        type="video/mp4">
+
+                    Your browser does not support
+                    video playback.
+
+                </video>
+
+            `;
+
+        }
+
+
+        /* =========================
+           NO VIDEO
+        ========================= */
+
+        else {
+
+            playerHTML = `
+
+                <div class="message">
+                    No video file is available.
+                </div>
+
+            `;
+
+        }
+
+
+        /* =========================
+           VIDEO PAGE
+        ========================= */
+
+        content.innerHTML = `
+
+            <div id="videoTitle">
+                ${escapeHTML(title)}
+            </div>
+
+
+            <div class="video-player">
+                ${playerHTML}
+            </div>
+
+
+            <div class="actions">
+
+                <button
+                    id="likeButton"
+                    class="like-button"
+                    onclick="likeVideo()">
+
+                    👍 Like
+                    <span id="likeCount">
+                        ${likes}
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <div class="info">
+
+                <div>
+                    <strong>Category:</strong>
+                    ${escapeHTML(category)}
+                </div>
+
+
+                <div>
+                    <strong>Creator:</strong>
+                    ${escapeHTML(uploader)}
+                </div>
+
+
+                <div>
+                    <strong>Views:</strong>
+
+                    <span id="viewCount">
+                        ${views}
+                    </span>
+
+                </div>
+
+
+                <div>
+                    <strong>Likes:</strong>
+
+                    <span id="infoLikeCount">
+                        ${likes}
+                    </span>
+
+                </div>
+
+
+                <div>
+                    <strong>Description:</strong>
+                    ${escapeHTML(description)}
+                </div>
+
+            </div>
+
+
+            <!-- COMMENTS -->
+
+            <div class="comments-section">
+
+                <h2>
+                    💬 Comments
+                </h2>
+
+
+                <div id="commentArea">
+                    Loading comments...
+                </div>
+
+
+                <div id="commentList"
+                     class="comment-list">
+
+                    Loading comments...
+
+                </div>
+
+            </div>
+
+
+            <a
+                class="back-button"
+                href="videos.html">
+
+                ← Back to Videos
+
+            </a>
+
+        `;
+
+
+        /* =========================
+           VIEW COUNT
+        ========================= */
+
+        try {
+
+            const viewResponse =
+                await fetch(
+                    "/api/videos/" +
+                    videoId +
+                    "/view",
+                    {
+                        method: "POST"
+                    }
+                );
+
+
+            const viewData =
+                await viewResponse.json();
+
+
+            if (viewResponse.ok) {
+
+                views =
+                    Number(
+                        viewData.views ??
+                        views + 1
+                    );
+
+
+                const viewElement =
+                    document.getElementById(
+                        "viewCount"
+                    );
+
+
+                if (viewElement) {
+
+                    viewElement.textContent =
+                        views;
+
+                }
+
+            }
+
+        } catch (error) {
+
+            console.log(
+                "View count update failed:",
+                error
+            );
+
+        }
+
+
+        /* =========================
+           LOGIN + COMMENTS
+        ========================= */
+
+        await setupComments();
+
+    } catch (error) {
+
+        console.error(error);
+
+
+        content.innerHTML = `
+
+            <div class="message">
+
+                Unable to load this video.
+
+            </div>
+
+
+            <a
+                class="back-button"
+                href="videos.html">
+
+                ← Back to Videos
+
+            </a>
+
+        `;
+
+    }
+
+}
+
+
+/* =========================
+   LIKE VIDEO
+========================= */
+
+async function likeVideo() {
+
+    if (!videoId) {
+        return;
+    }
+
+
+    const button =
+        document.getElementById(
+            "likeButton"
+        );
+
+
+    if (!button) {
+        return;
+    }
+
+
+    try {
+
+        button.disabled = true;
+
+
+        const response =
+            await fetch(
+                "/api/videos/" +
+                videoId +
+                "/like",
+                {
+                    method: "POST"
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            !response.ok ||
+            !data.success
+        ) {
+
+            alert(
+                data.message ||
+                "Unable to like this video."
+            );
+
+
+            button.disabled = false;
+
+            return;
+        }
+
+
+        const newLikes =
+            Number(
+                data.likes ??
+                data.likeCount ??
+                data.count ??
+                0
+            );
+
+
+        const likeCount =
+            document.getElementById(
+                "likeCount"
+            );
+
+
+        const infoLikeCount =
+            document.getElementById(
+                "infoLikeCount"
+            );
+
+
+        if (likeCount) {
+
+            likeCount.textContent =
+                newLikes;
+
+        }
+
+
+        if (infoLikeCount) {
+
+            infoLikeCount.textContent =
+                newLikes;
+
+        }
+
+
+        button.classList.add(
+            "liked"
+        );
+
+
+        button.innerHTML =
+            `👍 Liked <span id="likeCount">${newLikes}</span>`;
+
+
+    } catch (error) {
+
+        console.error(error);
+
+
+        alert(
+            "Unable to connect to the server."
+        );
+
+    } finally {
+
+        button.disabled = false;
+
+    }
+
+}
+
+
+/* =========================
+   SETUP COMMENTS
+========================= */
+
+async function setupComments() {
+
+    const commentArea =
+        document.getElementById(
+            "commentArea"
+        );
+
+
+    try {
+
+        const meResponse =
+            await fetch(
+                "/api/me"
+            );
+
+
+        const meData =
+            await meResponse.json();
+
+
+        if (
+            meData.loggedIn &&
+            meData.user
+        ) {
+
+            commentArea.innerHTML = `
+
+                <div class="comment-form">
+
+                    <textarea
+                        id="commentText"
+                        placeholder="Write your comment..."></textarea>
+
+                    <button
+                        id="commentButton"
+                        onclick="postComment()">
+
+                        Post Comment
+
+                    </button>
+
+                </div>
+
+            `;
+
+        } else {
+
+            commentArea.innerHTML = `
+
+                <div class="login-message">
+
+                    Please
+                    <a href="login.html">
+                        login
+                    </a>
+                    to write a comment.
+
+                </div>
+
+            `;
+
+        }
+
+
+    } catch (error) {
+
+        console.error(error);
+
+
+        commentArea.innerHTML = `
+
+            <div class="login-message">
+
+                Please
+                <a href="login.html">
+                    login
+                </a>
+                to comment.
+
+            </div>
+
+        `;
+
+    }
+
+
+    await loadComments();
+
+}
+
+
+/* =========================
+   LOAD COMMENTS
+========================= */
+
+async function loadComments() {
+
+    const commentList =
+        document.getElementById(
+            "commentList"
+        );
+
+
+    if (!commentList) {
+        return;
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/videos/" +
+                videoId +
+                "/comments"
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            !response.ok ||
+            !data.success
+        ) {
+
+            commentList.innerHTML = `
+
+                <div class="no-comments">
+                    Unable to load comments.
+                </div>
+
+            `;
+
+            return;
+        }
+
+
+        const comments =
+            data.comments || [];
+
+
+        if (comments.length === 0) {
+
+            commentList.innerHTML = `
+
+                <div class="no-comments">
+
+                    No comments yet.
+                    Be the first to comment!
+
+                </div>
+
+            `;
+
+            return;
+        }
+
+
+        commentList.innerHTML =
+            comments.map(comment => {
+
+                const userName =
+                    comment.user_name ||
+                    comment.username ||
+                    comment.name ||
+                    "User";
+
+
+                const commentText =
+                    comment.comment ||
+                    comment.text ||
+                    comment.content ||
+                    "";
+
+
+                const date =
+                    comment.created_at ||
+                    comment.createdAt ||
+                    "";
+
+
+                return `
+
+                    <div class="comment-item">
+
+                        <div class="comment-user">
+
+                            👤
+                            ${escapeHTML(userName)}
+
+                        </div>
+
+
+                        <div class="comment-date">
+
+                            ${escapeHTML(
+                                formatDate(date)
+                            )}
+
+                        </div>
+
+
+                        <div class="comment-text">
+
+                            ${escapeHTML(
+                                commentText
+                            )}
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            }).join("");
+
+
+    } catch (error) {
+
+        console.error(error);
+
+
+        commentList.innerHTML = `
+
+            <div class="no-comments">
+
+                Unable to load comments.
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* =========================
+   POST COMMENT
+========================= */
+
+async function postComment() {
+
+    const textarea =
+        document.getElementById(
+            "commentText"
+        );
+
+
+    const button =
+        document.getElementById(
+            "commentButton"
+        );
+
+
+    if (!textarea) {
+        return;
+    }
+
+
+    const text =
+        textarea.value.trim();
+
+
+    if (!text) {
+
+        alert(
+            "Please write a comment."
+        );
+
+        return;
+    }
+
+
+    try {
+
+        button.disabled = true;
+
+
+        const response =
+            await fetch(
+                "/api/videos/" +
+                videoId +
+                "/comments",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        comment: text
+                    })
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            !response.ok ||
+            !data.success
+        ) {
+
+            alert(
+                data.message ||
+                "Unable to post comment."
+            );
+
+
+            button.disabled = false;
+
+            return;
+        }
+
+
+        textarea.value = "";
+
+
+        await loadComments();
+
+
+    } catch (error) {
+
+        console.error(error);
+
+
+        alert(
+            "Unable to connect to the server."
+        );
+
+    } finally {
+
+        button.disabled = false;
+
+    }
+
+}
+
+
+/* =========================
+   DATE
+========================= */
+
+function formatDate(value) {
+
+    if (!value) {
+        return "";
+    }
+
+
+    try {
+
+        return new Date(value)
+            .toLocaleString();
+
+    } catch (error) {
+
+        return String(value);
+
+    }
+
+}
+
+
+/* =========================
+   ESCAPE HTML
+========================= */
+
+function escapeHTML(value) {
+
+    return String(value)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+/* =========================
+   ENTER SEARCH
+========================= */
+
+document
+    .getElementById(
+        "searchInput"
+    )
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key === "Enter"
+            ) {
+
+                searchVideos();
+
+            }
+
+        }
+    );
+
+
+/* =========================
+   START
+========================= */
+
+loadVideo();
+
+</script>
+
+</body>
+</html>

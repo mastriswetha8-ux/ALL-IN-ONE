@@ -1,0 +1,1787 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Watch Video - ALL-IN-ONE.COM
+    </title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            background:
+                #f5f7fb;
+
+            color:
+                #222;
+        }
+
+        header {
+
+            background:
+                #111827;
+
+            color:
+                white;
+
+            padding:
+                20px;
+
+            text-align:
+                center;
+        }
+
+        header h1 {
+
+            margin:
+                0;
+
+            font-size:
+                30px;
+        }
+
+        header p {
+
+            margin:
+                8px 0 15px;
+
+            color:
+                #d1d5db;
+        }
+
+        nav {
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                8px;
+        }
+
+        nav a {
+
+            color:
+                white;
+
+            text-decoration:
+                none;
+
+            padding:
+                9px 13px;
+
+            border-radius:
+                6px;
+
+            background:
+                #374151;
+
+            font-weight:
+                bold;
+
+            font-size:
+                14px;
+        }
+
+        nav a:hover {
+
+            background:
+                #2563eb;
+        }
+
+        .container {
+
+            max-width:
+                1000px;
+
+            margin:
+                30px auto;
+
+            padding:
+                0 20px;
+        }
+
+        .video-card {
+
+            background:
+                white;
+
+            border-radius:
+                12px;
+
+            overflow:
+                hidden;
+
+            box-shadow:
+                0 2px 12px
+                rgba(0,0,0,0.08);
+        }
+
+        .video-area {
+
+            width:
+                100%;
+
+            background:
+                #000;
+        }
+
+        .video-player {
+
+            width:
+                100%;
+
+            height:
+                550px;
+
+            display:
+                block;
+
+            background:
+                #000;
+        }
+
+        .youtube-frame {
+
+            width:
+                100%;
+
+            height:
+                550px;
+
+            border:
+                0;
+
+            display:
+                block;
+        }
+
+        .no-video {
+
+            min-height:
+                350px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            flex-direction:
+                column;
+
+            color:
+                white;
+
+            background:
+                #111;
+
+            text-align:
+                center;
+
+            padding:
+                30px;
+        }
+
+        .no-video h2 {
+
+            margin:
+                0 0 10px;
+        }
+
+        .info {
+
+            padding:
+                25px;
+        }
+
+        .info h2 {
+
+            margin-top:
+                0;
+
+            margin-bottom:
+                12px;
+
+            font-size:
+                28px;
+        }
+
+        .description {
+
+            color:
+                #555;
+
+            line-height:
+                1.6;
+
+            margin:
+                15px 0;
+        }
+
+        .creator {
+
+            font-weight:
+                bold;
+
+            color:
+                #2563eb;
+        }
+
+        .category {
+
+            display:
+                inline-block;
+
+            background:
+                #dbeafe;
+
+            color:
+                #1d4ed8;
+
+            padding:
+                7px 12px;
+
+            border-radius:
+                20px;
+
+            font-weight:
+                bold;
+
+            margin:
+                8px 0;
+        }
+
+        .stats {
+
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                20px;
+
+            margin-top:
+                18px;
+
+            padding:
+                15px;
+
+            background:
+                #f3f4f6;
+
+            border-radius:
+                8px;
+
+            font-weight:
+                bold;
+        }
+
+        .actions {
+
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                10px;
+
+            margin-top:
+                18px;
+        }
+
+        button {
+
+            border:
+                0;
+
+            padding:
+                11px 16px;
+
+            border-radius:
+                7px;
+
+            cursor:
+                pointer;
+
+            font-weight:
+                bold;
+        }
+
+        .like-btn {
+
+            background:
+                #fee2e2;
+
+            color:
+                #b91c1c;
+        }
+
+        .comment-btn {
+
+            background:
+                #dbeafe;
+
+            color:
+                #1d4ed8;
+        }
+
+        .back-btn {
+
+            background:
+                #374151;
+
+            color:
+                white;
+        }
+
+        button:hover {
+
+            opacity:
+                0.9;
+        }
+
+        .comments-section {
+
+            margin-top:
+                25px;
+
+            background:
+                white;
+
+            padding:
+                25px;
+
+            border-radius:
+                12px;
+
+            box-shadow:
+                0 2px 12px
+                rgba(0,0,0,0.08);
+        }
+
+        .comments-section h2 {
+
+            margin-top:
+                0;
+        }
+
+        textarea {
+
+            width:
+                100%;
+
+            min-height:
+                100px;
+
+            padding:
+                12px;
+
+            border:
+                1px solid #ccc;
+
+            border-radius:
+                7px;
+
+            resize:
+                vertical;
+
+            font-family:
+                Arial,
+                sans-serif;
+        }
+
+        .post-btn {
+
+            margin-top:
+                10px;
+
+            background:
+                #2563eb;
+
+            color:
+                white;
+        }
+
+        .comment-item {
+
+            background:
+                #f3f4f6;
+
+            padding:
+                12px;
+
+            border-radius:
+                7px;
+
+            margin-top:
+                12px;
+        }
+
+        .comment-user {
+
+            font-weight:
+                bold;
+
+            margin-bottom:
+                6px;
+
+            color:
+                #2563eb;
+        }
+
+        .message {
+
+            padding:
+                15px;
+
+            background:
+                #eef2ff;
+
+            border-radius:
+                8px;
+
+            margin-bottom:
+                20px;
+
+            font-weight:
+                bold;
+        }
+
+        .error {
+
+            background:
+                #fee2e2;
+
+            color:
+                #991b1b;
+        }
+
+        footer {
+
+            margin-top:
+                40px;
+
+            background:
+                #111827;
+
+            color:
+                white;
+
+            text-align:
+                center;
+
+            padding:
+                20px;
+        }
+
+        footer a {
+
+            color:
+                white;
+
+            text-decoration:
+                none;
+
+            margin:
+                0 8px;
+        }
+
+        @media (max-width: 700px) {
+
+            header h1 {
+
+                font-size:
+                    24px;
+            }
+
+            .video-player,
+            .youtube-frame {
+
+                height:
+                    300px;
+            }
+
+            .info {
+
+                padding:
+                    18px;
+            }
+
+            .info h2 {
+
+                font-size:
+                    22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>
+        📖 ALL-IN-ONE.COM
+    </h1>
+
+    <p>
+        Learn • Prepare • Watch • Enjoy
+    </p>
+
+    <nav>
+
+        <a href="/index.html">
+            Home
+        </a>
+
+        <a href="/educational.html">
+            Educational
+        </a>
+
+        <a href="/exams.html">
+            Exams
+        </a>
+
+        <a href="/entertainment.html">
+            Entertainment
+        </a>
+
+        <a href="/videos.html">
+            Videos
+        </a>
+
+        <a href="/login.html">
+            Login
+        </a>
+
+    </nav>
+
+</header>
+
+
+<div class="container">
+
+
+    <div id="message"
+         class="message">
+
+        ⏳ Loading video...
+
+    </div>
+
+
+    <div
+        id="videoCard"
+        class="video-card"
+        style="display:none;"
+    >
+
+        <div
+            id="videoArea"
+            class="video-area"
+        >
+        </div>
+
+
+        <div class="info">
+
+            <h2 id="videoTitle">
+                Video
+            </h2>
+
+
+            <div
+                id="videoCategory"
+                class="category"
+            >
+                Category
+            </div>
+
+
+            <p
+                id="videoDescription"
+                class="description"
+            >
+            </p>
+
+
+            <p
+                id="videoCreator"
+                class="creator"
+            >
+                👤 Creator
+            </p>
+
+
+            <div class="stats">
+
+                <span>
+                    👁️
+                    <span id="views">
+                        0
+                    </span>
+                    Views
+                </span>
+
+
+                <span>
+                    ❤️
+                    <span id="likes">
+                        0
+                    </span>
+                    Likes
+                </span>
+
+            </div>
+
+
+            <div class="actions">
+
+                <button
+                    class="like-btn"
+                    onclick="likeVideo()"
+                >
+                    ❤️ Like
+                </button>
+
+
+                <button
+                    class="comment-btn"
+                    onclick="scrollToComments()"
+                >
+                    💬 Comments
+                </button>
+
+
+                <button
+                    class="back-btn"
+                    onclick="goBack()"
+                >
+                    ← Back to Videos
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="commentsSection"
+        class="comments-section"
+        style="display:none;"
+    >
+
+        <h2>
+            💬 Comments
+        </h2>
+
+
+        <textarea
+            id="commentText"
+            placeholder="Write your comment..."
+        ></textarea>
+
+
+        <button
+            class="post-btn"
+            onclick="postComment()"
+        >
+            Post Comment
+        </button>
+
+
+        <div
+            id="commentsList"
+            style="margin-top:20px;"
+        >
+            ⏳ Loading comments...
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<footer>
+
+    <div>
+
+        <a href="/index.html">
+            Home
+        </a>
+
+        |
+
+        <a href="/terms.html">
+            Terms & Conditions
+        </a>
+
+        |
+
+        <a href="/privacy.html">
+            Privacy Policy
+        </a>
+
+    </div>
+
+    <p>
+        © 2026 ALL-IN-ONE.COM
+        —
+        Learn • Prepare • Watch • Enjoy
+    </p>
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================================================
+   GLOBAL VIDEO ID
+========================================================= */
+
+let videoId = null;
+
+let currentVideo = null;
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(value) {
+
+    if (
+        value === null ||
+        value === undefined
+    ) {
+
+        return "";
+
+    }
+
+    return String(value)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+/* =========================================================
+   GET YOUTUBE ID
+========================================================= */
+
+function getYouTubeId(url) {
+
+    if (!url) {
+
+        return null;
+
+    }
+
+    try {
+
+        const parsed =
+            new URL(url);
+
+
+        /* youtu.be */
+
+        if (
+            parsed.hostname
+                .toLowerCase()
+                .includes("youtu.be")
+        ) {
+
+            return parsed.pathname
+                .replace(/^\/+/, "")
+                .split("/")[0];
+
+        }
+
+
+        /* youtube.com */
+
+        if (
+            parsed.hostname
+                .toLowerCase()
+                .includes("youtube.com")
+        ) {
+
+            const watchId =
+                parsed.searchParams.get(
+                    "v"
+                );
+
+            if (watchId) {
+
+                return watchId;
+
+            }
+
+
+            const parts =
+                parsed.pathname
+                    .split("/")
+                    .filter(Boolean);
+
+
+            const embedIndex =
+                parts.indexOf("embed");
+
+            if (
+                embedIndex !== -1 &&
+                parts[embedIndex + 1]
+            ) {
+
+                return parts[
+                    embedIndex + 1
+                ];
+
+            }
+
+
+            const shortsIndex =
+                parts.indexOf("shorts");
+
+            if (
+                shortsIndex !== -1 &&
+                parts[shortsIndex + 1]
+            ) {
+
+                return parts[
+                    shortsIndex + 1
+                ];
+
+            }
+
+        }
+
+    }
+
+    catch (error) {
+
+        console.log(
+            "YouTube ID error:",
+            error
+        );
+
+    }
+
+    return null;
+
+}
+
+
+/* =========================================================
+   GET VIDEO ID FROM URL
+========================================================= */
+
+function getVideoIdFromURL() {
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+    return (
+        params.get("id") ||
+        params.get("video") ||
+        params.get("videoId")
+    );
+
+}
+
+
+/* =========================================================
+   LOAD VIDEO
+========================================================= */
+
+async function loadVideo() {
+
+    videoId =
+        getVideoIdFromURL();
+
+
+    if (!videoId) {
+
+        showError(
+            "❌ Video ID is missing."
+        );
+
+        return;
+
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/videos/" +
+                encodeURIComponent(
+                    videoId
+                )
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            !response.ok ||
+            !data.success ||
+            !data.video
+        ) {
+
+            throw new Error(
+                data.message ||
+                "Video not found."
+            );
+
+        }
+
+
+        currentVideo =
+            data.video;
+
+
+        displayVideo(
+            currentVideo
+        );
+
+
+        await loadComments();
+
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "LOAD VIDEO ERROR:",
+            error
+        );
+
+
+        showError(
+            "❌ Unable to load video: " +
+            error.message
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   DISPLAY VIDEO
+========================================================= */
+
+function displayVideo(video) {
+
+    const message =
+        document.getElementById(
+            "message"
+        );
+
+    const videoCard =
+        document.getElementById(
+            "videoCard"
+        );
+
+    const videoArea =
+        document.getElementById(
+            "videoArea"
+        );
+
+
+    document.getElementById(
+        "videoTitle"
+    ).textContent =
+        video.title ||
+        "Untitled Video";
+
+
+    document.getElementById(
+        "videoCategory"
+    ).textContent =
+        "Category: " +
+        (
+            video.category ||
+            "Other"
+        );
+
+
+    document.getElementById(
+        "videoDescription"
+    ).textContent =
+        video.description ||
+        "No description available.";
+
+
+    document.getElementById(
+        "videoCreator"
+    ).textContent =
+        "👤 Creator: " +
+        (
+            video.creator ||
+            video.uploader ||
+            "Unknown"
+        );
+
+
+    document.getElementById(
+        "views"
+    ).textContent =
+        Number(
+            video.views || 0
+        );
+
+
+    document.getElementById(
+        "likes"
+    ).textContent =
+        Number(
+            video.likes || 0
+        );
+
+
+    let playerHTML = "";
+
+
+    /* =====================================================
+       YOUTUBE VIDEO
+    ===================================================== */
+
+    if (
+        String(
+            video.source_type || ""
+        ).toLowerCase()
+        === "youtube"
+        &&
+        video.youtube_url
+    ) {
+
+        const youtubeId =
+            getYouTubeId(
+                video.youtube_url
+            );
+
+
+        if (youtubeId) {
+
+            playerHTML = `
+
+                <iframe
+
+                    id="youtubePlayer"
+
+                    class="youtube-frame"
+
+                    src="https://www.youtube.com/embed/${encodeURIComponent(youtubeId)}?enablejsapi=1"
+
+                    title="${escapeHTML(
+                        video.title ||
+                        "YouTube Video"
+                    )}"
+
+                    allow="
+                        accelerometer;
+                        autoplay;
+                        clipboard-write;
+                        encrypted-media;
+                        gyroscope;
+                        picture-in-picture;
+                        web-share
+                    "
+
+                    allowfullscreen>
+
+                </iframe>
+
+            `;
+
+        }
+
+    }
+
+
+    /* =====================================================
+       LOCAL VIDEO
+    ===================================================== */
+
+    if (
+        !playerHTML &&
+        video.filename
+    ) {
+
+        playerHTML = `
+
+            <video
+
+                id="localVideo"
+
+                class="video-player"
+
+                controls
+
+                preload="metadata"
+
+                playsinline
+
+                onplay="registerVideoView()"
+
+            >
+
+                <source
+
+                    src="/videos/${encodeURIComponent(
+                        video.filename
+                    )}"
+
+                >
+
+                Your browser does not support
+                video playback.
+
+            </video>
+
+        `;
+
+    }
+
+
+    /* =====================================================
+       FALLBACK
+    ===================================================== */
+
+    if (!playerHTML) {
+
+        playerHTML = `
+
+            <div class="no-video">
+
+                <h2>
+                    🎬 No video file is available.
+                </h2>
+
+                <p>
+                    This video does not have
+                    a playable YouTube URL or
+                    uploaded video file.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+
+    videoArea.innerHTML =
+        playerHTML;
+
+
+    message.style.display =
+        "none";
+
+
+    videoCard.style.display =
+        "block";
+
+
+    /*
+     * YouTube iframe does not expose
+     * play events directly to this page
+     * without the YouTube IFrame API.
+     *
+     * We register one view when the
+     * YouTube player becomes visible.
+     *
+     * Local MP4 videos use onplay().
+     */
+
+    if (
+        String(
+            video.source_type || ""
+        ).toLowerCase()
+        === "youtube"
+        &&
+        video.youtube_url
+    ) {
+
+        registerVideoView();
+
+    }
+
+}
+
+
+/* =========================================================
+   REGISTER VIEW
+========================================================= */
+
+let viewRegistered = false;
+
+
+async function registerVideoView() {
+
+    if (viewRegistered) {
+
+        return;
+
+    }
+
+
+    if (!videoId) {
+
+        return;
+
+    }
+
+
+    viewRegistered = true;
+
+
+    try {
+
+        const response =
+            await fetch(
+
+                "/api/videos/" +
+                encodeURIComponent(
+                    videoId
+                ) +
+                "/view",
+
+                {
+
+                    method:
+                        "POST"
+
+                }
+
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            data.success
+        ) {
+
+            document.getElementById(
+                "views"
+            ).textContent =
+                Number(
+                    data.views || 0
+                );
+
+        }
+
+    }
+
+    catch (error) {
+
+        console.log(
+            "View count error:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   LIKE VIDEO
+========================================================= */
+
+async function likeVideo() {
+
+    if (!videoId) {
+
+        return;
+
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+
+                "/api/videos/" +
+                encodeURIComponent(
+                    videoId
+                ) +
+                "/like",
+
+                {
+
+                    method:
+                        "POST"
+
+                }
+
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok) {
+
+            alert(
+                data.message ||
+                "Please login to like this video."
+            );
+
+            return;
+
+        }
+
+
+        if (
+            data.likes !==
+            undefined
+        ) {
+
+            document.getElementById(
+                "likes"
+            ).textContent =
+                data.likes;
+
+        }
+
+
+        alert(
+            data.message ||
+            "Like completed."
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "LIKE ERROR:",
+            error
+        );
+
+        alert(
+            "Unable to like video."
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   LOAD COMMENTS
+========================================================= */
+
+async function loadComments() {
+
+    const section =
+        document.getElementById(
+            "commentsSection"
+        );
+
+    const list =
+        document.getElementById(
+            "commentsList"
+        );
+
+
+    section.style.display =
+        "block";
+
+
+    list.innerHTML =
+        "⏳ Loading comments...";
+
+
+    try {
+
+        const response =
+            await fetch(
+
+                "/api/videos/" +
+                encodeURIComponent(
+                    videoId
+                ) +
+                "/comments"
+
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            !data.success ||
+            !Array.isArray(
+                data.comments
+            )
+        ) {
+
+            list.innerHTML =
+                "No comments yet.";
+
+            return;
+
+        }
+
+
+        if (
+            data.comments.length ===
+            0
+        ) {
+
+            list.innerHTML =
+                "No comments yet. Be the first to comment!";
+
+            return;
+
+        }
+
+
+        list.innerHTML = "";
+
+
+        data.comments.forEach(
+            function(comment) {
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                item.className =
+                    "comment-item";
+
+
+                const username =
+                    escapeHTML(
+                        comment.user_name ||
+                        comment.name ||
+                        "User"
+                    );
+
+
+                const text =
+                    escapeHTML(
+                        comment.comment ||
+                        ""
+                    );
+
+
+                item.innerHTML = `
+
+                    <div
+                        class="comment-user"
+                    >
+
+                        👤 ${username}
+
+                    </div>
+
+                    <div>
+
+                        ${text}
+
+                    </div>
+
+                `;
+
+
+                list.appendChild(
+                    item
+                );
+
+            }
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "COMMENTS ERROR:",
+            error
+        );
+
+
+        list.innerHTML =
+            "Unable to load comments.";
+
+    }
+
+}
+
+
+/* =========================================================
+   POST COMMENT
+========================================================= */
+
+async function postComment() {
+
+    const textarea =
+        document.getElementById(
+            "commentText"
+        );
+
+
+    const comment =
+        textarea.value.trim();
+
+
+    if (!comment) {
+
+        alert(
+            "Please enter a comment."
+        );
+
+        return;
+
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+
+                "/api/videos/" +
+                encodeURIComponent(
+                    videoId
+                ) +
+                "/comments",
+
+                {
+
+                    method:
+                        "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            comment:
+                                comment
+
+                        })
+
+                }
+
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok ||
+            !data.success
+        ) {
+
+            alert(
+                data.message ||
+                "Please login before posting a comment."
+            );
+
+            return;
+
+        }
+
+
+        textarea.value = "";
+
+
+        await loadComments();
+
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "POST COMMENT ERROR:",
+            error
+        );
+
+
+        alert(
+            "Unable to post comment."
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   SCROLL COMMENTS
+========================================================= */
+
+function scrollToComments() {
+
+    const section =
+        document.getElementById(
+            "commentsSection"
+        );
+
+
+    section.style.display =
+        "block";
+
+
+    section.scrollIntoView({
+
+        behavior:
+            "smooth"
+
+    });
+
+}
+
+
+/* =========================================================
+   BACK
+========================================================= */
+
+function goBack() {
+
+    window.location.href =
+        "/videos.html";
+
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+function showError(message) {
+
+    const messageBox =
+        document.getElementById(
+            "message"
+        );
+
+
+    messageBox.className =
+        "message error";
+
+
+    messageBox.innerHTML =
+        escapeHTML(message);
+
+}
+
+
+/* =========================================================
+   PAGE LOAD
+========================================================= */
+
+window.addEventListener(
+    "load",
+    function() {
+
+        console.log(
+            "Watch Video page loaded."
+        );
+
+
+        loadVideo();
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
+

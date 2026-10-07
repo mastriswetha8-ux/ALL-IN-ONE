@@ -1,0 +1,24 @@
+{
+  "name": "all-in-one-com",
+  "version": "1.0.0",
+  "description": "ALL-IN-ONE.COM Full Stack Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "better-sqlite3": "^12.4.1",
+    "better-sqlite3-session-store": "^0.1.0",
+    "dotenv": "^18.0.6",
+    "express": "^5.2.1",
+    "express-session": "^1.18.2",
+    "helmet": "^8.3.0",
+    "multer": "^2.0.2",
+    "razorpay": "^2.9.8"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

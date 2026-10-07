@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - ALL-IN-ONE.COM</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+
+        .login-page {
+            width: 94%;
+            max-width: 1000px;
+            margin: 35px auto;
+        }
+
+        .login-header {
+            background: white;
+            border: 2px solid #222;
+            padding: 25px;
+            box-shadow: 4px 4px 0 #222;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .login-header h1 {
+            margin-bottom: 8px;
+        }
+
+        .login-header p {
+            color: #666;
+        }
+
+        .login-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .login-box {
+            background: white;
+            border: 2px solid #222;
+            padding: 25px;
+            box-shadow: 4px 4px 0 #222;
+        }
+
+        .login-box h2 {
+            margin-bottom: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        .form-group input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px;
+            border: 2px solid #222;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            background: #fafafa;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #222;
+            background: #222;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background: #444;
+        }
+
+        .submit-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .message {
+            margin-top: 15px;
+            padding: 12px;
+            border: 2px dashed #222;
+            display: none;
+        }
+
+        .success-message {
+            background: #eef8ee;
+        }
+
+        .error-message {
+            background: #fff0f0;
+        }
+
+        .info-box {
+            margin-top: 20px;
+            padding: 16px;
+            background: #f4f1e8;
+            border: 1px dashed #222;
+            line-height: 1.7;
+        }
+
+        .account-info {
+            margin-top: 18px;
+            padding: 15px;
+            background: #f4f1e8;
+            border: 1px dashed #222;
+        }
+
+        .home-button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 10px 16px;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .home-button:hover {
+            background: #444;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 12px;
+            color: #666;
+        }
+
+        @media (max-width: 750px) {
+
+            .login-container {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <div class="logo">
+        ALL-IN-ONE.COM
+    </div>
+
+    <div class="tagline">
+        Learn • Prepare • Watch • Enjoy
+    </div>
+
+    <nav class="navbar">
+
+        <a href="/index.html">
+            Home
+        </a>
+
+        <a href="/educational.html">
+            Educational
+        </a>
+
+        <a href="/exams.html">
+            Exams
+        </a>
+
+        <a href="/entertainment.html">
+            Entertainment
+        </a>
+
+        <a href="/videos.html">
+            Videos
+        </a>
+
+        <a href="/login.html">
+            Login
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="login-page">
+
+
+    <section class="login-header">
+
+        <h1>
+            🔐 Login & Account Creation
+        </h1>
+
+        <p>
+            Login to your ALL-IN-ONE.COM account
+            and access your videos, classes and creator features.
+        </p>
+
+    </section>
+
+
+    <div class="login-container">
+
+
+        <!-- ================= LOGIN ================= -->
+
+        <section class="login-box">
+
+            <h2>
+                🔐 Login
+            </h2>
+
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <label for="loginEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                        autocomplete="email"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                        autocomplete="current-password"
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                    id="loginButton"
+                >
+                    Login
+                </button>
+
+
+                <div
+                    id="loginMessage"
+                    class="message"
+                ></div>
+
+            </form>
+
+
+            <div class="info-box">
+
+                <strong>
+                    After Login
+                </strong>
+
+                <br>
+
+                • Manage your account
+                <br>
+
+                • Upload videos
+                <br>
+
+                • View your uploaded videos
+                <br>
+
+                • Get creator opportunities
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CREATE ACCOUNT ================= -->
+
+        <section class="login-box">
+
+            <h2>
+                📝 Create Account
+            </h2>
+
+            <form id="signupForm">
+
+                <div class="form-group">
+
+                    <label for="signupName">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="signupName"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                        autocomplete="name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="signupEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="signupEmail"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                        autocomplete="email"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="signupPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="signupPassword"
+                        name="password"
+                        placeholder="Create a password"
+                        minlength="6"
+                        required
+                        autocomplete="new-password"
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                    id="signupButton"
+                >
+                    Create Account
+                </button>
+
+
+                <div
+                    id="signupMessage"
+                    class="message"
+                ></div>
+
+            </form>
+
+
+            <div class="info-box">
+
+                <strong>
+                    Creator Opportunities
+                </strong>
+
+                <br>
+
+                Create an account and upload your
+                educational, competitive, entertainment
+                or story videos.
+
+                <br><br>
+
+                <strong>
+                    Upload Videos and Get
+                    Income Opportunities
+                </strong>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <div
+        id="alreadyLoggedIn"
+        class="account-info"
+        style="display:none;"
+    >
+
+        <strong>
+            ✅ You are already logged in.
+        </strong>
+
+        <br>
+
+        <a href="/account.html">
+            Go to My Account
+        </a>
+
+    </div>
+
+
+    <div style="text-align:center;">
+
+        <a
+            href="/index.html"
+            class="home-button"
+        >
+            ← Back to Home
+        </a>
+
+    </div>
+
+
+</main>
+
+
+<script>
+
+
+/* =====================================================
+   MESSAGE HELPER
+===================================================== */
+
+function showMessage(
+    element,
+    message,
+    type
+) {
+
+    element.textContent = message;
+
+    element.style.display = "block";
+
+    element.className =
+        "message " +
+        (
+            type === "success"
+                ? "success-message"
+                : "error-message"
+        );
+
+}
+
+
+/* =====================================================
+   CHECK CURRENT SESSION
+===================================================== */
+
+async function checkCurrentLogin() {
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/me",
+                {
+                    method: "GET",
+                    credentials: "include",
+                    cache: "no-store"
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            data &&
+            data.loggedIn &&
+            data.user
+        ) {
+
+            document.getElementById(
+                "alreadyLoggedIn"
+            ).style.display = "block";
+
+        }
+
+    } catch (error) {
+
+        console.log(
+            "Session check error:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+document
+    .getElementById("loginForm")
+    .addEventListener(
+        "submit",
+        async function(event) {
+
+            event.preventDefault();
+
+
+            const email =
+                document
+                    .getElementById("loginEmail")
+                    .value
+                    .trim();
+
+
+            const password =
+                document
+                    .getElementById("loginPassword")
+                    .value;
+
+
+            const button =
+                document.getElementById(
+                    "loginButton"
+                );
+
+
+            const message =
+                document.getElementById(
+                    "loginMessage"
+                );
+
+
+            if (!email || !password) {
+
+                showMessage(
+                    message,
+                    "Please enter email and password.",
+                    "error"
+                );
+
+                return;
+
+            }
+
+
+            button.disabled = true;
+
+            button.textContent =
+                "Logging in...";
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        "/api/login",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            credentials:
+                                "include",
+
+                            cache:
+                                "no-store",
+
+                            body:
+                                JSON.stringify({
+                                    email:
+                                        email,
+                                    password:
+                                        password
+                                })
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                console.log(
+                    "LOGIN RESPONSE:",
+                    data
+                );
+
+
+                if (
+                    response.ok &&
+                    data.success
+                ) {
+
+                    showMessage(
+                        message,
+                        "Login successful. Opening your account...",
+                        "success"
+                    );
+
+
+                    /*
+                       Give the browser a moment to
+                       store the session cookie.
+                    */
+
+                    setTimeout(
+                        function() {
+
+                            window.location.href =
+                                "/account.html";
+
+                        },
+                        500
+                    );
+
+
+                } else {
+
+                    showMessage(
+                        message,
+                        data.message ||
+                        "Login failed. Please check your email and password.",
+                        "error"
+                    );
+
+                    button.disabled = false;
+
+                    button.textContent =
+                        "Login";
+
+                }
+
+            } catch (error) {
+
+                console.error(
+                    "LOGIN ERROR:",
+                    error
+                );
+
+
+                showMessage(
+                    message,
+                    "Unable to connect to the server. Please make sure ALL-IN-ONE.COM server is running.",
+                    "error"
+                );
+
+
+                button.disabled = false;
+
+                button.textContent =
+                    "Login";
+
+            }
+
+        }
+    );
+
+
+/* =====================================================
+   CREATE ACCOUNT
+===================================================== */
+
+document
+    .getElementById("signupForm")
+    .addEventListener(
+        "submit",
+        async function(event) {
+
+            event.preventDefault();
+
+
+            const name =
+                document
+                    .getElementById("signupName")
+                    .value
+                    .trim();
+
+
+            const email =
+                document
+                    .getElementById("signupEmail")
+                    .value
+                    .trim();
+
+
+            const password =
+                document
+                    .getElementById("signupPassword")
+                    .value;
+
+
+            const button =
+                document.getElementById(
+                    "signupButton"
+                );
+
+
+            const message =
+                document.getElementById(
+                    "signupMessage"
+                );
+
+
+            if (
+                !name ||
+                !email ||
+                !password
+            ) {
+
+                showMessage(
+                    message,
+                    "Please fill all fields.",
+                    "error"
+                );
+
+                return;
+
+            }
+
+
+            if (password.length < 6) {
+
+                showMessage(
+                    message,
+                    "Password must be at least 6 characters.",
+                    "error"
+                );
+
+                return;
+
+            }
+
+
+            button.disabled = true;
+
+            button.textContent =
+                "Creating Account...";
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        "/api/signup",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            credentials:
+                                "include",
+
+                            cache:
+                                "no-store",
+
+                            body:
+                                JSON.stringify({
+                                    name:
+                                        name,
+                                    email:
+                                        email,
+                                    password:
+                                        password
+                                })
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                console.log(
+                    "SIGNUP RESPONSE:",
+                    data
+                );
+
+
+                if (
+                    response.ok &&
+                    data.success
+                ) {
+
+                    showMessage(
+                        message,
+                        "Account created successfully. Opening your account...",
+                        "success"
+                    );
+
+
+                    setTimeout(
+                        function() {
+
+                            window.location.href =
+                                "/account.html";
+
+                        },
+                        500
+                    );
+
+
+                } else {
+
+                    showMessage(
+                        message,
+                        data.message ||
+                        "Account creation failed.",
+                        "error"
+                    );
+
+
+                    button.disabled = false;
+
+                    button.textContent =
+                        "Create Account";
+
+                }
+
+            } catch (error) {
+
+                console.error(
+                    "SIGNUP ERROR:",
+                    error
+                );
+
+
+                showMessage(
+                    message,
+                    "Unable to connect to the server.",
+                    "error"
+                );
+
+
+                button.disabled = false;
+
+                button.textContent =
+                    "Create Account";
+
+            }
+
+        }
+    );
+
+
+/* =====================================================
+   START
+===================================================== */
+
+checkCurrentLogin();
+
+</script>
+
+
+</body>
+
+</html>

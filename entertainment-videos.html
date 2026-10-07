@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entertainment Videos - ALL-IN-ONE.COM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ALL-IN-ONE.COM</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="educational.html">Education</a>
+        <a href="exams.html">Exams</a>
+        <a href="entertainment.html">Entertainment</a>
+        <a href="videos.html">Videos</a>
+        <a href="login.html">Login</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main class="website-content">
+
+    <section class="welcome">
+        <h1>🎬 Entertainment Videos</h1>
+        <p>Enjoy different types of entertainment content.</p>
+    </section>
+
+    <section class="feature-grid">
+
+        <div class="feature-card">
+            <h3>🎵 Music</h3>
+            <p>Music-related videos and entertainment content.</p>
+            <button onclick="showCategory('Music')">Watch Videos</button>
+        </div>
+
+        <div class="feature-card">
+            <h3>😂 Comedy</h3>
+            <p>Comedy and fun entertainment videos.</p>
+            <button onclick="showCategory('Comedy')">Watch Videos</button>
+        </div>
+
+        <div class="feature-card">
+            <h3>🎥 Movies</h3>
+            <p>Movie-related entertainment content.</p>
+            <button onclick="showCategory('Movies')">Watch Videos</button>
+        </div>
+
+        <div class="feature-card">
+            <h3>⚡ Shorts</h3>
+            <p>Short-form entertainment videos.</p>
+            <a href="shorts.html">
+                <button>Watch Shorts</button>
+            </a>
+        </div>
+
+        <div class="feature-card">
+            <h3>📖 Stories</h3>
+            <p>Story-based entertainment content.</p>
+            <a href="story-videos.html">
+                <button>Watch Stories</button>
+            </a>
+        </div>
+
+        <div class="feature-card">
+            <h3>🎭 Other Entertainment</h3>
+            <p>More entertainment categories and videos.</p>
+            <button onclick="showCategory('Other Entertainment')">
+                Watch Videos
+            </button>
+        </div>
+
+    </section>
+
+    <section class="info-box">
+        <h2>🎥 Entertainment Library</h2>
+        <p>
+            Entertainment videos can be organized by category,
+            making it easy for users to discover different content.
+        </p>
+    </section>
+
+    <section class="info-box">
+        <h2>📤 Upload Videos</h2>
+        <p>
+            Video upload functionality can be connected to the website
+            server and database for registered users.
+        </p>
+
+        <a href="login.html">
+            <button>Login</button>
+        </a>
+    </section>
+
+    <div style="text-align:center; margin-top:20px;">
+        <a href="entertainment.html">
+            <button type="button">⬅ Back to Entertainment</button>
+        </a>
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 ALL-IN-ONE.COM | All Rights Reserved</p>
+</footer>
+
+<script>
+function showCategory(category) {
+    alert(category + " video section is ready.");
+}
+</script>
+
+</body>
+</html>
+

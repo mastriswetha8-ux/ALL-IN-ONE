@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Upload Video - ALL-IN-ONE.COM</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        header p {
+            margin: 8px 0 15px;
+            color: #d1d5db;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 9px 13px;
+            border-radius: 6px;
+            background: #374151;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            background: #2563eb;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .upload-box {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .upload-box h2 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .category-fields {
+            display: none;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .educational-fields {
+            background: #eff6ff;
+        }
+
+        .competitive-fields {
+            background: #fef3c7;
+        }
+
+        .category-fields h3 {
+            margin-top: 0;
+        }
+
+        .youtube-box {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .youtube-box h3 {
+            margin-top: 0;
+            color: #c2410c;
+        }
+
+        .or {
+            text-align: center;
+            font-weight: bold;
+            margin: 18px 0;
+            color: #6b7280;
+        }
+
+        .income-box {
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .income-box h3 {
+            margin-top: 0;
+            color: #047857;
+        }
+
+        .upload-button {
+            width: 100%;
+            background: #2563eb;
+            color: white;
+            border: 0;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .upload-button:hover {
+            background: #1d4ed8;
+        }
+
+        .upload-button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+
+        #message {
+            display: none;
+            padding: 14px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .success {
+            display: block !important;
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .error {
+            display: block !important;
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .progress-container {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .progress-bar-background {
+            width: 100%;
+            height: 22px;
+            background: #e5e7eb;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: #2563eb;
+            transition: width 0.2s;
+        }
+
+        #progressText {
+            text-align: center;
+            margin-top: 8px;
+            font-weight: bold;
+        }
+
+        .login-message {
+            background: #fff7ed;
+            border: 1px solid #fdba74;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .login-message a {
+            display: inline-block;
+            margin-top: 10px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            .upload-box {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>📖 ALL-IN-ONE.COM</h1>
+
+    <p>
+        Learn • Prepare • Watch • Enjoy
+    </p>
+
+    <nav>
+
+        <a href="/index.html">Home</a>
+
+        <a href="/educational.html">Educational</a>
+
+        <a href="/exams.html">Exams</a>
+
+        <a href="/entertainment.html">Entertainment</a>
+
+        <a href="/videos.html">Videos</a>
+
+        <a href="/storyvideos.html">Story Videos</a>
+
+        <a href="/storycontent.html">Story Content</a>
+
+        <a href="/login.html">Login</a>
+
+    </nav>
+
+</header>
+
+
+<div class="container">
+
+
+    <div
+        id="loginMessage"
+        class="login-message"
+        style="display:none;"
+    >
+
+        <h2>🔐 Please Login</h2>
+
+        <p>
+            You must login before uploading a video.
+        </p>
+
+        <a href="/login.html">
+            Login / Create Account
+        </a>
+
+    </div>
+
+
+    <div
+        id="uploadBox"
+        class="upload-box"
+        style="display:none;"
+    >
+
+        <h2>📤 Upload Video</h2>
+
+        <p>
+            Upload educational, competitive,
+            entertainment or story videos.
+        </p>
+
+        <p id="userInfo"></p>
+
+
+        <form id="uploadForm">
+
+
+            <!-- VIDEO TITLE -->
+
+            <div class="form-group">
+
+                <label for="title">
+                    Video Title
+                </label>
+
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    placeholder="Enter video title"
+                    required
+                >
+
+            </div>
+
+
+            <!-- CATEGORY -->
+
+            <div class="form-group">
+
+                <label for="category">
+                    Category
+                </label>
+
+                <select
+                    id="category"
+                    name="category"
+                    required
+                >
+
+                    <option value="">
+                        Select Category
+                    </option>
+
+                    <option value="Educational">
+                        Educational
+                    </option>
+
+                    <option value="Competitive Exams">
+                        Competitive Exams
+                    </option>
+
+                    <option value="Entertainment">
+                        Entertainment
+                    </option>
+
+                    <option value="Story Videos">
+                        Story Videos
+                    </option>
+
+                    <option value="Music">
+                        Music
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- EDUCATIONAL FIELDS -->
+
+            <div
+                id="educationalFields"
+                class="category-fields educational-fields"
+            >
+
+                <h3>
+                    🎓 Educational Video Details
+                </h3>
+
+
+                <div class="form-group">
+
+                    <label for="classNumber">
+                        Class / Course
+                    </label>
+
+                    <select
+                        id="classNumber"
+                        name="class_number"
+                    >
+
+                        <option value="">
+                            Select Class / Course
+                        </option>
+
+                        <option value="1">
+                            1st Class
+                        </option>
+
+                        <option value="2">
+                            2nd Class
+                        </option>
+
+                        <option value="3">
+                            3rd Class
+                        </option>
+
+                        <option value="4">
+                            4th Class
+                        </option>
+
+                        <option value="5">
+                            5th Class
+                        </option>
+
+                        <option value="6">
+                            6th Class
+                        </option>
+
+                        <option value="7">
+                            7th Class
+                        </option>
+
+                        <option value="8">
+                            8th Class
+                        </option>
+
+                        <option value="9">
+                            9th Class
+                        </option>
+
+                        <option value="10">
+                            10th Class
+                        </option>
+
+                        <option value="Intermediate / +2">
+                            Intermediate / +2
+                        </option>
+
+                        <option value="Degree">
+                            Degree
+                        </option>
+
+                        <option value="PG">
+                            PG
+                        </option>
+
+                        <option value="Professional">
+                            Professional
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        Subject / Course
+                    </label>
+
+                    <select
+                        id="subject"
+                        name="subject"
+                    >
+
+                        <option value="">
+                            Select Subject
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- COMPETITIVE FIELDS -->
+
+            <div
+                id="competitiveFields"
+                class="category-fields competitive-fields"
+            >
+
+                <h3>
+                    🎯 Competitive Exam Details
+                </h3>
+
+                <div class="form-group">
+
+                    <label for="competitiveSubject">
+                        Competitive Exam Subject
+                    </label>
+
+                    <select
+                        id="competitiveSubject"
+                        name="subject"
+                    >
+
+                        <option value="">
+                            Select Competitive Subject
+                        </option>
+
+                        <option value="Arithmetic">
+                            🔢 Arithmetic
+                        </option>
+
+                        <option value="Reasoning">
+                            🧠 Reasoning
+                        </option>
+
+                        <option value="Economy">
+                            💰 Economy
+                        </option>
+
+                        <option value="Polity">
+                            🏛️ Polity
+                        </option>
+
+                        <option value="History">
+                            📜 History
+                        </option>
+
+                        <option value="Other">
+                            📚 Other Subjects
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="form-group">
+
+                <label for="description">
+                    Description
+                </label>
+
+                <textarea
+                    id="description"
+                    name="description"
+                    placeholder="Write video description..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- YOUTUBE -->
+
+            <div class="youtube-box">
+
+                <h3>
+                    ▶ YouTube Video
+                </h3>
+
+                <p>
+                    You can paste a YouTube video link
+                    instead of uploading a video file.
+                </p>
+
+                <input
+                    type="url"
+                    id="youtubeUrl"
+                    name="youtube_url"
+                    placeholder="Paste YouTube link here"
+                >
+
+            </div>
+
+
+            <div class="or">
+                — OR —
+            </div>
+
+
+            <!-- LOCAL VIDEO -->
+
+            <div class="form-group">
+
+                <label for="videoFile">
+                    📁 Upload Video File
+                </label>
+
+                <input
+                    type="file"
+                    id="videoFile"
+                    name="video"
+                    accept="video/*"
+                >
+
+                <small>
+                    MP4, WebM, OGG, MOV, M4V
+                </small>
+
+            </div>
+
+
+            <!-- THUMBNAIL -->
+
+            <div class="form-group">
+
+                <label for="thumbnail">
+                    🖼️ Thumbnail (Optional)
+                </label>
+
+                <input
+                    type="file"
+                    id="thumbnail"
+                    name="thumbnail"
+                    accept="image/*"
+                >
+
+            </div>
+
+
+            <!-- INCOME -->
+
+            <div class="income-box">
+
+                <h3>
+                    💰 Income Opportunities
+                </h3>
+
+                <p>
+                    Upload useful videos to
+                    ALL-IN-ONE.COM and build your
+                    creator profile.
+                </p>
+
+                <p>
+                    Eligible views, likes and
+                    engagement can help creators
+                    participate in income opportunities
+                    according to website policies.
+                </p>
+
+                <p>
+                    <strong>
+                        Current creator rate:
+                        ₹0.01 per eligible view
+                    </strong>
+                </p>
+
+            </div>
+
+
+            <!-- UPLOAD BUTTON -->
+
+            <button
+                type="submit"
+                id="uploadButton"
+                class="upload-button"
+            >
+                📤 Upload Video
+            </button>
+
+
+            <!-- PROGRESS -->
+
+            <div
+                id="progressContainer"
+                class="progress-container"
+            >
+
+                <div class="progress-bar-background">
+
+                    <div
+                        id="progressBar"
+                        class="progress-bar"
+                    ></div>
+
+                </div>
+
+                <div id="progressText">
+                    0%
+                </div>
+
+            </div>
+
+
+            <div id="message"></div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    © 2026 ALL-IN-ONE.COM —
+    Learn • Prepare • Watch • Enjoy
+
+</footer>
+
+
+<script>
+
+
+const category =
+    document.getElementById("category");
+
+
+const educationalFields =
+    document.getElementById(
+        "educationalFields"
+    );
+
+
+const competitiveFields =
+    document.getElementById(
+        "competitiveFields"
+    );
+
+
+const classNumber =
+    document.getElementById(
+        "classNumber"
+    );
+
+
+const subject =
+    document.getElementById(
+        "subject"
+    );
+
+
+const competitiveSubject =
+    document.getElementById(
+        "competitiveSubject"
+    );
+
+
+const videoFile =
+    document.getElementById(
+        "videoFile"
+    );
+
+
+const youtubeUrl =
+    document.getElementById(
+        "youtubeUrl"
+    );
+
+
+const uploadForm =
+    document.getElementById(
+        "uploadForm"
+    );
+
+
+const uploadButton =
+    document.getElementById(
+        "uploadButton"
+    );
+
+
+const message =
+    document.getElementById(
+        "message"
+    );
+
+
+const progressContainer =
+    document.getElementById(
+        "progressContainer"
+    );
+
+
+const progressBar =
+    document.getElementById(
+        "progressBar"
+    );
+
+
+const progressText =
+    document.getElementById(
+        "progressText"
+    );
+
+
+const schoolSubjects = [
+
+    "Mathematics",
+    "English",
+    "Telugu",
+    "Hindi",
+    "Science",
+    "Social Studies"
+
+];
+
+
+const intermediateSubjects = [
+
+    "MPC",
+    "BiPC",
+    "CEC",
+    "MEC",
+    "HEC",
+    "Other Courses"
+
+];
+
+
+const degreeSubjects = [
+
+    "B.Sc",
+    "B.A",
+    "B.Com"
+
+];
+
+
+const pgSubjects = [
+
+    "MBA",
+    "MCA",
+    "M.Com",
+    "M.Sc",
+    "M.A",
+    "M.Tech"
+
+];
+
+
+const professionalSubjects = [
+
+    "CA",
+    "CS",
+    "CMA",
+    "Digital Marketing",
+    "Data Science / AI",
+    "Law",
+    "Teaching"
+
+];
+
+
+function updateSubjectOptions() {
+
+    subject.innerHTML = `
+        <option value="">
+            Select Subject / Course
+        </option>
+    `;
+
+
+    let subjects = [];
+
+
+    if (
+        classNumber.value ===
+        "Intermediate / +2"
+    ) {
+
+        subjects =
+            intermediateSubjects;
+
+    }
+
+    else if (
+        classNumber.value ===
+        "Degree"
+    ) {
+
+        subjects =
+            degreeSubjects;
+
+    }
+
+    else if (
+        classNumber.value ===
+        "PG"
+    ) {
+
+        subjects =
+            pgSubjects;
+
+    }
+
+    else if (
+        classNumber.value ===
+        "Professional"
+    ) {
+
+        subjects =
+            professionalSubjects;
+
+    }
+
+    else if (
+        classNumber.value !== ""
+    ) {
+
+        subjects =
+            schoolSubjects;
+
+    }
+
+
+    subjects.forEach(
+        function(item) {
+
+            const option =
+                document.createElement(
+                    "option"
+                );
+
+            option.value =
+                item;
+
+            option.textContent =
+                item;
+
+            subject.appendChild(
+                option
+            );
+
+        }
+    );
+
+}
+
+
+function updateCategoryFields() {
+
+    educationalFields.style.display =
+        "none";
+
+    competitiveFields.style.display =
+        "none";
+
+
+    classNumber.required =
+        false;
+
+    subject.required =
+        false;
+
+    competitiveSubject.required =
+        false;
+
+
+    if (
+        category.value ===
+        "Educational"
+    ) {
+
+        educationalFields.style.display =
+            "block";
+
+        classNumber.required =
+            true;
+
+        subject.required =
+            true;
+
+        updateSubjectOptions();
+
+    }
+
+
+    else if (
+        category.value ===
+        "Competitive Exams"
+    ) {
+
+        competitiveFields.style.display =
+            "block";
+
+        competitiveSubject.required =
+            true;
+
+    }
+
+
+    else {
+
+        classNumber.value = "";
+
+        subject.innerHTML = `
+            <option value="">
+                Select Subject / Course
+            </option>
+        `;
+
+        competitiveSubject.value =
+            "";
+
+    }
+
+}
+
+
+category.addEventListener(
+    "change",
+    updateCategoryFields
+);
+
+
+classNumber.addEventListener(
+    "change",
+    updateSubjectOptions
+);
+
+
+async function checkLogin() {
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/me",
+                {
+                    cache: "no-store",
+                    credentials: "include"
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            data.loggedIn &&
+            data.user
+        ) {
+
+            document.getElementById(
+                "loginMessage"
+            ).style.display =
+                "none";
+
+
+            document.getElementById(
+                "uploadBox"
+            ).style.display =
+                "block";
+
+
+            document.getElementById(
+                "userInfo"
+            ).innerHTML =
+
+                "👤 Logged in as: <strong>" +
+
+                escapeHTML(
+                    data.user.name
+                ) +
+
+                "</strong>";
+
+        }
+
+        else {
+
+            document.getElementById(
+                "loginMessage"
+            ).style.display =
+                "block";
+
+
+            document.getElementById(
+                "uploadBox"
+            ).style.display =
+                "none";
+
+        }
+
+    }
+
+    catch (error) {
+
+        document.getElementById(
+            "loginMessage"
+        ).style.display =
+            "block";
+
+        document.getElementById(
+            "uploadBox"
+        ).style.display =
+            "none";
+
+    }
+
+}
+
+
+function escapeHTML(value) {
+
+    return String(
+        value || ""
+    )
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+function showMessage(
+    text,
+    type
+) {
+
+    message.textContent =
+        text;
+
+    message.className =
+        type;
+
+}
+
+
+uploadForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const titleValue =
+            document.getElementById(
+                "title"
+            ).value.trim();
+
+
+        const selectedCategory =
+            category.value;
+
+
+        const youtubeValue =
+            youtubeUrl.value.trim();
+
+
+        const selectedFile =
+            videoFile.files.length > 0;
+
+
+        if (!titleValue) {
+
+            showMessage(
+                "Please enter video title.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if (!selectedCategory) {
+
+            showMessage(
+                "Please select category.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        /*
+         * EDUCATIONAL VALIDATION
+         */
+
+        if (
+            selectedCategory ===
+            "Educational"
+        ) {
+
+            if (!classNumber.value) {
+
+                showMessage(
+                    "Please select Class / Course.",
+                    "error"
+                );
+
+                return;
+
+            }
+
+
+            if (!subject.value) {
+
+                showMessage(
+                    "Please select Subject / Course.",
+                    "error"
+                );
+
+                return;
+
+            }
+
+        }
+
+
+        /*
+         * COMPETITIVE VALIDATION
+         */
+
+        if (
+            selectedCategory ===
+            "Competitive Exams"
+        ) {
+
+            if (
+                !competitiveSubject.value
+            ) {
+
+                showMessage(
+                    "Please select Competitive Exam Subject.",
+                    "error"
+                );
+
+                return;
+
+            }
+
+        }
+
+
+        /*
+         * VIDEO VALIDATION
+         */
+
+        if (
+            !selectedFile &&
+            !youtubeValue
+        ) {
+
+            showMessage(
+                "Please select a video file or enter a YouTube link.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        /*
+         * CREATE FORM DATA
+         */
+
+        const formData =
+            new FormData(
+                uploadForm
+            );
+
+
+        /*
+         * EDUCATIONAL
+         */
+
+        if (
+            selectedCategory ===
+            "Educational"
+        ) {
+
+            formData.set(
+                "class_number",
+                classNumber.value
+            );
+
+            formData.set(
+                "subject",
+                subject.value
+            );
+
+        }
+
+
+        /*
+         * COMPETITIVE
+         */
+
+        else if (
+            selectedCategory ===
+            "Competitive Exams"
+        ) {
+
+            formData.delete(
+                "class_number"
+            );
+
+            formData.set(
+                "subject",
+                competitiveSubject.value
+            );
+
+        }
+
+
+        /*
+         * OTHER CATEGORIES
+         */
+
+        else {
+
+            formData.delete(
+                "class_number"
+            );
+
+            formData.delete(
+                "subject"
+            );
+
+        }
+
+
+        uploadButton.disabled =
+            true;
+
+        uploadButton.textContent =
+            "⏳ Uploading...";
+
+
+        progressContainer.style.display =
+            "block";
+
+
+        progressBar.style.width =
+            "0%";
+
+
+        progressText.textContent =
+            "0%";
+
+
+        message.className =
+            "";
+
+
+        const xhr =
+            new XMLHttpRequest();
+
+
+        xhr.open(
+            "POST",
+            "/api/upload",
+            true
+        );
+
+
+        xhr.withCredentials =
+            true;
+
+
+        xhr.upload.onprogress =
+            function(event) {
+
+                if (
+                    event.lengthComputable
+                ) {
+
+                    const percent =
+                        Math.round(
+                            (
+                                event.loaded /
+                                event.total
+                            ) * 100
+                        );
+
+
+                    progressBar.style.width =
+                        percent + "%";
+
+
+                    progressText.textContent =
+                        percent + "%";
+
+                }
+
+            };
+
+
+        xhr.onload =
+            async function() {
+
+                uploadButton.disabled =
+                    false;
+
+                uploadButton.textContent =
+                    "📤 Upload Video";
+
+
+                try {
+
+                    const data =
+                        JSON.parse(
+                            xhr.responseText
+                        );
+
+
+                    if (
+                        xhr.status >= 200 &&
+                        xhr.status < 300 &&
+                        data.success
+                    ) {
+
+                        progressBar.style.width =
+                            "100%";
+
+                        progressText.textContent =
+                            "100%";
+
+
+                        showMessage(
+                            data.message ||
+                            "Video uploaded successfully!",
+                            "success"
+                        );
+
+
+                        uploadForm.reset();
+
+
+                        updateCategoryFields();
+
+
+                        setTimeout(
+                            function() {
+
+                                window.location.href =
+                                    "/videos.html";
+
+                            },
+                            1500
+                        );
+
+                    }
+
+                    else {
+
+                        showMessage(
+                            data.message ||
+                            "Upload failed.",
+                            "error"
+                        );
+
+                    }
+
+                }
+
+                catch (error) {
+
+                    showMessage(
+                        "Server returned an invalid response.",
+                        "error"
+                    );
+
+                }
+
+            };
+
+
+        xhr.onerror =
+            function() {
+
+                uploadButton.disabled =
+                    false;
+
+                uploadButton.textContent =
+                    "📤 Upload Video";
+
+
+                showMessage(
+                    "Unable to connect to server.",
+                    "error"
+                );
+
+            };
+
+
+        xhr.send(
+            formData
+        );
+
+    }
+);
+
+
+window.addEventListener(
+    "load",
+    function() {
+
+        checkLogin();
+
+        updateCategoryFields();
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>

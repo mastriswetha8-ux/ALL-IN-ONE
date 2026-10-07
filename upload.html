@@ -1,0 +1,700 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Upload Video - ALL-IN-ONE.COM</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(
+                90deg,
+                #172554,
+                #1d4ed8,
+                #2563eb
+            );
+
+            color: white;
+
+            padding: 22px 40px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 900;
+        }
+
+        header button {
+            border: none;
+            padding: 10px 16px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .home-btn {
+            background: white;
+            color: #1d4ed8;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+
+            margin: 40px auto;
+        }
+
+        .upload-box {
+            background: white;
+
+            border: 2px solid #334155;
+
+            border-radius: 10px;
+
+            padding: 35px;
+
+            box-shadow:
+                0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            text-align: center;
+
+            color: #1e3a8a;
+
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+
+            color: #64748b;
+
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+
+            font-weight: bold;
+
+            margin-bottom: 7px;
+
+            color: #334155;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #cbd5e1;
+
+            border-radius: 6px;
+
+            margin-bottom: 20px;
+
+            font-family: Arial;
+        }
+
+        textarea {
+            min-height: 120px;
+
+            resize: vertical;
+        }
+
+        input[type="file"] {
+            background: #f8fafc;
+
+            cursor: pointer;
+        }
+
+        .upload-button {
+            width: 100%;
+
+            background: #16a34a;
+
+            color: white;
+
+            border: none;
+
+            padding: 14px;
+
+            border-radius: 7px;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .upload-button:hover {
+            background: #15803d;
+        }
+
+        .upload-button:disabled {
+            background: #94a3b8;
+
+            cursor: not-allowed;
+        }
+
+        #message {
+            margin-top: 20px;
+
+            padding: 12px;
+
+            border-radius: 6px;
+
+            display: none;
+
+            text-align: center;
+
+            font-weight: bold;
+        }
+
+        .success {
+            display: block !important;
+
+            background: #dcfce7;
+
+            color: #166534;
+        }
+
+        .error {
+            display: block !important;
+
+            background: #fee2e2;
+
+            color: #991b1b;
+        }
+
+        .user-info {
+            background: #eff6ff;
+
+            border: 1px solid #bfdbfe;
+
+            padding: 12px;
+
+            border-radius: 6px;
+
+            margin-bottom: 25px;
+
+            color: #1e3a8a;
+
+            display: none;
+        }
+
+        footer {
+            margin-top: 40px;
+
+            background: #172554;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+
+                gap: 15px;
+
+                text-align: center;
+            }
+
+            .container {
+                width: 94%;
+            }
+
+            .upload-box {
+                padding: 22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        ALL-IN-ONE.COM
+    </div>
+
+    <button
+        class="home-btn"
+        onclick="window.location.href='index.html'">
+
+        🏠 Home
+
+    </button>
+
+</header>
+
+
+<div class="container">
+
+
+    <div class="upload-box">
+
+        <h1>🎥 Upload Video</h1>
+
+        <p class="subtitle">
+            Share your videos on ALL-IN-ONE.COM
+        </p>
+
+
+        <div
+            id="userInfo"
+            class="user-info">
+        </div>
+
+
+        <form id="uploadForm">
+
+
+            <label for="title">
+                Video Title
+            </label>
+
+            <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Enter video title"
+                required>
+
+
+            <label for="description">
+                Description
+            </label>
+
+            <textarea
+                id="description"
+                name="description"
+                placeholder="Enter video description">
+            </textarea>
+
+
+            <label for="video">
+                Select Video
+            </label>
+
+            <input
+                type="file"
+                id="video"
+                name="video"
+                accept="video/mp4,video/webm,video/ogg,video/quicktime,.mp4,.webm,.ogg,.mov,.m4v"
+                required>
+
+
+            <button
+                type="submit"
+                class="upload-button"
+                id="uploadButton">
+
+                🚀 Upload Video
+
+            </button>
+
+
+        </form>
+
+
+        <div id="message"></div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <h3>ALL-IN-ONE.COM</h3>
+
+    <p>
+        Learn • Prepare • Watch • Enjoy
+    </p>
+
+</footer>
+
+
+<script>
+
+
+/* ==========================================
+   CHECK LOGIN
+========================================== */
+
+async function checkLogin() {
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/me"
+            );
+
+        const data =
+            await response.json();
+
+
+        if (
+            !data.loggedIn
+        ) {
+
+            alert(
+                "Please login before uploading a video."
+            );
+
+            window.location.href =
+                "login.html";
+
+            return;
+
+        }
+
+
+        const userInfo =
+            document.getElementById(
+                "userInfo"
+            );
+
+
+        userInfo.style.display =
+            "block";
+
+
+        userInfo.innerHTML =
+            "👤 Logged in as: <strong>" +
+            escapeHtml(data.user.name) +
+            "</strong>";
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Unable to check login."
+        );
+
+    }
+
+}
+
+
+/* ==========================================
+   UPLOAD VIDEO
+========================================== */
+
+document
+    .getElementById("uploadForm")
+    .addEventListener(
+        "submit",
+        async function(event) {
+
+            event.preventDefault();
+
+
+            const title =
+                document.getElementById(
+                    "title"
+                ).value.trim();
+
+
+            const description =
+                document.getElementById(
+                    "description"
+                ).value.trim();
+
+
+            const video =
+                document.getElementById(
+                    "video"
+                ).files[0];
+
+
+            const message =
+                document.getElementById(
+                    "message"
+                );
+
+
+            const button =
+                document.getElementById(
+                    "uploadButton"
+                );
+
+
+            if (!title) {
+
+                showMessage(
+                    "Please enter video title.",
+                    "error"
+                );
+
+                return;
+            }
+
+
+            if (!video) {
+
+                showMessage(
+                    "Please select a video.",
+                    "error"
+                );
+
+                return;
+            }
+
+
+            const allowedTypes = [
+                "video/mp4",
+                "video/webm",
+                "video/ogg",
+                "video/quicktime"
+            ];
+
+
+            const extension =
+                video.name
+                    .toLowerCase()
+                    .split(".")
+                    .pop();
+
+
+            const allowedExtensions = [
+                "mp4",
+                "webm",
+                "ogg",
+                "mov",
+                "m4v"
+            ];
+
+
+            if (
+                !allowedTypes.includes(
+                    video.type
+                ) &&
+                !allowedExtensions.includes(
+                    extension
+                )
+            ) {
+
+                showMessage(
+                    "Please select a valid video file.",
+                    "error"
+                );
+
+                return;
+            }
+
+
+            const formData =
+                new FormData();
+
+
+            formData.append(
+                "title",
+                title
+            );
+
+
+            formData.append(
+                "description",
+                description
+            );
+
+
+            formData.append(
+                "video",
+                video
+            );
+
+
+            button.disabled = true;
+
+            button.textContent =
+                "⏳ Uploading...";
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        "/api/videos/upload",
+                        {
+                            method: "POST",
+                            body: formData
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                if (!response.ok) {
+
+                    showMessage(
+                        data.message ||
+                        "Upload failed.",
+                        "error"
+                    );
+
+                    button.disabled =
+                        false;
+
+                    button.textContent =
+                        "🚀 Upload Video";
+
+                    return;
+                }
+
+
+                showMessage(
+                    "✅ Video uploaded successfully!",
+                    "success"
+                );
+
+
+                document
+                    .getElementById(
+                        "uploadForm"
+                    )
+                    .reset();
+
+
+                button.disabled =
+                    false;
+
+                button.textContent =
+                    "🚀 Upload Video";
+
+
+                setTimeout(
+                    function() {
+
+                        window.location.href =
+                            "videos.html";
+
+                    },
+                    1500
+                );
+
+
+            } catch (error) {
+
+                console.error(error);
+
+                showMessage(
+                    "Server connection failed.",
+                    "error"
+                );
+
+
+                button.disabled =
+                    false;
+
+                button.textContent =
+                    "🚀 Upload Video";
+
+            }
+
+        }
+    );
+
+
+/* ==========================================
+   MESSAGE
+========================================== */
+
+function showMessage(
+    text,
+    type
+) {
+
+    const message =
+        document.getElementById(
+            "message"
+        );
+
+
+    message.textContent =
+        text;
+
+
+    message.className =
+        type;
+
+}
+
+
+/* ==========================================
+   SECURITY
+========================================== */
+
+function escapeHtml(
+    value
+) {
+
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+}
+
+
+/* ==========================================
+   START
+========================================== */
+
+checkLogin();
+
+</script>
+
+
+</body>
+
+</html>
+

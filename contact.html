@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - ALL-IN-ONE.COM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ALL-IN-ONE.COM</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="educational.html">Education</a>
+        <a href="exams.html">Exams</a>
+        <a href="entertainment.html">Entertainment</a>
+        <a href="videos.html">Videos</a>
+        <a href="login.html">Login</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main class="website-content">
+
+    <section class="welcome">
+        <h1>Contact Us</h1>
+        <p>We would like to hear from you.</p>
+    </section>
+
+    <section class="info-box">
+
+        <h2>Send Us a Message</h2>
+
+        <form onsubmit="sendMessage(event)">
+
+            <label for="name">Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+                style="width:100%; padding:12px; margin:8px 0 15px; box-sizing:border-box;"
+            >
+
+            <label for="email">Email</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+                style="width:100%; padding:12px; margin:8px 0 15px; box-sizing:border-box;"
+            >
+
+            <label for="message">Message</label>
+            <textarea
+                id="message"
+                rows="6"
+                placeholder="Enter your message"
+                required
+                style="width:100%; padding:12px; margin:8px 0 15px; box-sizing:border-box;"
+            ></textarea>
+
+            <button type="submit">Send Message</button>
+
+        </form>
+
+        <p id="messageResult"></p>
+
+    </section>
+
+    <section class="info-box">
+        <h2>Other Information</h2>
+        <p>For website-related questions, suggestions or feedback, use the contact form above.</p>
+    </section>
+
+    <div style="text-align:center; margin-top:20px;">
+        <a href="index.html">
+            <button type="button">⬅ Back to Home</button>
+        </a>
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 ALL-IN-ONE.COM | All Rights Reserved</p>
+</footer>
+
+<script>
+function sendMessage(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const contactMessage = {
+        name: name,
+        email: email,
+        message: message,
+        date: new Date().toLocaleString()
+    };
+
+    let messages = JSON.parse(
+        localStorage.getItem("allInOneMessages")
+    ) || [];
+
+    messages.push(contactMessage);
+
+    localStorage.setItem(
+        "allInOneMessages",
+        JSON.stringify(messages)
+    );
+
+    document.getElementById("messageResult").innerHTML =
+        "✅ Your message has been saved successfully.";
+
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+}
+</script>
+
+</body>
+</html>
+

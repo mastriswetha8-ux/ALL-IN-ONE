@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ALL-IN-ONE.COM</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* ===============================
+           PROFESSIONAL HOMEPAGE DESIGN
+        =============================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f6fb;
+            color: #1f2937;
+        }
+
+        a {
+            transition: 0.2s ease;
+        }
+
+
+        /* ===============================
+           HEADER
+        =============================== */
+
+        .main-header {
+            background: linear-gradient(
+                135deg,
+                #111827,
+                #1e3a8a
+            );
+
+            color: white;
+            padding: 22px 20px;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.15);
+
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .main-header nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .main-header nav a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.12);
+            padding: 9px 14px;
+            border-radius: 7px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .main-header nav a:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+        }
+
+
+        /* ===============================
+           MAIN THREE COLUMN STRUCTURE
+        =============================== */
+
+        .main-layout {
+            max-width: 1450px;
+            margin: 28px auto;
+            padding: 0 18px;
+
+            display: grid;
+
+            grid-template-columns:
+                270px
+                minmax(0, 1fr)
+                270px;
+
+            gap: 22px;
+
+            align-items: start;
+        }
+
+
+        /* ===============================
+           COMMON CARD
+        =============================== */
+
+        .left-column,
+        .center-column,
+        .right-column {
+            min-width: 0;
+        }
+
+        .left-column,
+        .paid-section,
+        .welcome-section,
+        .search-box,
+        .feature-card,
+        .login-section,
+        .upload-section,
+        .income-section,
+        .comment-section,
+        .story-card,
+        .terms-section {
+            background: white;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 5px 18px rgba(15,23,42,0.07);
+        }
+
+
+        /* ===============================
+           LEFT WATCHING VIDEOS
+        =============================== */
+
+        .left-column {
+            padding: 20px;
+
+            position: sticky;
+            top: 18px;
+        }
+
+        .left-column h2 {
+            margin-top: 0;
+            color: #111827;
+            font-size: 21px;
+            padding-bottom: 13px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .left-column h3 {
+            margin-top: 22px;
+            margin-bottom: 8px;
+            color: #1d4ed8;
+            font-size: 16px;
+        }
+
+        .left-column a {
+            display: block;
+
+            text-decoration: none;
+
+            color: #374151;
+
+            padding: 9px 10px;
+
+            margin: 3px 0;
+
+            border-radius: 7px;
+
+            font-size: 14px;
+        }
+
+        .left-column a:hover {
+            background: #eff6ff;
+            color: #1d4ed8;
+            padding-left: 14px;
+        }
+
+
+        /* ===============================
+           CENTER WELCOME
+        =============================== */
+
+        .welcome-section {
+            padding: 30px;
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #eff6ff
+                );
+
+            margin-bottom: 18px;
+        }
+
+        .welcome-section h1 {
+            margin: 0;
+            font-size: 30px;
+            color: #111827;
+        }
+
+        .welcome-section p {
+            margin: 10px 0 0;
+            font-size: 17px;
+            color: #4b5563;
+            font-weight: bold;
+        }
+
+
+        /* ===============================
+           SEARCH
+        =============================== */
+
+        .search-box {
+            padding: 14px;
+            margin-bottom: 18px;
+        }
+
+        #searchBox {
+            width: 100%;
+
+            border: 1px solid #d1d5db;
+
+            border-radius: 9px;
+
+            padding: 13px 15px;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        #searchBox:focus {
+            border-color: #2563eb;
+
+            box-shadow:
+                0 0 0 3px rgba(37,99,235,0.12);
+        }
+
+        #searchMessage {
+            margin: 8px 2px 14px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .search-highlight {
+            outline: 2px solid #93c5fd;
+        }
+
+
+        /* ===============================
+           FEATURES
+        =============================== */
+
+        .feature-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 16px;
+
+            margin-bottom: 18px;
+        }
+
+        .feature-card {
+            padding: 21px;
+        }
+
+        .feature-card:hover,
+        .story-card:hover,
+        .paid-section:hover,
+        .income-section:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 25px rgba(15,23,42,0.10);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            font-size: 19px;
+            color: #111827;
+        }
+
+        .feature-card p {
+            color: #6b7280;
+            line-height: 1.5;
+            min-height: 48px;
+        }
+
+        .feature-card a,
+        .login-section a,
+        .upload-section a,
+        .income-section a,
+        .paid-section a,
+        .story-card a,
+        .terms-section a {
+            display: inline-block;
+
+            background: #2563eb;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 10px 15px;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+
+            margin-top: 5px;
+        }
+
+        .feature-card a:hover,
+        .login-section a:hover,
+        .upload-section a:hover,
+        .paid-section a:hover,
+        .story-card a:hover,
+        .terms-section a:hover {
+            background: #1d4ed8;
+        }
+
+
+        /* ===============================
+           LOGIN / UPLOAD
+        =============================== */
+
+        .login-section,
+        .upload-section,
+        .income-section,
+        .comment-section {
+            padding: 22px;
+            margin-bottom: 18px;
+        }
+
+        .login-section h2,
+        .upload-section h2,
+        .income-section h2,
+        .comment-section h2 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        .login-section p,
+        .upload-section p {
+            color: #6b7280;
+        }
+
+
+        /* ===============================
+           INCOME OPPORTUNITIES
+        =============================== */
+
+        .income-section {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #ecfdf5
+                );
+
+            border: 2px solid #10b981;
+        }
+
+        .income-section h2 {
+            color: #047857;
+        }
+
+        .income-section p {
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .income-section ul {
+            margin: 14px 0;
+            padding-left: 22px;
+            color: #374151;
+            line-height: 1.9;
+        }
+
+        .income-section li {
+            margin-bottom: 3px;
+        }
+
+        .income-section a {
+            background: #059669;
+        }
+
+        .income-section a:hover {
+            background: #047857;
+        }
+
+
+        /* ===============================
+           RIGHT PAID CLASSES
+        =============================== */
+
+        .right-column {
+            position: sticky;
+            top: 18px;
+        }
+
+        .paid-section {
+            padding: 23px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #fff7ed
+                );
+        }
+
+        .paid-section h2 {
+            margin-top: 0;
+            color: #92400e;
+        }
+
+        .paid-section p {
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        .paid-section a {
+            background: #ea580c;
+        }
+
+        .paid-section a:hover {
+            background: #c2410c;
+        }
+
+
+        /* ===============================
+           STATS
+        =============================== */
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .stats span {
+            background: #f8fafc;
+
+            border: 1px solid #e5e7eb;
+
+            padding: 8px 10px;
+
+            border-radius: 7px;
+
+            font-size: 13px;
+
+            color: #4b5563;
+        }
+
+        .stats strong {
+            color: #111827;
+        }
+
+
+        /* ===============================
+           STORY SECTION
+        =============================== */
+
+        .story-section {
+            max-width: 1450px;
+
+            margin: 22px auto;
+
+            padding: 0 18px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 22px;
+        }
+
+        .story-card {
+            padding: 24px;
+        }
+
+        .story-card h2 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        .story-card p {
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        .story-card:nth-child(1) {
+            border-top: 4px solid #2563eb;
+        }
+
+        .story-card:nth-child(2) {
+            border-top: 4px solid #7c3aed;
+        }
+
+        .story-card:nth-child(2) a {
+            background: #7c3aed;
+        }
+
+        .story-card:nth-child(2) a:hover {
+            background: #6d28d9;
+        }
+
+
+        /* ===============================
+           TERMS
+        =============================== */
+
+        .terms-section {
+            max-width: 1450px;
+
+            margin: 22px auto;
+
+            padding: 24px 28px;
+        }
+
+        .terms-section h2 {
+            margin-top: 0;
+        }
+
+        .terms-section p {
+            color: #6b7280;
+        }
+
+
+        /* ===============================
+           COMMENT BOX
+        =============================== */
+
+        #homeCommentInput {
+            width: 100%;
+
+            min-height: 100px;
+
+            resize: vertical;
+
+            padding: 12px;
+
+            border: 1px solid #d1d5db;
+
+            border-radius: 8px;
+
+            font-family: Arial, sans-serif;
+
+            margin-bottom: 10px;
+        }
+
+        #homeCommentInput:focus {
+            outline: none;
+
+            border-color: #2563eb;
+
+            box-shadow:
+                0 0 0 3px rgba(37,99,235,0.10);
+        }
+
+        .comment-section button {
+            border: 0;
+
+            background: #2563eb;
+
+            color: white;
+
+            padding: 10px 16px;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-bottom: 15px;
+        }
+
+        .comment-section button:hover {
+            background: #1d4ed8;
+        }
+
+        #homeCommentsList > div {
+            border-left: 4px solid #2563eb;
+
+            background: #f8fafc;
+
+            padding: 12px;
+
+            margin-top: 10px;
+
+            border-radius: 8px;
+        }
+
+
+        /* ===============================
+           FOOTER
+        =============================== */
+
+        footer {
+            margin-top: 35px;
+
+            background: #111827;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        footer p {
+            margin: 7px 0;
+        }
+
+
+        /* ===============================
+           MOBILE
+        =============================== */
+
+        @media (max-width: 1050px) {
+
+            .main-layout {
+                grid-template-columns:
+                    220px
+                    minmax(0, 1fr)
+                    220px;
+            }
+
+        }
+
+
+        @media (max-width: 850px) {
+
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .left-column,
+            .right-column {
+                position: static;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .story-section {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .main-header {
+                padding: 18px 12px;
+            }
+
+            .logo {
+                font-size: 25px;
+            }
+
+            .main-header nav {
+                gap: 5px;
+            }
+
+            .main-header nav a {
+                font-size: 12px;
+                padding: 8px 10px;
+            }
+
+            .main-layout,
+            .story-section {
+                padding: 0 12px;
+                margin-top: 15px;
+            }
+
+            .welcome-section {
+                padding: 23px 15px;
+            }
+
+            .welcome-section h1 {
+                font-size: 24px;
+            }
+
+            .stats {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="main-header">
+
+    <div class="logo">
+        ALL-IN-ONE.COM
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="educational.html">
+            Educational
+        </a>
+
+        <a href="exams.html">
+            Exams
+        </a>
+
+        <a href="entertainment.html">
+            Entertainment
+        </a>
+
+        <a href="videos.html">
+            Videos
+        </a>
+
+        <a href="storyvideos.html">
+            Story Videos
+        </a>
+
+        <a href="storycontent.html">
+            Story Content
+        </a>
+
+        <a href="login.html">
+            Login
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= MAIN THREE COLUMNS ================= -->
+
+<div class="main-layout">
+
+
+    <!-- ================= LEFT COLUMN ================= -->
+
+    <aside class="left-column">
+
+        <h2>
+            🎥 Watching Videos
+        </h2>
+
+
+        <h3>
+            📚 Educational
+        </h3>
+
+        <a href="educational.html?category=school">
+            🏫 1–10 Classes
+        </a>
+
+        <a href="educational.html?category=intermediate">
+            🎓 Intermediate / +2
+        </a>
+
+        <a href="educational.html?category=degree">
+            📖 Degree
+        </a>
+
+        <a href="educational.html?category=pg">
+            🎓 PG / Related
+        </a>
+
+        <a href="educational.html?category=other">
+            📚 Other Videos
+        </a>
+
+
+        <h3>
+            📝 Competitive Exams
+        </h3>
+
+        <a href="exams.html?category=arithmetic">
+            🔢 Arithmetic
+        </a>
+
+        <a href="exams.html?category=reasoning">
+            🧠 Reasoning
+        </a>
+
+        <a href="exams.html?category=economy">
+            💰 Economy
+        </a>
+
+        <a href="exams.html?category=polity">
+            🏛️ Polity
+        </a>
+
+        <a href="exams.html?category=history">
+            📜 History
+        </a>
+
+        <a href="exams.html?category=other">
+            📚 Other Subjects
+        </a>
+
+
+        <h3>
+            🎬 Entertainment
+        </h3>
+
+        <a href="entertainment.html">
+            🎬 Entertainment Videos
+        </a>
+
+    </aside>
+
+
+
+    <!-- ================= CENTER COLUMN ================= -->
+
+    <main class="center-column">
+
+
+        <section class="welcome-section">
+
+            <h1>
+                Welcome to ALL-IN-ONE.COM
+            </h1>
+
+            <p>
+                Learn • Prepare • Watch • Enjoy
+            </p>
+
+        </section>
+
+
+
+        <!-- ================= SEARCH ================= -->
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="🔎 Search Education, Exams, Videos, Stories..."
+                onkeyup="searchWebsite()"
+            >
+
+        </div>
+
+        <div id="searchMessage"></div>
+
+
+
+        <!-- ================= FEATURES ================= -->
+
+        <div class="feature-grid">
+
+
+            <div
+                class="feature-card searchable-card"
+                data-search="education educational classes school degree intermediate pg"
+            >
+
+                <h3>
+                    📚 Education
+                </h3>
+
+                <p>
+                    School, Intermediate, Degree,
+                    PG and other educational videos.
+                </p>
+
+                <a href="educational.html">
+                    Explore Education
+                </a>
+
+            </div>
+
+
+
+            <div
+                class="feature-card searchable-card"
+                data-search="competitive exams arithmetic reasoning economy polity history"
+            >
+
+                <h3>
+                    📝 Competitive Exams
+                </h3>
+
+                <p>
+                    Prepare for competitive examinations
+                    with useful videos.
+                </p>
+
+                <a href="exams.html">
+                    Explore Exams
+                </a>
+
+            </div>
+
+
+
+            <div
+                class="feature-card searchable-card"
+                data-search="entertainment movies comedy music fun"
+            >
+
+                <h3>
+                    🎬 Entertainment
+                </h3>
+
+                <p>
+                    Enjoy entertainment videos,
+                    music and fun content.
+                </p>
+
+                <a href="entertainment.html">
+                    Watch Entertainment
+                </a>
+
+            </div>
+
+
+
+            <div
+                class="feature-card searchable-card"
+                data-search="website videos all videos youtube"
+            >
+
+                <h3>
+                    🎥 Website Videos
+                </h3>
+
+                <p>
+                    Watch all available videos
+                    on our website.
+                </p>
+
+                <a href="videos.html">
+                    Watch Videos
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================= LOGIN ================= -->
+
+        <section class="login-section">
+
+            <h2>
+                👤 Website Login / Account Creation
+            </h2>
+
+            <p>
+                Create your account and login
+                to ALL-IN-ONE.COM.
+            </p>
+
+            <a href="login.html">
+                Login / Create Account
+            </a>
+
+        </section>
+
+
+
+        <!-- ================= UPLOAD ================= -->
+
+        <section class="upload-section">
+
+            <h2>
+                📤 Website Video Upload
+            </h2>
+
+            <p>
+                Upload your own videos and
+                create content on ALL-IN-ONE.COM.
+            </p>
+
+            <a href="video-upload.html">
+                Upload Video
+            </a>
+
+        </section>
+
+
+
+        <!-- ================= INCOME OPPORTUNITIES ================= -->
+
+        <section
+            class="income-section searchable-card"
+            data-search="income opportunities earn money creator upload videos views likes comments"
+        >
+
+            <h2>
+                💰 Income Opportunities
+            </h2>
+
+            <p>
+                Upload your own videos on
+                ALL-IN-ONE.COM and get opportunities
+                to earn income from your content.
+            </p>
+
+            <ul>
+
+                <li>
+                    📤 Upload your own videos
+                </li>
+
+                <li>
+                    👁️ Get views on your videos
+                </li>
+
+                <li>
+                    ❤️ Receive likes and comments
+                </li>
+
+                <li>
+                    💰 Eligible creators can earn
+                    from their content
+                </li>
+
+            </ul>
+
+            <a href="video-upload.html">
+                📤 Upload Videos & Earn Opportunities
+            </a>
+
+        </section>
+
+
+
+        <!-- ================= WEBSITE ACTIVITY ================= -->
+
+        <section class="comment-section">
+
+            <h2>
+                📊 Website Activity
+            </h2>
+
+            <div class="stats">
+
+                <span>
+                    👍 Likes:
+                    <strong id="homeLikes">0</strong>
+                </span>
+
+                <span>
+                    👁️ Views:
+                    <strong id="homeViews">0</strong>
+                </span>
+
+                <span>
+                    💬 Comments:
+                    <strong id="homeComments">0</strong>
+                </span>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= RIGHT COLUMN ================= -->
+
+    <aside class="right-column">
+
+        <section class="paid-section">
+
+            <h2>
+                💰 Paid Classes
+            </h2>
+
+            <p>
+                Learn from our special
+                paid courses.
+            </p>
+
+            <p>
+                🎓 UPSC Complete Course
+            </p>
+
+            <p>
+                📝 Competitive Exams
+            </p>
+
+            <p>
+                📖 Degree Classes
+            </p>
+
+            <a href="paidclasses.html">
+                View Paid Classes
+            </a>
+
+        </section>
+
+    </aside>
+
+
+</div>
+
+
+
+<!-- ================= STORY SECTION ================= -->
+
+<section class="story-section">
+
+
+    <!-- STORY VIDEOS -->
+
+    <div
+        class="story-card searchable-card"
+        data-search="story story videos moral animal family festival"
+    >
+
+        <h2>
+            🎥 Story Videos
+        </h2>
+
+        <p>
+            Watch interesting Moral, Family,
+            Animal and Festival stories.
+        </p>
+
+        <div class="stats">
+
+            <span>
+                👍 Likes:
+                <strong id="storyVideoLikes">
+                    0
+                </strong>
+            </span>
+
+            <span>
+                👁️ Views:
+                <strong id="storyVideoViews">
+                    0
+                </strong>
+            </span>
+
+            <span>
+                💬 Comments:
+                <strong id="storyVideoComments">
+                    0
+                </strong>
+            </span>
+
+        </div>
+
+        <br>
+
+        <a href="storyvideos.html">
+            Watch Story Videos
+        </a>
+
+    </div>
+
+
+
+    <!-- STORY CONTENT -->
+
+    <div
+        class="story-card searchable-card"
+        data-search="story content moral stories animal family festival"
+    >
+
+        <h2>
+            📖 Story Content
+        </h2>
+
+        <p>
+            Read Moral, Family, Animal
+            and Festival story content.
+        </p>
+
+        <div class="stats">
+
+            <span>
+                👍 Likes:
+                <strong id="storyContentLikes">
+                    0
+                </strong>
+            </span>
+
+            <span>
+                👁️ Views:
+                <strong id="storyContentViews">
+                    0
+                </strong>
+            </span>
+
+            <span>
+                💬 Comments:
+                <strong id="storyContentComments">
+                    0
+                </strong>
+            </span>
+
+        </div>
+
+        <br>
+
+        <a href="storycontent.html">
+            Read Story Content
+        </a>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ================= TERMS ================= -->
+
+<section class="terms-section">
+
+    <h2>
+        📜 Terms and Conditions
+    </h2>
+
+    <p>
+        Please read our website terms and
+        conditions before using the services.
+    </p>
+
+    <a href="terms.html">
+        Read Terms & Conditions
+    </a>
+
+</section>
+
+
+
+<!-- ================= COMMENT BOX ================= -->
+
+<section class="comment-section">
+
+    <h2>
+        💬 Comment Box
+    </h2>
+
+    <textarea
+        id="homeCommentInput"
+        placeholder="Write your comment here..."
+    ></textarea>
+
+    <button onclick="postHomeComment()">
+        Post Comment
+    </button>
+
+    <div class="stats">
+
+        <span>
+            👍 Likes:
+            <strong id="commentLikes">
+                0
+            </strong>
+        </span>
+
+        <span>
+            👁️ Views:
+            <strong id="commentViews">
+                0
+            </strong>
+        </span>
+
+        <span>
+            💬 Comments:
+            <strong id="totalComments">
+                0
+            </strong>
+        </span>
+
+    </div>
+
+    <div id="homeCommentsList"></div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        <strong>
+            © 2026 ALL-IN-ONE.COM
+        </strong>
+    </p>
+
+    <p>
+        Learn • Prepare • Watch • Enjoy
+    </p>
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+/* =========================================
+   HOME PAGE VIEWS
+========================================= */
+
+let homeViews =
+    Number(
+        localStorage.getItem(
+            "allInOneHomeViews"
+        )
+    ) || 0;
+
+homeViews++;
+
+localStorage.setItem(
+    "allInOneHomeViews",
+    homeViews
+);
+
+document.getElementById(
+    "homeViews"
+).textContent = homeViews;
+
+document.getElementById(
+    "commentViews"
+).textContent = homeViews;
+
+
+
+/* =========================================
+   HOME LIKES
+========================================= */
+
+let homeLikes =
+    Number(
+        localStorage.getItem(
+            "allInOneHomeLikes"
+        )
+    ) || 0;
+
+document.getElementById(
+    "homeLikes"
+).textContent = homeLikes;
+
+document.getElementById(
+    "commentLikes"
+).textContent = homeLikes;
+
+
+
+/* =========================================
+   HOME COMMENTS
+========================================= */
+
+let homeComments =
+    JSON.parse(
+        localStorage.getItem(
+            "allInOneHomeComments"
+        )
+    ) || [];
+
+document.getElementById(
+    "totalComments"
+).textContent =
+    homeComments.length;
+
+document.getElementById(
+    "homeComments"
+).textContent =
+    homeComments.length;
+
+
+
+function postHomeComment() {
+
+    const input =
+        document.getElementById(
+            "homeCommentInput"
+        );
+
+    const comment =
+        input.value.trim();
+
+    if (comment === "") {
+
+        alert(
+            "Please write a comment."
+        );
+
+        return;
+    }
+
+    homeComments.push(comment);
+
+    localStorage.setItem(
+        "allInOneHomeComments",
+        JSON.stringify(homeComments)
+    );
+
+    input.value = "";
+
+    displayHomeComments();
+}
+
+
+
+/* =========================================
+   DISPLAY COMMENTS
+========================================= */
+
+function displayHomeComments() {
+
+    const list =
+        document.getElementById(
+            "homeCommentsList"
+        );
+
+    list.innerHTML = "";
+
+    homeComments.forEach(
+        function(comment) {
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+            div.textContent =
+                "💬 " + comment;
+
+            list.appendChild(div);
+
+        }
+    );
+
+    document.getElementById(
+        "totalComments"
+    ).textContent =
+        homeComments.length;
+
+    document.getElementById(
+        "homeComments"
+    ).textContent =
+        homeComments.length;
+}
+
+displayHomeComments();
+
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+function searchWebsite() {
+
+    const searchText =
+        document.getElementById(
+            "searchBox"
+        )
+        .value
+        .toLowerCase()
+        .trim();
+
+    const cards =
+        document.querySelectorAll(
+            ".searchable-card"
+        );
+
+    const message =
+        document.getElementById(
+            "searchMessage"
+        );
+
+    let found = 0;
+
+
+    cards.forEach(
+        function(card) {
+
+            const keywords =
+                (
+                    card.getAttribute(
+                        "data-search"
+                    ) || ""
+                )
+                .toLowerCase();
+
+
+            if (
+                searchText === "" ||
+                keywords.includes(searchText)
+            ) {
+
+                card.style.display = "";
+
+                card.classList.remove(
+                    "search-highlight"
+                );
+
+                if (
+                    searchText !== ""
+                ) {
+
+                    card.classList.add(
+                        "search-highlight"
+                    );
+
+                    found++;
+                }
+
+            } else {
+
+                card.style.display =
+                    "none";
+            }
+
+        }
+    );
+
+
+    if (searchText === "") {
+
+        message.textContent = "";
+
+    } else if (found > 0) {
+
+        message.textContent =
+            "🔎 " +
+            found +
+            " result(s) found.";
+
+    } else {
+
+        message.textContent =
+            "❌ No results found.";
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+
+
