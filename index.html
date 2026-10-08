@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,7 +72,6 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
-        /* PAID CLASSES - YELLOW BOX */
         .paid-column {
             background: #fff3a3;
             border: 2px solid #facc15;
@@ -162,12 +160,20 @@
             border: 1px solid #facc15;
         }
 
+        /* STORY + TERMS LAYOUT */
+
+        .bottom-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin: 20px;
+        }
+
         .story-section,
         .terms-section,
         .comment-section {
             background: white;
             padding: 20px;
-            margin: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
@@ -214,6 +220,7 @@
         }
 
         @media (max-width: 900px) {
+
             .main-container {
                 grid-template-columns: 1fr;
             }
@@ -221,23 +228,33 @@
             .features {
                 grid-template-columns: 1fr;
             }
+
+            .bottom-layout {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 600px) {
+
             header h1 {
                 font-size: 25px;
             }
 
-            .main-container,
-            .story-section,
-            .terms-section,
-            .comment-section {
+            .main-container {
+                margin: 0;
+                padding: 12px;
+            }
+
+            .bottom-layout {
                 margin: 0;
                 padding: 12px;
             }
 
             .column,
-            .center-section {
+            .center-section,
+            .story-section,
+            .terms-section,
+            .comment-section {
                 padding: 15px;
             }
         }
@@ -536,96 +553,102 @@
     </div>
 
 
-    <!-- STORY VIDEOS -->
+    <!-- BOTTOM THREE COLUMN LAYOUT -->
 
-    <div class="story-section">
+    <div class="bottom-layout">
 
-        <h2>🎥 Story Videos</h2>
+        <!-- STORY VIDEOS LEFT -->
 
-        <p>
-            Watch interesting Moral, Family, Animal and Festival stories.
-        </p>
+        <div class="story-section">
 
-        <div class="activity">
+            <h2>🎥 Story Videos</h2>
 
-            <span>
-                👍 Likes: <strong>0</strong>
-            </span>
+            <p>
+                Watch interesting Moral, Family, Animal and Festival stories.
+            </p>
 
-            <span>
-                👁️ Views: <strong>0</strong>
-            </span>
+            <div class="activity">
 
-            <span>
-                💬 Comments: <strong>0</strong>
-            </span>
+                <span>
+                    👍 Likes: <strong>0</strong>
+                </span>
 
-        </div>
+                <span>
+                    👁️ Views: <strong>0</strong>
+                </span>
 
-        <br>
+                <span>
+                    💬 Comments: <strong>0</strong>
+                </span>
 
-        <a class="btn" href="storyvideos.html">
-            Watch Story Videos
-        </a>
+            </div>
 
-    </div>
+            <br>
 
-
-    <!-- STORY CONTENT -->
-
-    <div class="story-section">
-
-        <h2>📖 Story Content</h2>
-
-        <p>
-            Read Moral, Family, Animal and Festival story content.
-        </p>
-
-        <div class="activity">
-
-            <span>
-                👍 Likes: <strong>0</strong>
-            </span>
-
-            <span>
-                👁️ Views: <strong>0</strong>
-            </span>
-
-            <span>
-                💬 Comments: <strong>0</strong>
-            </span>
+            <a class="btn" href="storyvideos.html">
+                Watch Story Videos
+            </a>
 
         </div>
 
-        <br>
 
-        <a class="btn" href="storycontent.html">
-            Read Story Content
-        </a>
+        <!-- TERMS CENTER -->
 
-    </div>
+        <div class="terms-section">
+
+            <h2>📜 Terms and Conditions</h2>
+
+            <p>
+                Please read our website terms and conditions before using the services.
+            </p>
+
+            <a class="btn" href="terms.html">
+                Read Terms & Conditions
+            </a>
+
+        </div>
 
 
-    <!-- TERMS -->
+        <!-- STORY CONTENT RIGHT -->
 
-    <div class="terms-section">
+        <div class="story-section">
 
-        <h2>📜 Terms and Conditions</h2>
+            <h2>📖 Story Content</h2>
 
-        <p>
-            Please read our website terms and conditions before using the services.
-        </p>
+            <p>
+                Read Moral, Family, Animal and Festival story content.
+            </p>
 
-        <a class="btn" href="terms.html">
-            Read Terms & Conditions
-        </a>
+            <div class="activity">
+
+                <span>
+                    👍 Likes: <strong>0</strong>
+                </span>
+
+                <span>
+                    👁️ Views: <strong>0</strong>
+                </span>
+
+                <span>
+                    💬 Comments: <strong>0</strong>
+                </span>
+
+            </div>
+
+            <br>
+
+            <a class="btn" href="storycontent.html">
+                Read Story Content
+            </a>
+
+        </div>
 
     </div>
 
 
     <!-- COMMENT BOX -->
 
-    <div class="comment-section">
+    <div class="comment-section" style="margin:20px;">
 
         <h2>💬 Comment Box</h2>
 
@@ -666,6 +689,7 @@
     <footer>
 
         <p>
+
             <a href="terms.html">
                 Terms & Conditions
             </a>
@@ -675,6 +699,7 @@
             <a href="privacy-policy.html">
                 Privacy Policy
             </a>
+
         </p>
 
         <p>
@@ -754,4 +779,3 @@
 </body>
 
 </html>
-
