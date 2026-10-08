@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Paid Classes - ALL-IN-ONE.COM</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            color: #222;
+        }
+
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+
+        header p {
+            margin: 7px 0 0;
+            color: #d1d5db;
+            font-size: 16px;
+        }
+
+
+        .container {
+            width: 92%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+
+        .top-box {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+
+        .top-box h2 {
+            margin-top: 0;
+            font-size: 27px;
+        }
+
+
+        .login-status {
+            margin-top: 15px;
+            padding: 13px;
+            background: #eef6ff;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+
+        .razorpay-status {
+            margin-top: 12px;
+            padding: 13px;
+            background: #ecfdf5;
+            color: #166534;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+
+        #message {
+            display: none;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+
+
+        #message.loading {
+            display: block;
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+
+        #message.success {
+            display: block;
+            background: #dcfce7;
+            color: #166534;
+        }
+
+
+        #message.error {
+            display: block;
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+
+        .course {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+            text-align: center;
+        }
+
+
+        .course-icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+
+        .course h3 {
+            margin: 10px 0;
+            font-size: 21px;
+        }
+
+
+        .course p {
+            min-height: 48px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+
+        .price {
+            font-size: 29px;
+            font-weight: bold;
+            margin: 18px 0;
+        }
+
+
+        .buy-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+        .buy-btn:hover {
+            background: #1d4ed8;
+        }
+
+
+        .buy-btn:active {
+            transform: scale(0.98);
+        }
+
+
+        .features {
+            background: white;
+            margin-top: 30px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+
+        .features h2 {
+            margin-top: 0;
+        }
+
+
+        .features li {
+            margin: 10px 0;
+        }
+
+
+        .back {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+            background: #111827;
+            color: white;
+            padding: 11px 18px;
+            border-radius: 7px;
+        }
+
+
+        @media (max-width: 800px) {
+
+            .courses {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+
+    <!-- Razorpay Checkout -->
+
+    <script
+        src="https://checkout.razorpay.com/v1/checkout.js">
+    </script>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>
+        ALL-IN-ONE.COM
+    </h1>
+
+    <p>
+        Learn • Prepare • Watch • Enjoy
+    </p>
+
+</header>
+
+
+
+<div class="container">
+
+
+    <!-- TOP -->
+
+    <div class="top-box">
+
+        <h2>
+            💳 Paid Classes
+        </h2>
+
+        <p>
+            Choose your course and get access after successful payment.
+        </p>
+
+
+        <div
+            class="login-status"
+            id="loginStatus">
+
+            Checking login...
+
+        </div>
+
+
+        <div
+            class="razorpay-status"
+            id="razorpayStatus">
+
+            Checking Razorpay...
+
+        </div>
+
+    </div>
+
+
+
+    <!-- PAYMENT MESSAGE -->
+
+    <div id="message"></div>
+
+
+
+    <!-- COURSES -->
+
+    <div class="courses">
+
+
+        <!-- UPSC -->
+
+        <div class="course">
+
+            <div class="course-icon">
+                📚
+            </div>
+
+
+            <h3>
+                UPSC Complete Course
+            </h3>
+
+
+            <p>
+                Complete preparation course for UPSC aspirants.
+            </p>
+
+
+            <div class="price">
+                ₹999
+            </div>
+
+
+            <button
+                type="button"
+                class="buy-btn"
+                data-course="upsc"
+                data-name="UPSC Complete Course"
+                data-amount="999">
+
+                💳 Buy Now
+
+            </button>
+
+        </div>
+
+
+
+        <!-- COMPETITIVE -->
+
+        <div class="course">
+
+            <div class="course-icon">
+                🎯
+            </div>
+
+
+            <h3>
+                Competitive Exams
+            </h3>
+
+
+            <p>
+                Preparation material for competitive examinations.
+            </p>
+
+
+            <div class="price">
+                ₹799
+            </div>
+
+
+            <button
+                type="button"
+                class="buy-btn"
+                data-course="competitive"
+                data-name="Competitive Exams"
+                data-amount="799">
+
+                💳 Buy Now
+
+            </button>
+
+        </div>
+
+
+
+        <!-- DEGREE -->
+
+        <div class="course">
+
+            <div class="course-icon">
+                🎓
+            </div>
+
+
+            <h3>
+                Degree Classes
+            </h3>
+
+
+            <p>
+                Degree-level educational classes and study material.
+            </p>
+
+
+            <div class="price">
+                ₹599
+            </div>
+
+
+            <button
+                type="button"
+                class="buy-btn"
+                data-course="degree"
+                data-name="Degree Classes"
+                data-amount="599">
+
+                💳 Buy Now
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- FEATURES -->
+
+    <div class="features">
+
+        <h2>
+            ✨ Course Features
+        </h2>
+
+
+        <ul>
+
+            <li>
+                📖 Complete Course Material
+            </li>
+
+            <li>
+                🎥 Educational Videos
+            </li>
+
+            <li>
+                📝 Study Material
+            </li>
+
+            <li>
+                🔐 Paid Course Access
+            </li>
+
+            <li>
+                💳 Secure Razorpay Payment
+            </li>
+
+            <li>
+                👤 Personal Account
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+    <a
+        href="index.html"
+        class="back">
+
+        ← Back to Home
+
+    </a>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =====================================================
+   GLOBAL USER
+===================================================== */
+
+let currentUser = null;
+
+
+
+/* =====================================================
+   SHOW MESSAGE
+===================================================== */
+
+function showMessage(text, type) {
+
+    const message =
+        document.getElementById("message");
+
+    message.className = "";
+
+    message.textContent = text;
+
+    message.classList.add(type);
+
+}
+
+
+
+/* =====================================================
+   CHECK LOGIN
+===================================================== */
+
+async function checkLogin() {
+
+    const status =
+        document.getElementById("loginStatus");
+
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/me",
+                {
+                    credentials: "same-origin",
+                    cache: "no-store"
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        console.log(
+            "LOGIN RESPONSE:",
+            data
+        );
+
+
+        if (
+            data.loggedIn &&
+            data.user
+        ) {
+
+            currentUser =
+                data.user;
+
+
+            window.currentUserName =
+                data.user.name || "";
+
+
+            window.currentUserEmail =
+                data.user.email || "";
+
+
+            status.textContent =
+                "👤 Logged in as " +
+                data.user.name;
+
+        }
+
+        else {
+
+            currentUser = null;
+
+
+            status.textContent =
+                "⚠️ Please login before buying a course.";
+
+        }
+
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "LOGIN CHECK ERROR:",
+            error
+        );
+
+
+        status.textContent =
+            "❌ Unable to check login.";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   CHECK RAZORPAY
+===================================================== */
+
+function checkRazorpay() {
+
+    const status =
+        document.getElementById(
+            "razorpayStatus"
+        );
+
+
+    if (
+        typeof Razorpay === "function"
+    ) {
+
+        status.textContent =
+            "✅ Razorpay Checkout Ready";
+
+        return true;
+
+    }
+
+
+    status.textContent =
+        "❌ Razorpay Checkout could not load.";
+
+    return false;
+
+}
+
+
+
+/* =====================================================
+   START PAYMENT
+===================================================== */
+
+async function startPayment(
+    courseId,
+    courseName,
+    amount
+) {
+
+
+    console.log(
+        "BUY BUTTON CLICKED"
+    );
+
+
+    console.log(
+        "COURSE:",
+        courseId
+    );
+
+
+    console.log(
+        "NAME:",
+        courseName
+    );
+
+
+    console.log(
+        "AMOUNT:",
+        amount
+    );
+
+
+    showMessage(
+        "⏳ Creating Razorpay payment order...",
+        "loading"
+    );
+
+
+
+    /* LOGIN CHECK */
+
+    if (!currentUser) {
+
+        showMessage(
+            "❌ Please login before buying a course.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+
+    /* RAZORPAY CHECK */
+
+    if (
+        !checkRazorpay()
+    ) {
+
+        showMessage(
+            "❌ Razorpay Checkout is not loaded. Please refresh the page.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+
+    try {
+
+
+        /* CREATE ORDER */
+
+        const response =
+            await fetch(
+                "/api/create-order",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    credentials:
+                        "same-origin",
+
+                    body:
+                        JSON.stringify({
+                            courseId:
+                                courseId
+                        })
+                }
+            );
+
+
+
+        console.log(
+            "CREATE ORDER STATUS:",
+            response.status
+        );
+
+
+
+        const responseText =
+            await response.text();
+
+
+
+        console.log(
+            "CREATE ORDER RESPONSE:",
+            responseText
+        );
+
+
+
+        let data;
+
+
+        try {
+
+            data =
+                JSON.parse(
+                    responseText
+                );
+
+        }
+
+        catch (jsonError) {
+
+            showMessage(
+                "❌ Server returned invalid payment response.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+
+        /* ALREADY PURCHASED */
+
+        if (
+            data.alreadyPurchased
+        ) {
+
+            showMessage(
+                "✅ You already purchased this course. Opening course...",
+                "success"
+            );
+
+
+            setTimeout(
+                function () {
+
+                    window.location.href =
+                        "course.html?course=" +
+                        encodeURIComponent(
+                            courseId
+                        );
+
+                },
+                1200
+            );
+
+
+            return;
+
+        }
+
+
+
+        /* SERVER ERROR */
+
+        if (
+            !response.ok ||
+            !data.success
+        ) {
+
+            showMessage(
+                "❌ " +
+                (
+                    data.message ||
+                    "Unable to create payment order."
+                ),
+                "error"
+            );
+
+            return;
+
+        }
+
+
+
+        /* CHECK KEY */
+
+        if (
+            !data.key
+        ) {
+
+            showMessage(
+                "❌ Razorpay Key ID was not received from server.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+
+        /* CHECK ORDER */
+
+        if (
+            !data.order ||
+            !data.order.id
+        ) {
+
+            showMessage(
+                "❌ Razorpay Order ID was not received from server.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+
+        console.log(
+            "RAZORPAY ORDER:",
+            data.order
+        );
+
+
+
+        showMessage(
+            "💳 Opening Razorpay Checkout...",
+            "loading"
+        );
+
+
+
+        /* RAZORPAY OPTIONS */
+
+        const options = {
+
+            key:
+                data.key,
+
+            amount:
+                data.order.amount,
+
+            currency:
+                data.order.currency ||
+                "INR",
+
+            name:
+                "ALL-IN-ONE.COM",
+
+            description:
+                courseName,
+
+            order_id:
+                data.order.id,
+
+
+            prefill: {
+
+                name:
+                    currentUser.name || "",
+
+                email:
+                    currentUser.email || ""
+
+            },
+
+
+            theme: {
+
+                color:
+                    "#2563eb"
+
+            },
+
+
+            handler:
+                async function(payment) {
+
+
+                    console.log(
+                        "PAYMENT SUCCESS:",
+                        payment
+                    );
+
+
+                    showMessage(
+                        "⏳ Payment successful. Verifying payment...",
+                        "loading"
+                    );
+
+
+                    await verifyPayment(
+                        payment,
+                        courseId
+                    );
+
+                },
+
+
+            modal: {
+
+                ondismiss:
+                    function() {
+
+
+                        console.log(
+                            "RAZORPAY CLOSED"
+                        );
+
+
+                        showMessage(
+                            "ℹ️ Razorpay payment window closed.",
+                            "error"
+                        );
+
+                    }
+
+            }
+
+        };
+
+
+
+        /* CREATE RAZORPAY */
+
+        console.log(
+            "CREATING RAZORPAY OBJECT"
+        );
+
+
+        const razorpay =
+            new Razorpay(
+                options
+            );
+
+
+
+        /* PAYMENT FAILED */
+
+        razorpay.on(
+            "payment.failed",
+            function(response) {
+
+
+                console.error(
+                    "PAYMENT FAILED:",
+                    response
+                );
+
+
+                showMessage(
+                    "❌ Payment failed. Please try again.",
+                    "error"
+                );
+
+            }
+        );
+
+
+
+        /* OPEN CHECKOUT */
+
+        console.log(
+            "OPENING RAZORPAY CHECKOUT"
+        );
+
+
+        razorpay.open();
+
+
+    }
+
+    catch (error) {
+
+
+        console.error(
+            "START PAYMENT ERROR:",
+            error
+        );
+
+
+        showMessage(
+            "❌ Error: " +
+            error.message,
+            "error"
+        );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   VERIFY PAYMENT
+===================================================== */
+
+async function verifyPayment(
+    payment,
+    courseId
+) {
+
+
+    try {
+
+
+        const response =
+            await fetch(
+                "/api/verify-payment",
+                {
+
+                    method:
+                        "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+                    credentials:
+                        "same-origin",
+
+                    body:
+                        JSON.stringify({
+
+                            courseId:
+                                courseId,
+
+                            razorpay_order_id:
+                                payment.razorpay_order_id,
+
+                            razorpay_payment_id:
+                                payment.razorpay_payment_id,
+
+                            razorpay_signature:
+                                payment.razorpay_signature
+
+                        })
+
+                }
+            );
+
+
+
+        const data =
+            await response.json();
+
+
+
+        console.log(
+            "VERIFY PAYMENT:",
+            data
+        );
+
+
+
+        if (
+            !response.ok ||
+            !data.success
+        ) {
+
+            showMessage(
+                "❌ Payment verification failed: " +
+                (
+                    data.message ||
+                    "Unknown error"
+                ),
+                "error"
+            );
+
+            return;
+
+        }
+
+
+
+        showMessage(
+            "✅ Payment successful! Course access granted.",
+            "success"
+        );
+
+
+
+        setTimeout(
+            function() {
+
+                window.location.href =
+                    "course.html?course=" +
+                    encodeURIComponent(
+                        courseId
+                    );
+
+            },
+            1200
+        );
+
+
+    }
+
+    catch (error) {
+
+
+        console.error(
+            "VERIFY PAYMENT ERROR:",
+            error
+        );
+
+
+        showMessage(
+            "❌ Payment verification error: " +
+            error.message,
+            "error"
+        );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   PAGE LOAD
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+
+        console.log(
+            "================================"
+        );
+
+
+        console.log(
+            "PAID CLASSES PAGE READY"
+        );
+
+
+        console.log(
+            "================================"
+        );
+
+
+
+        /* CHECK RAZORPAY */
+
+        checkRazorpay();
+
+
+
+        /* CHECK LOGIN */
+
+        checkLogin();
+
+
+
+        /* FIND BUTTONS */
+
+        const buttons =
+            document.querySelectorAll(
+                ".buy-btn"
+            );
+
+
+        console.log(
+            "BUY BUTTON COUNT:",
+            buttons.length
+        );
+
+
+
+        /* ADD CLICK EVENTS */
+
+        buttons.forEach(
+            function(button) {
+
+
+                button.addEventListener(
+                    "click",
+                    function() {
+
+
+                        console.log(
+                            "BUTTON CLICK EVENT FIRED"
+                        );
+
+
+                        /*
+                           IMPORTANT TEST
+                        */
+
+                        alert(
+                            "BUY BUTTON CLICK WORKING"
+                        );
+
+
+
+                        const courseId =
+                            button.dataset.course;
+
+
+                        const courseName =
+                            button.dataset.name;
+
+
+                        const amount =
+                            button.dataset.amount;
+
+
+
+                        startPayment(
+                            courseId,
+                            courseName,
+                            amount
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
