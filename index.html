@@ -2,22 +2,12 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ALL-IN-ONE.COM</title>
 
-    <link rel="stylesheet" href="style.css">
-
     <style>
-
-        /* ===============================
-           PROFESSIONAL HOMEPAGE DESIGN
-        =============================== */
-
         * {
             box-sizing: border-box;
         }
@@ -25,1566 +15,734 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f3f6fb;
-            color: #1f2937;
+            background: #f4f7fb;
+            color: #222;
         }
 
-        a {
-            transition: 0.2s ease;
-        }
-
-
-        /* ===============================
-           HEADER
-        =============================== */
-
-        .main-header {
-            background: linear-gradient(
-                135deg,
-                #111827,
-                #1e3a8a
-            );
-
+        header {
+            background: #0f172a;
             color: white;
-            padding: 22px 20px;
-
-            box-shadow:
-                0 4px 15px rgba(0,0,0,0.15);
-
+            padding: 20px;
             text-align: center;
         }
 
-        .logo {
+        header h1 {
+            margin: 0;
             font-size: 32px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            margin-bottom: 16px;
         }
 
-        .main-header nav {
+        header p {
+            margin: 8px 0 15px;
+            font-size: 16px;
+        }
+
+        nav {
             display: flex;
             justify-content: center;
-            align-items: center;
             flex-wrap: wrap;
             gap: 8px;
         }
 
-        .main-header nav a {
+        nav a {
             color: white;
             text-decoration: none;
-            background: rgba(255,255,255,0.12);
-            padding: 9px 14px;
-            border-radius: 7px;
+            background: #1e293b;
+            padding: 8px 12px;
+            border-radius: 6px;
             font-weight: bold;
-            font-size: 14px;
         }
 
-        .main-header nav a:hover {
+        nav a:hover {
             background: #2563eb;
-            transform: translateY(-1px);
         }
 
-
-        /* ===============================
-           MAIN THREE COLUMN STRUCTURE
-        =============================== */
-
-        .main-layout {
-            max-width: 1450px;
-            margin: 28px auto;
-            padding: 0 18px;
-
+        .main-container {
             display: grid;
-
-            grid-template-columns:
-                270px
-                minmax(0, 1fr)
-                270px;
-
-            gap: 22px;
-
-            align-items: start;
-        }
-
-
-        /* ===============================
-           COMMON CARD
-        =============================== */
-
-        .left-column,
-        .center-column,
-        .right-column {
-            min-width: 0;
-        }
-
-        .left-column,
-        .paid-section,
-        .welcome-section,
-        .search-box,
-        .feature-card,
-        .login-section,
-        .upload-section,
-        .income-section,
-        .comment-section,
-        .story-card,
-        .terms-section {
-            background: white;
-
-            border: 1px solid #e5e7eb;
-
-            border-radius: 14px;
-
-            box-shadow:
-                0 5px 18px rgba(15,23,42,0.07);
-        }
-
-
-        /* ===============================
-           LEFT WATCHING VIDEOS
-        =============================== */
-
-        .left-column {
+            grid-template-columns: 270px minmax(0, 1fr) 270px;
+            gap: 20px;
             padding: 20px;
-
-            position: sticky;
-            top: 18px;
+            max-width: 1400px;
+            margin: auto;
         }
 
-        .left-column h2 {
+        .column {
+            background: white;
+            padding: 18px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        h2,
+        h3 {
             margin-top: 0;
-            color: #111827;
-            font-size: 21px;
-            padding-bottom: 13px;
-            border-bottom: 2px solid #e5e7eb;
         }
 
-        .left-column h3 {
-            margin-top: 22px;
-            margin-bottom: 8px;
-            color: #1d4ed8;
-            font-size: 16px;
-        }
-
-        .left-column a {
+        .tree a {
             display: block;
-
+            padding: 8px;
+            margin: 4px 0;
             text-decoration: none;
-
-            color: #374151;
-
-            padding: 9px 10px;
-
-            margin: 3px 0;
-
-            border-radius: 7px;
-
-            font-size: 14px;
-        }
-
-        .left-column a:hover {
+            color: #1e3a8a;
             background: #eff6ff;
-            color: #1d4ed8;
-            padding-left: 14px;
+            border-radius: 5px;
         }
 
-
-        /* ===============================
-           CENTER WELCOME
-        =============================== */
-
-        .welcome-section {
-            padding: 30px;
-            text-align: center;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #ffffff,
-                    #eff6ff
-                );
-
-            margin-bottom: 18px;
+        .tree a:hover {
+            background: #dbeafe;
         }
 
-        .welcome-section h1 {
-            margin: 0;
-            font-size: 30px;
-            color: #111827;
+        .sub-item {
+            margin-left: 15px;
         }
 
-        .welcome-section p {
-            margin: 10px 0 0;
-            font-size: 17px;
-            color: #4b5563;
-            font-weight: bold;
+        .center-section {
+            background: white;
+            padding: 22px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
-
-
-        /* ===============================
-           SEARCH
-        =============================== */
 
         .search-box {
-            padding: 14px;
-            margin-bottom: 18px;
-        }
-
-        #searchBox {
-            width: 100%;
-
-            border: 1px solid #d1d5db;
-
-            border-radius: 9px;
-
-            padding: 13px 15px;
-
-            font-size: 15px;
-
-            outline: none;
-        }
-
-        #searchBox:focus {
-            border-color: #2563eb;
-
-            box-shadow:
-                0 0 0 3px rgba(37,99,235,0.12);
-        }
-
-        #searchMessage {
-            margin: 8px 2px 14px;
-            font-weight: bold;
-            color: #2563eb;
-        }
-
-        .search-highlight {
-            outline: 2px solid #93c5fd;
-        }
-
-
-        /* ===============================
-           FEATURES
-        =============================== */
-
-        .feature-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
-
-            gap: 16px;
-
-            margin-bottom: 18px;
-        }
-
-        .feature-card {
-            padding: 21px;
-        }
-
-        .feature-card:hover,
-        .story-card:hover,
-        .paid-section:hover,
-        .income-section:hover {
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 8px 25px rgba(15,23,42,0.10);
-        }
-
-        .feature-card h3 {
-            margin-top: 0;
-            font-size: 19px;
-            color: #111827;
-        }
-
-        .feature-card p {
-            color: #6b7280;
-            line-height: 1.5;
-            min-height: 48px;
-        }
-
-        .feature-card a,
-        .login-section a,
-        .upload-section a,
-        .income-section a,
-        .paid-section a,
-        .story-card a,
-        .terms-section a {
-            display: inline-block;
-
-            background: #2563eb;
-
-            color: white;
-
-            text-decoration: none;
-
-            padding: 10px 15px;
-
-            border-radius: 7px;
-
-            font-weight: bold;
-
-            margin-top: 5px;
-        }
-
-        .feature-card a:hover,
-        .login-section a:hover,
-        .upload-section a:hover,
-        .paid-section a:hover,
-        .story-card a:hover,
-        .terms-section a:hover {
-            background: #1d4ed8;
-        }
-
-
-        /* ===============================
-           LOGIN / UPLOAD
-        =============================== */
-
-        .login-section,
-        .upload-section,
-        .income-section,
-        .comment-section {
-            padding: 22px;
-            margin-bottom: 18px;
-        }
-
-        .login-section h2,
-        .upload-section h2,
-        .income-section h2,
-        .comment-section h2 {
-            margin-top: 0;
-            color: #111827;
-        }
-
-        .login-section p,
-        .upload-section p {
-            color: #6b7280;
-        }
-
-
-        /* ===============================
-           INCOME OPPORTUNITIES
-        =============================== */
-
-        .income-section {
-            background:
-                linear-gradient(
-                    135deg,
-                    #ffffff,
-                    #ecfdf5
-                );
-
-            border: 2px solid #10b981;
-        }
-
-        .income-section h2 {
-            color: #047857;
-        }
-
-        .income-section p {
-            color: #4b5563;
-            line-height: 1.6;
-        }
-
-        .income-section ul {
-            margin: 14px 0;
-            padding-left: 22px;
-            color: #374151;
-            line-height: 1.9;
-        }
-
-        .income-section li {
-            margin-bottom: 3px;
-        }
-
-        .income-section a {
-            background: #059669;
-        }
-
-        .income-section a:hover {
-            background: #047857;
-        }
-
-
-        /* ===============================
-           RIGHT PAID CLASSES
-        =============================== */
-
-        .right-column {
-            position: sticky;
-            top: 18px;
-        }
-
-        .paid-section {
-            padding: 23px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #ffffff,
-                    #fff7ed
-                );
-        }
-
-        .paid-section h2 {
-            margin-top: 0;
-            color: #92400e;
-        }
-
-        .paid-section p {
-            color: #6b7280;
-            line-height: 1.5;
-        }
-
-        .paid-section a {
-            background: #ea580c;
-        }
-
-        .paid-section a:hover {
-            background: #c2410c;
-        }
-
-
-        /* ===============================
-           STATS
-        =============================== */
-
-        .stats {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
+            margin: 15px 0;
         }
 
-        .stats span {
-            background: #f8fafc;
-
-            border: 1px solid #e5e7eb;
-
-            padding: 8px 10px;
-
-            border-radius: 7px;
-
-            font-size: 13px;
-
-            color: #4b5563;
+        .search-box input {
+            flex: 1;
+            padding: 11px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
         }
 
-        .stats strong {
-            color: #111827;
-        }
-
-
-        /* ===============================
-           STORY SECTION
-        =============================== */
-
-        .story-section {
-            max-width: 1450px;
-
-            margin: 22px auto;
-
-            padding: 0 18px;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
-
-            gap: 22px;
-        }
-
-        .story-card {
-            padding: 24px;
-        }
-
-        .story-card h2 {
-            margin-top: 0;
-            color: #111827;
-        }
-
-        .story-card p {
-            color: #6b7280;
-            line-height: 1.5;
-        }
-
-        .story-card:nth-child(1) {
-            border-top: 4px solid #2563eb;
-        }
-
-        .story-card:nth-child(2) {
-            border-top: 4px solid #7c3aed;
-        }
-
-        .story-card:nth-child(2) a {
-            background: #7c3aed;
-        }
-
-        .story-card:nth-child(2) a:hover {
-            background: #6d28d9;
-        }
-
-
-        /* ===============================
-           TERMS
-        =============================== */
-
-        .terms-section {
-            max-width: 1450px;
-
-            margin: 22px auto;
-
-            padding: 24px 28px;
-        }
-
-        .terms-section h2 {
-            margin-top: 0;
-        }
-
-        .terms-section p {
-            color: #6b7280;
-        }
-
-
-        /* ===============================
-           COMMENT BOX
-        =============================== */
-
-        #homeCommentInput {
-            width: 100%;
-
-            min-height: 100px;
-
-            resize: vertical;
-
-            padding: 12px;
-
-            border: 1px solid #d1d5db;
-
-            border-radius: 8px;
-
-            font-family: Arial, sans-serif;
-
-            margin-bottom: 10px;
-        }
-
-        #homeCommentInput:focus {
-            outline: none;
-
-            border-color: #2563eb;
-
-            box-shadow:
-                0 0 0 3px rgba(37,99,235,0.10);
-        }
-
-        .comment-section button {
-            border: 0;
-
+        .search-box button,
+        .btn {
+            padding: 11px 16px;
+            border: none;
+            border-radius: 6px;
             background: #2563eb;
-
             color: white;
-
-            padding: 10px 16px;
-
-            border-radius: 7px;
-
-            font-weight: bold;
-
             cursor: pointer;
-
-            margin-bottom: 15px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
         }
 
-        .comment-section button:hover {
+        .search-box button:hover,
+        .btn:hover {
             background: #1d4ed8;
         }
 
-        #homeCommentsList > div {
-            border-left: 4px solid #2563eb;
-
-            background: #f8fafc;
-
-            padding: 12px;
-
-            margin-top: 10px;
-
-            border-radius: 8px;
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
         }
 
+        .feature {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
 
-        /* ===============================
-           FOOTER
-        =============================== */
+        .paid-course {
+            background: #f8fafc;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 7px;
+        }
+
+        .story-section,
+        .terms-section,
+        .comment-section {
+            background: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            resize: vertical;
+        }
+
+        .activity {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .activity span {
+            background: #f1f5f9;
+            padding: 10px 14px;
+            border-radius: 6px;
+        }
 
         footer {
-            margin-top: 35px;
-
-            background: #111827;
-
+            background: #0f172a;
             color: white;
-
             text-align: center;
-
             padding: 25px;
+            margin-top: 20px;
         }
 
-        footer p {
-            margin: 7px 0;
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 8px;
         }
 
-
-        /* ===============================
-           MOBILE
-        =============================== */
-
-        @media (max-width: 1050px) {
-
-            .main-layout {
-                grid-template-columns:
-                    220px
-                    minmax(0, 1fr)
-                    220px;
-            }
-
+        footer a:hover {
+            color: #93c5fd;
+            text-decoration: underline;
         }
 
-
-        @media (max-width: 850px) {
-
-            .main-layout {
+        @media (max-width: 900px) {
+            .main-container {
                 grid-template-columns: 1fr;
             }
 
-            .left-column,
-            .right-column {
-                position: static;
-            }
-
-            .feature-grid {
+            .features {
                 grid-template-columns: 1fr;
             }
-
-            .story-section {
-                grid-template-columns: 1fr;
-            }
-
         }
-
 
         @media (max-width: 600px) {
-
-            .main-header {
-                padding: 18px 12px;
-            }
-
-            .logo {
+            header h1 {
                 font-size: 25px;
             }
 
-            .main-header nav {
-                gap: 5px;
+            .main-container,
+            .story-section,
+            .terms-section,
+            .comment-section {
+                margin: 0;
+                padding: 12px;
             }
 
-            .main-header nav a {
-                font-size: 12px;
-                padding: 8px 10px;
+            .column,
+            .center-section {
+                padding: 15px;
             }
-
-            .main-layout,
-            .story-section {
-                padding: 0 12px;
-                margin-top: 15px;
-            }
-
-            .welcome-section {
-                padding: 23px 15px;
-            }
-
-            .welcome-section h1 {
-                font-size: 24px;
-            }
-
-            .stats {
-                flex-direction: column;
-            }
-
         }
-
     </style>
-
 </head>
-
 
 <body>
 
+    <header>
 
-<!-- ================= HEADER ================= -->
+        <h1>ALL-IN-ONE.COM</h1>
 
-<header class="main-header">
+        <p>Learn • Prepare • Watch • Enjoy</p>
 
-    <div class="logo">
-        ALL-IN-ONE.COM
-    </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="educational.html">Educational</a>
+            <a href="exams.html">Exams</a>
+            <a href="entertainment.html">Entertainment</a>
+            <a href="videos.html">Videos</a>
+            <a href="storyvideos.html">Story Videos</a>
+            <a href="storycontent.html">Story Content</a>
+            <a href="login.html">Login</a>
+        </nav>
 
-    <nav>
-
-        <a href="index.html">
-            Home
-        </a>
-
-        <a href="educational.html">
-            Educational
-        </a>
-
-        <a href="exams.html">
-            Exams
-        </a>
-
-        <a href="entertainment.html">
-            Entertainment
-        </a>
-
-        <a href="videos.html">
-            Videos
-        </a>
-
-        <a href="storyvideos.html">
-            Story Videos
-        </a>
-
-        <a href="storycontent.html">
-            Story Content
-        </a>
-
-        <a href="login.html">
-            Login
-        </a>
-
-    </nav>
-
-</header>
+    </header>
 
 
+    <div class="main-container">
 
-<!-- ================= MAIN THREE COLUMNS ================= -->
+        <!-- LEFT COLUMN -->
 
-<div class="main-layout">
+        <div class="column">
 
+            <h2>🎥 Watching Videos</h2>
 
-    <!-- ================= LEFT COLUMN ================= -->
+            <div class="tree">
 
-    <aside class="left-column">
+                <h3>📚 Educational</h3>
 
-        <h2>
-            🎥 Watching Videos
-        </h2>
+                <a href="educational.html?category=school">
+                    🏫 1–10 Classes
+                </a>
 
+                <a href="educational.html?category=intermediate">
+                    🎓 Intermediate / +2
+                </a>
 
-        <h3>
-            📚 Educational
-        </h3>
+                <a href="educational.html?category=degree">
+                    📖 Degree
+                </a>
 
-        <a href="educational.html?category=school">
-            🏫 1–10 Classes
-        </a>
+                <a href="educational.html?category=pg">
+                    🎓 PG / Related
+                </a>
 
-        <a href="educational.html?category=intermediate">
-            🎓 Intermediate / +2
-        </a>
-
-        <a href="educational.html?category=degree">
-            📖 Degree
-        </a>
-
-        <a href="educational.html?category=pg">
-            🎓 PG / Related
-        </a>
-
-        <a href="educational.html?category=other">
-            📚 Other Videos
-        </a>
+                <a href="educational.html?category=other">
+                    📚 Other Videos
+                </a>
 
 
-        <h3>
-            📝 Competitive Exams
-        </h3>
+                <h3>📝 Competitive Exams</h3>
 
-        <a href="exams.html?category=arithmetic">
-            🔢 Arithmetic
-        </a>
+                <a href="exams.html?category=arithmetic">
+                    🔢 Arithmetic
+                </a>
 
-        <a href="exams.html?category=reasoning">
-            🧠 Reasoning
-        </a>
+                <a href="exams.html?category=reasoning">
+                    🧠 Reasoning
+                </a>
 
-        <a href="exams.html?category=economy">
-            💰 Economy
-        </a>
+                <a href="exams.html?category=economy">
+                    💰 Economy
+                </a>
 
-        <a href="exams.html?category=polity">
-            🏛️ Polity
-        </a>
+                <a href="exams.html?category=polity">
+                    🏛️ Polity
+                </a>
 
-        <a href="exams.html?category=history">
-            📜 History
-        </a>
+                <a href="exams.html?category=history">
+                    📜 History
+                </a>
 
-        <a href="exams.html?category=other">
-            📚 Other Subjects
-        </a>
+                <a href="exams.html?category=other">
+                    📚 Other Subjects
+                </a>
 
 
-        <h3>
-            🎬 Entertainment
-        </h3>
+                <h3>🎬 Entertainment</h3>
 
-        <a href="entertainment.html">
-            🎬 Entertainment Videos
-        </a>
+                <a href="entertainment.html">
+                    🎬 Entertainment Videos
+                </a>
 
-    </aside>
-
-
-
-    <!-- ================= CENTER COLUMN ================= -->
-
-    <main class="center-column">
-
-
-        <section class="welcome-section">
-
-            <h1>
-                Welcome to ALL-IN-ONE.COM
-            </h1>
-
-            <p>
-                Learn • Prepare • Watch • Enjoy
-            </p>
-
-        </section>
-
-
-
-        <!-- ================= SEARCH ================= -->
-
-        <div class="search-box">
-
-            <input
-                type="text"
-                id="searchBox"
-                placeholder="🔎 Search Education, Exams, Videos, Stories..."
-                onkeyup="searchWebsite()"
-            >
+            </div>
 
         </div>
 
-        <div id="searchMessage"></div>
+
+        <!-- CENTER COLUMN -->
+
+        <div>
+
+            <div class="center-section">
+
+                <h2>Welcome to ALL-IN-ONE.COM</h2>
+
+                <h3>Learn • Prepare • Watch • Enjoy</h3>
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search videos, classes, exams..."
+                    >
+
+                    <button onclick="searchWebsite()">
+                        🔍 Search
+                    </button>
+
+                </div>
+
+            </div>
 
 
+            <div class="center-section">
 
-        <!-- ================= FEATURES ================= -->
-
-        <div class="feature-grid">
-
-
-            <div
-                class="feature-card searchable-card"
-                data-search="education educational classes school degree intermediate pg"
-            >
-
-                <h3>
-                    📚 Education
-                </h3>
+                <h2>📚 Education</h2>
 
                 <p>
-                    School, Intermediate, Degree,
-                    PG and other educational videos.
+                    School, Intermediate, Degree, PG and other educational videos.
                 </p>
 
-                <a href="educational.html">
+                <a class="btn" href="educational.html">
                     Explore Education
                 </a>
 
             </div>
 
 
+            <div class="center-section">
 
-            <div
-                class="feature-card searchable-card"
-                data-search="competitive exams arithmetic reasoning economy polity history"
-            >
-
-                <h3>
-                    📝 Competitive Exams
-                </h3>
+                <h2>📝 Competitive Exams</h2>
 
                 <p>
-                    Prepare for competitive examinations
-                    with useful videos.
+                    Prepare for competitive examinations with useful videos.
                 </p>
 
-                <a href="exams.html">
+                <a class="btn" href="exams.html">
                     Explore Exams
                 </a>
 
             </div>
 
 
+            <div class="center-section">
 
-            <div
-                class="feature-card searchable-card"
-                data-search="entertainment movies comedy music fun"
-            >
-
-                <h3>
-                    🎬 Entertainment
-                </h3>
+                <h2>🎬 Entertainment</h2>
 
                 <p>
-                    Enjoy entertainment videos,
-                    music and fun content.
+                    Enjoy entertainment videos, music and fun content.
                 </p>
 
-                <a href="entertainment.html">
+                <a class="btn" href="entertainment.html">
                     Watch Entertainment
                 </a>
 
             </div>
 
 
+            <div class="center-section">
 
-            <div
-                class="feature-card searchable-card"
-                data-search="website videos all videos youtube"
-            >
-
-                <h3>
-                    🎥 Website Videos
-                </h3>
+                <h2>🎥 Website Videos</h2>
 
                 <p>
-                    Watch all available videos
-                    on our website.
+                    Watch all available videos on our website.
                 </p>
 
-                <a href="videos.html">
+                <a class="btn" href="videos.html">
                     Watch Videos
                 </a>
 
             </div>
 
 
-        </div>
+            <div class="center-section">
 
+                <h2>👤 Website Login / Account Creation</h2>
 
+                <p>
+                    Create your account and login to ALL-IN-ONE.COM.
+                </p>
 
-        <!-- ================= LOGIN ================= -->
-
-        <section class="login-section">
-
-            <h2>
-                👤 Website Login / Account Creation
-            </h2>
-
-            <p>
-                Create your account and login
-                to ALL-IN-ONE.COM.
-            </p>
-
-            <a href="login.html">
-                Login / Create Account
-            </a>
-
-        </section>
-
-
-
-        <!-- ================= UPLOAD ================= -->
-
-        <section class="upload-section">
-
-            <h2>
-                📤 Website Video Upload
-            </h2>
-
-            <p>
-                Upload your own videos and
-                create content on ALL-IN-ONE.COM.
-            </p>
-
-            <a href="video-upload.html">
-                Upload Video
-            </a>
-
-        </section>
-
-
-
-        <!-- ================= INCOME OPPORTUNITIES ================= -->
-
-        <section
-            class="income-section searchable-card"
-            data-search="income opportunities earn money creator upload videos views likes comments"
-        >
-
-            <h2>
-                💰 Income Opportunities
-            </h2>
-
-            <p>
-                Upload your own videos on
-                ALL-IN-ONE.COM and get opportunities
-                to earn income from your content.
-            </p>
-
-            <ul>
-
-                <li>
-                    📤 Upload your own videos
-                </li>
-
-                <li>
-                    👁️ Get views on your videos
-                </li>
-
-                <li>
-                    ❤️ Receive likes and comments
-                </li>
-
-                <li>
-                    💰 Eligible creators can earn
-                    from their content
-                </li>
-
-            </ul>
-
-            <a href="video-upload.html">
-                📤 Upload Videos & Earn Opportunities
-            </a>
-
-        </section>
-
-
-
-        <!-- ================= WEBSITE ACTIVITY ================= -->
-
-        <section class="comment-section">
-
-            <h2>
-                📊 Website Activity
-            </h2>
-
-            <div class="stats">
-
-                <span>
-                    👍 Likes:
-                    <strong id="homeLikes">0</strong>
-                </span>
-
-                <span>
-                    👁️ Views:
-                    <strong id="homeViews">0</strong>
-                </span>
-
-                <span>
-                    💬 Comments:
-                    <strong id="homeComments">0</strong>
-                </span>
+                <a class="btn" href="login.html">
+                    Login / Create Account
+                </a>
 
             </div>
 
-        </section>
+
+            <div class="center-section">
+
+                <h2>📤 Website Video Upload</h2>
+
+                <p>
+                    Upload your own videos and create content on ALL-IN-ONE.COM.
+                </p>
+
+                <a class="btn" href="video-upload.html">
+                    Upload Video
+                </a>
+
+            </div>
 
 
-    </main>
+            <div class="center-section">
+
+                <h2>💰 Income Opportunities</h2>
+
+                <p>
+                    Upload your own videos on ALL-IN-ONE.COM and get opportunities
+                    to earn income from your content.
+                </p>
+
+                <ul>
+                    <li>📤 Upload your own videos</li>
+                    <li>👁️ Get views on your videos</li>
+                    <li>❤️ Receive likes and comments</li>
+                    <li>💰 Eligible creators can earn from their content</li>
+                </ul>
+
+                <a class="btn" href="video-upload.html">
+                    📤 Upload Videos & Earn Opportunities
+                </a>
+
+            </div>
 
 
+            <div class="center-section">
 
-    <!-- ================= RIGHT COLUMN ================= -->
+                <h2>📊 Website Activity</h2>
 
-    <aside class="right-column">
+                <div class="activity">
 
-        <section class="paid-section">
+                    <span>
+                        👍 Likes:
+                        <strong id="likesCount">0</strong>
+                    </span>
 
-            <h2>
-                💰 Paid Classes
-            </h2>
+                    <span>
+                        👁️ Views:
+                        <strong id="viewsCount">3</strong>
+                    </span>
+
+                    <span>
+                        💬 Comments:
+                        <strong id="commentsCount">0</strong>
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT COLUMN -->
+
+        <div class="column">
+
+            <h2>💰 Paid Classes</h2>
 
             <p>
-                Learn from our special
-                paid courses.
+                Learn from our special paid courses.
             </p>
 
-            <p>
+            <div class="paid-course">
                 🎓 UPSC Complete Course
-            </p>
+            </div>
 
-            <p>
+            <div class="paid-course">
                 📝 Competitive Exams
-            </p>
+            </div>
 
-            <p>
+            <div class="paid-course">
                 📖 Degree Classes
-            </p>
+            </div>
 
-            <a href="paidclasses.html">
+            <a class="btn" href="paidclasses.html">
                 View Paid Classes
             </a>
 
-        </section>
+        </div>
 
-    </aside>
-
-
-</div>
-
-
-
-<!-- ================= STORY SECTION ================= -->
-
-<section class="story-section">
+    </div>
 
 
     <!-- STORY VIDEOS -->
 
-    <div
-        class="story-card searchable-card"
-        data-search="story story videos moral animal family festival"
-    >
+    <div class="story-section">
 
-        <h2>
-            🎥 Story Videos
-        </h2>
+        <h2>🎥 Story Videos</h2>
 
         <p>
-            Watch interesting Moral, Family,
-            Animal and Festival stories.
+            Watch interesting Moral, Family, Animal and Festival stories.
         </p>
 
-        <div class="stats">
+        <div class="activity">
 
             <span>
-                👍 Likes:
-                <strong id="storyVideoLikes">
-                    0
-                </strong>
+                👍 Likes: <strong>0</strong>
             </span>
 
             <span>
-                👁️ Views:
-                <strong id="storyVideoViews">
-                    0
-                </strong>
+                👁️ Views: <strong>0</strong>
             </span>
 
             <span>
-                💬 Comments:
-                <strong id="storyVideoComments">
-                    0
-                </strong>
+                💬 Comments: <strong>0</strong>
             </span>
 
         </div>
 
         <br>
 
-        <a href="storyvideos.html">
+        <a class="btn" href="storyvideos.html">
             Watch Story Videos
         </a>
 
     </div>
 
 
-
     <!-- STORY CONTENT -->
 
-    <div
-        class="story-card searchable-card"
-        data-search="story content moral stories animal family festival"
-    >
+    <div class="story-section">
 
-        <h2>
-            📖 Story Content
-        </h2>
+        <h2>📖 Story Content</h2>
 
         <p>
-            Read Moral, Family, Animal
-            and Festival story content.
+            Read Moral, Family, Animal and Festival story content.
         </p>
 
-        <div class="stats">
+        <div class="activity">
 
             <span>
-                👍 Likes:
-                <strong id="storyContentLikes">
-                    0
-                </strong>
+                👍 Likes: <strong>0</strong>
             </span>
 
             <span>
-                👁️ Views:
-                <strong id="storyContentViews">
-                    0
-                </strong>
+                👁️ Views: <strong>0</strong>
             </span>
 
             <span>
-                💬 Comments:
-                <strong id="storyContentComments">
-                    0
-                </strong>
+                💬 Comments: <strong>0</strong>
             </span>
 
         </div>
 
         <br>
 
-        <a href="storycontent.html">
+        <a class="btn" href="storycontent.html">
             Read Story Content
         </a>
 
     </div>
 
 
-</section>
+    <!-- TERMS -->
 
+    <div class="terms-section">
 
+        <h2>📜 Terms and Conditions</h2>
 
-<!-- ================= TERMS ================= -->
+        <p>
+            Please read our website terms and conditions before using the services.
+        </p>
 
-<section class="terms-section">
-
-    <h2>
-        📜 Terms and Conditions
-    </h2>
-
-    <p>
-        Please read our website terms and
-        conditions before using the services.
-    </p>
-
-    <a href="terms.html">
-        Read Terms & Conditions
-    </a>
-
-</section>
-
-
-
-<!-- ================= COMMENT BOX ================= -->
-
-<section class="comment-section">
-
-    <h2>
-        💬 Comment Box
-    </h2>
-
-    <textarea
-        id="homeCommentInput"
-        placeholder="Write your comment here..."
-    ></textarea>
-
-    <button onclick="postHomeComment()">
-        Post Comment
-    </button>
-
-    <div class="stats">
-
-        <span>
-            👍 Likes:
-            <strong id="commentLikes">
-                0
-            </strong>
-        </span>
-
-        <span>
-            👁️ Views:
-            <strong id="commentViews">
-                0
-            </strong>
-        </span>
-
-        <span>
-            💬 Comments:
-            <strong id="totalComments">
-                0
-            </strong>
-        </span>
+        <a class="btn" href="terms.html">
+            Read Terms & Conditions
+        </a>
 
     </div>
 
-    <div id="homeCommentsList"></div>
 
-</section>
+    <!-- COMMENT BOX -->
+
+    <div class="comment-section">
+
+        <h2>💬 Comment Box</h2>
+
+        <textarea
+            id="commentInput"
+            placeholder="Write your comment..."
+        ></textarea>
+
+        <br><br>
+
+        <button class="btn" onclick="postComment()">
+            Post Comment
+        </button>
+
+        <br><br>
+
+        <div class="activity">
+
+            <span>
+                👍 Likes: <strong id="commentLikes">0</strong>
+            </span>
+
+            <span>
+                👁️ Views: <strong id="commentViews">3</strong>
+            </span>
+
+            <span>
+                💬 Comments: <strong id="commentTotal">0</strong>
+            </span>
+
+        </div>
+
+    </div>
 
 
+    <!-- FOOTER -->
 
-<!-- ================= FOOTER ================= -->
+    <footer>
 
-<footer>
+        <p>
+            <a href="terms.html">
+                Terms & Conditions
+            </a>
 
-    <p>
-        <strong>
+            |
+
+            <a href="privacy-policy.html">
+                Privacy Policy
+            </a>
+        </p>
+
+        <p>
             © 2026 ALL-IN-ONE.COM
-        </strong>
-    </p>
+        </p>
 
-    <p>
-        Learn • Prepare • Watch • Enjoy
-    </p>
+        <p>
+            Learn • Prepare • Watch • Enjoy
+        </p>
 
-</footer>
+    </footer>
 
 
+    <script>
 
-<!-- ================= JAVASCRIPT ================= -->
+        function searchWebsite() {
 
-<script>
+            const search =
+                document.getElementById("searchInput").value.trim();
 
+            if (search === "") {
 
-/* =========================================
-   HOME PAGE VIEWS
-========================================= */
+                alert("Please enter something to search.");
 
-let homeViews =
-    Number(
-        localStorage.getItem(
-            "allInOneHomeViews"
-        )
-    ) || 0;
-
-homeViews++;
-
-localStorage.setItem(
-    "allInOneHomeViews",
-    homeViews
-);
-
-document.getElementById(
-    "homeViews"
-).textContent = homeViews;
-
-document.getElementById(
-    "commentViews"
-).textContent = homeViews;
-
-
-
-/* =========================================
-   HOME LIKES
-========================================= */
-
-let homeLikes =
-    Number(
-        localStorage.getItem(
-            "allInOneHomeLikes"
-        )
-    ) || 0;
-
-document.getElementById(
-    "homeLikes"
-).textContent = homeLikes;
-
-document.getElementById(
-    "commentLikes"
-).textContent = homeLikes;
-
-
-
-/* =========================================
-   HOME COMMENTS
-========================================= */
-
-let homeComments =
-    JSON.parse(
-        localStorage.getItem(
-            "allInOneHomeComments"
-        )
-    ) || [];
-
-document.getElementById(
-    "totalComments"
-).textContent =
-    homeComments.length;
-
-document.getElementById(
-    "homeComments"
-).textContent =
-    homeComments.length;
-
-
-
-function postHomeComment() {
-
-    const input =
-        document.getElementById(
-            "homeCommentInput"
-        );
-
-    const comment =
-        input.value.trim();
-
-    if (comment === "") {
-
-        alert(
-            "Please write a comment."
-        );
-
-        return;
-    }
-
-    homeComments.push(comment);
-
-    localStorage.setItem(
-        "allInOneHomeComments",
-        JSON.stringify(homeComments)
-    );
-
-    input.value = "";
-
-    displayHomeComments();
-}
-
-
-
-/* =========================================
-   DISPLAY COMMENTS
-========================================= */
-
-function displayHomeComments() {
-
-    const list =
-        document.getElementById(
-            "homeCommentsList"
-        );
-
-    list.innerHTML = "";
-
-    homeComments.forEach(
-        function(comment) {
-
-            const div =
-                document.createElement(
-                    "div"
-                );
-
-            div.textContent =
-                "💬 " + comment;
-
-            list.appendChild(div);
-
-        }
-    );
-
-    document.getElementById(
-        "totalComments"
-    ).textContent =
-        homeComments.length;
-
-    document.getElementById(
-        "homeComments"
-    ).textContent =
-        homeComments.length;
-}
-
-displayHomeComments();
-
-
-
-/* =========================================
-   SEARCH
-========================================= */
-
-function searchWebsite() {
-
-    const searchText =
-        document.getElementById(
-            "searchBox"
-        )
-        .value
-        .toLowerCase()
-        .trim();
-
-    const cards =
-        document.querySelectorAll(
-            ".searchable-card"
-        );
-
-    const message =
-        document.getElementById(
-            "searchMessage"
-        );
-
-    let found = 0;
-
-
-    cards.forEach(
-        function(card) {
-
-            const keywords =
-                (
-                    card.getAttribute(
-                        "data-search"
-                    ) || ""
-                )
-                .toLowerCase();
-
-
-            if (
-                searchText === "" ||
-                keywords.includes(searchText)
-            ) {
-
-                card.style.display = "";
-
-                card.classList.remove(
-                    "search-highlight"
-                );
-
-                if (
-                    searchText !== ""
-                ) {
-
-                    card.classList.add(
-                        "search-highlight"
-                    );
-
-                    found++;
-                }
-
-            } else {
-
-                card.style.display =
-                    "none";
+                return;
             }
 
+            alert("Searching for: " + search);
         }
-    );
 
 
-    if (searchText === "") {
+        function postComment() {
 
-        message.textContent = "";
+            const input =
+                document.getElementById("commentInput");
 
-    } else if (found > 0) {
+            const comment =
+                input.value.trim();
 
-        message.textContent =
-            "🔎 " +
-            found +
-            " result(s) found.";
+            if (comment === "") {
 
-    } else {
+                alert("Please write a comment.");
 
-        message.textContent =
-            "❌ No results found.";
-    }
+                return;
+            }
 
-}
+            let count =
+                Number(localStorage.getItem("commentCount") || 0);
 
-</script>
+            count++;
 
+            localStorage.setItem("commentCount", count);
+
+            document.getElementById("commentsCount").textContent = count;
+
+            document.getElementById("commentTotal").textContent = count;
+
+            input.value = "";
+
+            alert("Comment posted successfully!");
+        }
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const count =
+                Number(localStorage.getItem("commentCount") || 0);
+
+            document.getElementById("commentsCount").textContent = count;
+
+            document.getElementById("commentTotal").textContent = count;
+
+        });
+
+    </script>
 
 </body>
 
 </html>
-
-
